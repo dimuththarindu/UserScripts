@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         LK-SLT-Usage
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      5.7
 // @description  try to take over the world!
 // @author       DT
 // @match        *://*.internetvas.slt.lk/SLTVasPortal-war/application/home.nable
