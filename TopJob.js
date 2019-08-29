@@ -1,7 +1,8 @@
 // ==UserScript==
 // @name         TopJob
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      2.0
+// @history      1.0 Remove the right click restriction
 // @history      0.1 Remove 'overflow-y: auto;height: 583px'
 // @description  Sri Lanka Telecom - Data Usage
 // @author       DT
@@ -31,4 +32,6 @@
     pathValue = '//*[@id="redBG"]';
     element = document.evaluate(pathValue, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
     element.parentNode.removeChild(element);
+    
+    document.oncontextmenu = undefined;
 })();
