@@ -1,6 +1,6 @@
-# tampermonkey.net
+# UserScripts
 
-UserScript Manager: Tampermonkey  
+UserScript Manager: <a href="https://www.tampermonkey.net">Tampermonkey</a>  
 <a href="https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo">Chrome</a>, 
 <a href="https://www.microsoft.com/en-lk/p/tampermonkey/9nblggh5162s">Microsoft Edge</a>, 
 <a href="https://safari-extensions.apple.com/details/?id=net.tampermonkey.safari-G3XV72R5TC">Safari</a>,
