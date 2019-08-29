@@ -7,5 +7,5 @@ UserScript Manager: Tampermonkey
 <a href="https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/">Firefox</a>,
 <a href="https://addons.opera.com/en/extensions/details/tampermonkey-beta/">Opera Next</a>, 
 <a href="https://play.google.com/store/apps/details?id=net.tampermonkey.dolphin">Dolphin Browser</a>, and
-<a href="https://play.google.com/store/apps/details?id=net.tampermonkey.uc">uc browser</a>
+<a href="https://play.google.com/store/apps/details?id=net.tampermonkey.uc">UC Browser</a>.
 
