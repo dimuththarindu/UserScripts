@@ -1,12 +1,17 @@
 // ==UserScript==
 // @name         TopJob
 // @namespace    http://tampermonkey.net/
-// @version      0.1
-// @description  try to take over the world!
+// @version      1.0
+// @history      0.1 Remove 'overflow-y: auto;height: 583px'
+// @description  Sri Lanka Telecom - Data Usage
 // @author       DT
 // @match        *://*.topjobs.lk/*
 // @run-at       document-end
-// @grant        none
+// @grant        GM_getResourceText
+// @grant        GM_addStyle
+// @grant        GM_xmlhttpRequest
+// @downloadURL  https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/TopJob.js
+// @updateURL    https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/TopJob.js
 // ==/UserScript==
 
 (function() {

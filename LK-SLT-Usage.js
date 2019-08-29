@@ -2,7 +2,8 @@
 // @name         LK-SLT-Usage
 // @namespace    http://tampermonkey.net/
 // @version      5.7
-// @description  try to take over the world!
+// @history      5.7 Firefox Extension Script
+// @description  Sri Lanka Telecom - Data Usage
 // @author       DT
 // @match        *://*.internetvas.slt.lk/SLTVasPortal-war/application/home.nable
 // @run-at       document-end
@@ -24,14 +25,14 @@ var peakUsed = 0;
 var peakRemaining = 0;
 
 // Off-Peak Volume
-var offPeakMonthlylimit = 0; 
-var offPeakUsed = 0; 
-var offPeakRemaining = 0; 
+var offPeakMonthlylimit = 0;
+var offPeakUsed = 0;
+var offPeakRemaining = 0;
 
 // Dates
-var daysInThisMonth = 0; 
-var dayOfTheMonth = 0; 
-var noOfComingDays = 0; 
+var daysInThisMonth = 0;
+var dayOfTheMonth = 0;
+var noOfComingDays = 0;
 
 // Given data // Total Data / days
 var peakDataPerDay = 0;
@@ -62,12 +63,8 @@ var percentagePeakUsed = 0;
 var percentageOffPeakRem = 0;
 var percentageOffPeakUsed = 0;
 
-
 // Only clean, secure codes are allowed
 "use strict";
-
-// Automatic Update Test
-console.log("Update Test");
 
 // This function has to execute before other functions
 funCalculation();
@@ -84,137 +81,152 @@ funCustomStyle03();
 funCustomStyle04();
 funCustomStyle05();
 
-funDebug(); // For debugging pursues
-
+funDebug();
+// For debugging pursues
 
 function funCalculation() {
-	
-	// Get data from the page
-	totalMonthlylimit = funCircumference('//*[@id="myUsagePanel"]/div/div[1]/div[1]/div[2]/div[1]/div[1]/div/div[2]/div[1]/h5/strong/text()'); // 90.0GB 
-	totalRemaining = funCircumference('//*[@id="myUsagePanel"]/div/div[1]/div[1]/div[2]/div[1]/div[1]/div/div[2]/div[2]/h5/strong/text()'); // 73.3GB
-	totalUsed = funCircumference('//*[@id="myUsagePanel"]/div/div[1]/div[1]/div[2]/div[1]/div[1]/div/div[2]/div[3]/h5/strong/text()'); // 16.7GB
-	peakMonthlylimit = funCircumference('//*[@id="myUsagePanel"]/div/div[1]/div[1]/div[2]/div[1]/div[2]/div/div[2]/div[1]/h5/strong/text()'); // 36.0GB
-	peakRemaining = funCircumference('//*[@id="myUsagePanel"]/div/div[1]/div[1]/div[2]/div[1]/div[2]/div/div[2]/div[2]/h5/strong/text()'); // 26.6GB
-	peakUsed = funCircumference('//*[@id="myUsagePanel"]/div/div[1]/div[1]/div[2]/div[1]/div[2]/div/div[2]/div[3]/h5/strong/text()'); // 09.4GB
 
-	
-	// Off-Peak details
-	offPeakMonthlylimit = Number((totalMonthlylimit - peakMonthlylimit).toFixed(2)) || 0; // 90-36 = 54GB
-	offPeakUsed = Number((totalUsed - peakUsed).toFixed(2)) || 0; // 16.7-09.4 = 07.3GB
-	offPeakRemaining = Number((offPeakMonthlylimit - offPeakUsed).toFixed(2)) || 0; // 54-07.3 = 46.7GB
+    // Get data from the page
+    totalMonthlylimit = funCircumference('//*[@id="myUsagePanel"]/div/div[1]/div[1]/div[2]/div[1]/div[1]/div/div[2]/div[1]/h5/strong/text()');
+    // 90.0GB 
+    totalRemaining = funCircumference('//*[@id="myUsagePanel"]/div/div[1]/div[1]/div[2]/div[1]/div[1]/div/div[2]/div[2]/h5/strong/text()');
+    // 73.3GB
+    totalUsed = funCircumference('//*[@id="myUsagePanel"]/div/div[1]/div[1]/div[2]/div[1]/div[1]/div/div[2]/div[3]/h5/strong/text()');
+    // 16.7GB
+    peakMonthlylimit = funCircumference('//*[@id="myUsagePanel"]/div/div[1]/div[1]/div[2]/div[1]/div[2]/div/div[2]/div[1]/h5/strong/text()');
+    // 36.0GB
+    peakRemaining = funCircumference('//*[@id="myUsagePanel"]/div/div[1]/div[1]/div[2]/div[1]/div[2]/div/div[2]/div[2]/h5/strong/text()');
+    // 26.6GB
+    peakUsed = funCircumference('//*[@id="myUsagePanel"]/div/div[1]/div[1]/div[2]/div[1]/div[2]/div/div[2]/div[3]/h5/strong/text()');
+    // 09.4GB
 
-	// Date details
-	daysInThisMonth = new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0).getDate(); // 31
-	dayOfTheMonth = new Date().getDate(); // 11
-	noOfComingDays = daysInThisMonth - dayOfTheMonth; // 31-11 = 20
+    // Off-Peak details
+    offPeakMonthlylimit = Number((totalMonthlylimit - peakMonthlylimit).toFixed(2)) || 0;
+    // 90-36 = 54GB
+    offPeakUsed = Number((totalUsed - peakUsed).toFixed(2)) || 0;
+    // 16.7-09.4 = 07.3GB
+    offPeakRemaining = Number((offPeakMonthlylimit - offPeakUsed).toFixed(2)) || 0;
+    // 54-07.3 = 46.7GB
 
-	// Per day details // Given data
-	peakDataPerDay = Number((peakMonthlylimit / daysInThisMonth).toFixed(2)) || 0;
-	offPeakDataPerDay = Number((totalMonthlylimit / daysInThisMonth).toFixed(2)) || 0;
-	
-	// Per day availability details
-	peakDataAvailablePerDay = Number((peakRemaining / (daysInThisMonth - dayOfTheMonth)).toFixed(2)) || 0;	
-	offPeakDataAvailablePerDay = Number((offPeakRemaining / noOfComingDays).toFixed(2)) || 0;
+    // Date details
+    daysInThisMonth = new Date(new Date().getFullYear(),new Date().getMonth() + 1,0).getDate();
+    // 31
+    dayOfTheMonth = new Date().getDate();
+    // 11
+    noOfComingDays = daysInThisMonth - dayOfTheMonth;
+    // 31-11 = 20
 
-	// Calculate average
-	avgUsage = Number((totalUsed / dayOfTheMonth).toFixed(2)) || 0;
-	avgPeakUsage = Number((peakUsed / dayOfTheMonth).toFixed(2)) || 0;
-	avgOffPeakUsage = Number((offPeakUsed / dayOfTheMonth).toFixed(2)) || 0;
+    // Per day details // Given data
+    peakDataPerDay = Number((peakMonthlylimit / daysInThisMonth).toFixed(2)) || 0;
+    offPeakDataPerDay = Number((totalMonthlylimit / daysInThisMonth).toFixed(2)) || 0;
 
-	// Data exceed details + warning
-	let dataExceededFun;
-	dataExceededFun = funVolExceed(totalRemaining, avgUsage);
-	dataExceeded = dataExceededFun.val;
-	dataExceededWarning = dataExceededFun.warning;
+    // Per day availability details
+    peakDataAvailablePerDay = Number((peakRemaining / (daysInThisMonth - dayOfTheMonth)).toFixed(2)) || 0;
+    offPeakDataAvailablePerDay = Number((offPeakRemaining / noOfComingDays).toFixed(2)) || 0;
 
-	dataExceededFun = funVolExceed(peakRemaining, avgPeakUsage);
-	peakDataExceeded = dataExceededFun.val;
-	peakDataExceededWarning = dataExceededFun.warning;
+    // Calculate average
+    avgUsage = Number((totalUsed / dayOfTheMonth).toFixed(2)) || 0;
+    avgPeakUsage = Number((peakUsed / dayOfTheMonth).toFixed(2)) || 0;
+    avgOffPeakUsage = Number((offPeakUsed / dayOfTheMonth).toFixed(2)) || 0;
 
-	dataExceededFun = funVolExceed(offPeakRemaining, avgOffPeakUsage);
-	offPeakDataExceeded = dataExceededFun.val;
-	offPeakDataExceededWarning = dataExceededFun.warning;
+    // Data exceed details + warning
+    let dataExceededFun;
+    dataExceededFun = funVolExceed(totalRemaining, avgUsage);
+    dataExceeded = dataExceededFun.val;
+    dataExceededWarning = dataExceededFun.warning;
 
-	// Calculate Percentages
-	percentagePeakRem = ((peakRemaining/peakMonthlylimit) * 100).toFixed(0); // Peak Remaining
-	percentagePeakUsed = ((peakUsed/peakMonthlylimit) * 100).toFixed(0); // Peak Used
-	percentageOffPeakRem = ((offPeakRemaining/offPeakMonthlylimit) * 100).toFixed(0); // Off-Peak Remaining
-	percentageOffPeakUsed = ((offPeakUsed/offPeakMonthlylimit) * 100).toFixed(0); // Off-Peak Used
+    dataExceededFun = funVolExceed(peakRemaining, avgPeakUsage);
+    peakDataExceeded = dataExceededFun.val;
+    peakDataExceededWarning = dataExceededFun.warning;
+
+    dataExceededFun = funVolExceed(offPeakRemaining, avgOffPeakUsage);
+    offPeakDataExceeded = dataExceededFun.val;
+    offPeakDataExceededWarning = dataExceededFun.warning;
+
+    // Calculate Percentages
+    percentagePeakRem = ((peakRemaining / peakMonthlylimit) * 100).toFixed(0);
+    // Peak Remaining
+    percentagePeakUsed = ((peakUsed / peakMonthlylimit) * 100).toFixed(0);
+    // Peak Used
+    percentageOffPeakRem = ((offPeakRemaining / offPeakMonthlylimit) * 100).toFixed(0);
+    // Off-Peak Remaining
+    percentageOffPeakUsed = ((offPeakUsed / offPeakMonthlylimit) * 100).toFixed(0);
+    // Off-Peak Used
 }
 
-function funDebug() {	
-	// Logs
-	console.log("");
-	console.log("%cLK SLT Usage (Unofficial): Logs", "font-weight: bold; font-size: 1.2em;");
+function funDebug() {
+    // Logs
+    console.log("");
+    console.log("%cLK SLT Usage (Unofficial): Logs", "font-weight: bold; font-size: 1.2em;");
 
-	// Total Volume
-	console.log("");
-	console.log("%cTotal Volume", "font-weight: bold;");	
-	console.log("totalMonthlylimit: " + totalMonthlylimit);
-	console.log("totalRemaining: " + totalRemaining);
-	console.log("totalUsed: " + totalUsed);
-	
-	// Peak Volume
-	console.log("");
-	console.log("%cPeak Volume", "font-weight: bold;");
-	console.log("peakMonthlylimit: " + peakMonthlylimit);
-	console.log("peakUsed: " + peakUsed);
-	console.log("peakRemaining: " + peakRemaining);
+    // Total Volume
+    console.log("");
+    console.log("%cTotal Volume", "font-weight: bold;");
+    console.log("totalMonthlylimit: " + totalMonthlylimit);
+    console.log("totalRemaining: " + totalRemaining);
+    console.log("totalUsed: " + totalUsed);
 
-	// Off-Peak Volume
-	console.log("");
-	console.log("%cOff-Peak Volume", "font-weight: bold;");
-	console.log("offPeakMonthlylimit: " + offPeakMonthlylimit); 
-	console.log("offPeakUsed: " + offPeakUsed); 
-	console.log("offPeakRemaining: " + offPeakRemaining); 
+    // Peak Volume
+    console.log("");
+    console.log("%cPeak Volume", "font-weight: bold;");
+    console.log("peakMonthlylimit: " + peakMonthlylimit);
+    console.log("peakUsed: " + peakUsed);
+    console.log("peakRemaining: " + peakRemaining);
 
-	// Dates
-	console.log("");
-	console.log("%cDates", "font-weight: bold;");
-	console.log("daysInThisMonth: " + daysInThisMonth); 
-	console.log("dayOfTheMonth: " + dayOfTheMonth); 
-	console.log("noOfComingDays: " + noOfComingDays); 
+    // Off-Peak Volume
+    console.log("");
+    console.log("%cOff-Peak Volume", "font-weight: bold;");
+    console.log("offPeakMonthlylimit: " + offPeakMonthlylimit);
+    console.log("offPeakUsed: " + offPeakUsed);
+    console.log("offPeakRemaining: " + offPeakRemaining);
 
-	// Given data 
-	console.log("");
-	console.log("%cGiven data", "font-weight: bold;");
-	console.log("peakDataPerDay: " + peakDataPerDay);
-	console.log("offPeakDataPerDay: " + offPeakDataPerDay);
-	
-	// Available data
-	console.log("");
-	console.log("%cAvailable data", "font-weight: bold;");
-	console.log("peakDataAvailablePerDay: " + peakDataAvailablePerDay);
-	console.log("offPeakDataAvailablePerDay: " + offPeakDataAvailablePerDay);
+    // Dates
+    console.log("");
+    console.log("%cDates", "font-weight: bold;");
+    console.log("daysInThisMonth: " + daysInThisMonth);
+    console.log("dayOfTheMonth: " + dayOfTheMonth);
+    console.log("noOfComingDays: " + noOfComingDays);
+
+    // Given data 
+    console.log("");
+    console.log("%cGiven data", "font-weight: bold;");
+    console.log("peakDataPerDay: " + peakDataPerDay);
+    console.log("offPeakDataPerDay: " + offPeakDataPerDay);
+
+    // Available data
+    console.log("");
+    console.log("%cAvailable data", "font-weight: bold;");
+    console.log("peakDataAvailablePerDay: " + peakDataAvailablePerDay);
+    console.log("offPeakDataAvailablePerDay: " + offPeakDataAvailablePerDay);
 
     // Average Data
-	console.log("");
-	console.log("%cAverage Data", "font-weight: bold;");
-	console.log("avgUsage: " + avgUsage);
-	console.log("avgPeakUsage: " + avgPeakUsage);
-	console.log("avgOffPeakUsage: " + avgOffPeakUsage);
-	
-	// Data exceed details
-	console.log("");
-	console.log("%cData exceed details", "font-weight: bold;");
-	console.log("dataExceeded: " + dataExceeded);
-	console.log("peakDataExceeded: " + peakDataExceeded);
-	console.log("offPeakDataExceeded: " + offPeakDataExceeded);
+    console.log("");
+    console.log("%cAverage Data", "font-weight: bold;");
+    console.log("avgUsage: " + avgUsage);
+    console.log("avgPeakUsage: " + avgPeakUsage);
+    console.log("avgOffPeakUsage: " + avgOffPeakUsage);
 
-	// Data exceed details warning
-	console.log("");
-	console.log("%cData exceed details warning", "font-weight: bold;");
-	console.log("dataExceededWarning: " + dataExceededWarning);
-	console.log("peakDataExceededWarning: " + peakDataExceededWarning);
-	console.log("offPeakDataExceededWarning: " + offPeakDataExceededWarning);
-	
-	// Percentages Values
-	console.log("");
-	console.log("%cPercentages Values", "font-weight: bold;");
-	console.log("percentagePeakRem: " + percentagePeakRem);
-	console.log("percentagePeakUsed: " + percentagePeakUsed);
-	console.log("percentageOffPeakRem: " + percentageOffPeakRem);	
-	console.log("percentageOffPeakUsed: " + percentageOffPeakUsed);
+    // Data exceed details
+    console.log("");
+    console.log("%cData exceed details", "font-weight: bold;");
+    console.log("dataExceeded: " + dataExceeded);
+    console.log("peakDataExceeded: " + peakDataExceeded);
+    console.log("offPeakDataExceeded: " + offPeakDataExceeded);
+
+    // Data exceed details warning
+    console.log("");
+    console.log("%cData exceed details warning", "font-weight: bold;");
+    console.log("dataExceededWarning: " + dataExceededWarning);
+    console.log("peakDataExceededWarning: " + peakDataExceededWarning);
+    console.log("offPeakDataExceededWarning: " + offPeakDataExceededWarning);
+
+    // Percentages Values
+    console.log("");
+    console.log("%cPercentages Values", "font-weight: bold;");
+    console.log("percentagePeakRem: " + percentagePeakRem);
+    console.log("percentagePeakUsed: " + percentagePeakUsed);
+    console.log("percentageOffPeakRem: " + percentageOffPeakRem);
+    console.log("percentageOffPeakUsed: " + percentageOffPeakUsed);
 }
 
 function funCircumference(xPathValue) {
@@ -224,25 +236,23 @@ function funCircumference(xPathValue) {
     } catch (err) {
         x = 0;
         console.log("Error: " + err);
-    } finally {
-    }
+    } finally {}
     return x;
 }
 
 function funVolExceed(inputVal, inputAvg) {
-	let inputWarning = "";
-    try { 		
-		inputVal = Number((inputVal / inputAvg).toFixed(0)) || 0;
-		if (inputVal > noOfComingDays) {
-			inputVal = noOfComingDays;
-		} else {
-			inputWarning = "⚠";
-		}
+    let inputWarning = "";
+    try {
+        inputVal = Number((inputVal / inputAvg).toFixed(0)) || 0;
+        if (inputVal > noOfComingDays) {
+            inputVal = noOfComingDays;
+        } else {
+            inputWarning = "⚠";
+        }
     } catch (err) {
-		inputVal = 0;
+        inputVal = 0;
         console.log("Error: " + err);
-    } finally {
-    }
+    } finally {}
     return {
         val: inputVal,
         warning: inputWarning,
@@ -250,150 +260,145 @@ function funVolExceed(inputVal, inputAvg) {
 }
 
 function funChangeName() {
-	
-	// Standard Volume // Peak Volume
-	let pathPV = '/html/body/div[3]/div/div[2]/div/div/div/form/div/div[1]/div/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/h4';
+
+    // Standard Volume // Peak Volume
+    let pathPV = '/html/body/div[3]/div/div[2]/div/div/div/form/div/div[1]/div/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/h4';
     let elePV = document.evaluate(pathPV, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
     elePV.id = 'foreignDOMPV';
-	
-	//  Total (Standard+Free) Volume // Total Volume
-	let pathTV = '/html/body/div[3]/div/div[2]/div/div/div/form/div/div[1]/div/div[1]/div[1]/div[2]/div[1]/div[1]/div/h4';
+
+    //  Total (Standard+Free) Volume // Total Volume
+    let pathTV = '/html/body/div[3]/div/div[2]/div/div/div/form/div/div[1]/div/div[1]/div[1]/div[2]/div[1]/div[1]/div/h4';
     let eleTV = document.evaluate(pathTV, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
     eleTV.id = 'foreignDOMTV';
-	
-	document.getElementById("foreignDOMPV").innerHTML = "Peak Volume";
-	document.getElementById("foreignDOMTV").innerHTML = "Total Volume";
+
+    document.getElementById("foreignDOMPV").innerHTML = "Peak Volume";
+    document.getElementById("foreignDOMTV").innerHTML = "Total Volume";
 }
 
-
 function funInsertProgressBar() {
-	
-	let path = '/html/body/div[3]/div/div[2]/div/div/div/form/div/div[1]/div/div[1]/div[1]/div[2]/div[1]/div[2]/div';
+
+    let path = '/html/body/div[3]/div/div[2]/div/div/div/form/div/div[1]/div/div[1]/div[1]/div[2]/div[1]/div[2]/div';
     var element = document.evaluate(path, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
     element.id = 'foreignDOMPogressContainer_Before';
-	
-	var docFragment = document.createDocumentFragment(); // contains all gathered nodes
-	
-	let lineBreak = document.createElement("p");
-	docFragment.appendChild(lineBreak);
-	lineBreak.append(" ");
-	
-	
-	let maindiv = document.createElement("div");
+
+    var docFragment = document.createDocumentFragment();
+    // contains all gathered nodes
+
+    let lineBreak = document.createElement("p");
+    docFragment.appendChild(lineBreak);
+    lineBreak.append(" ");
+
+    let maindiv = document.createElement("div");
     maindiv.className = "col-md-12";
     docFragment.appendChild(maindiv);
-	
-	let maindivh4 = document.createElement("h4");
+
+    let maindivh4 = document.createElement("h4");
     maindiv.appendChild(maindivh4);
     maindivh4.append("Off-Peak Volume");
     maindiv.append("\n");
-	
-	let ProgressDiv = document.createElement("div");
+
+    let ProgressDiv = document.createElement("div");
     ProgressDiv.className = "progress";
     maindiv.appendChild(ProgressDiv);
     maindiv.append("\n");
-	
-	let ProgressBarDivA = document.createElement("div");
+
+    let ProgressBarDivA = document.createElement("div");
     ProgressBarDivA.className = "progress-bar";
-	ProgressBarDivA.setAttribute("role", "progressbar");
-	ProgressBarDivA.setAttribute("aria-valuenow", "50");
-	ProgressBarDivA.setAttribute("aria-valuemin", "0");
-	ProgressBarDivA.setAttribute("aria-valuemax", "100");
-	ProgressBarDivA.style.width = percentageOffPeakRem + "%";  
-	ProgressBarDivA.style.backgroundColor = "#0d0548";
+    ProgressBarDivA.setAttribute("role", "progressbar");
+    ProgressBarDivA.setAttribute("aria-valuenow", "50");
+    ProgressBarDivA.setAttribute("aria-valuemin", "0");
+    ProgressBarDivA.setAttribute("aria-valuemax", "100");
+    ProgressBarDivA.style.width = percentageOffPeakRem + "%";
+    ProgressBarDivA.style.backgroundColor = "#0d0548";
     ProgressDiv.appendChild(ProgressBarDivA);
-	ProgressBarDivA.append(percentageOffPeakRem + "%");
+    ProgressBarDivA.append(percentageOffPeakRem + "%");
     maindiv.append("\n");
-	
-	let ProgressBarDivB = document.createElement("div");
+
+    let ProgressBarDivB = document.createElement("div");
     ProgressBarDivB.className = "progress-bar";
-	ProgressBarDivB.setAttribute("role", "progressbar");
-	ProgressBarDivB.style.backgroundColor = "#87C7DE";
-	ProgressBarDivB.style.width = "0%";
-    ProgressDiv.appendChild(ProgressBarDivB);	
+    ProgressBarDivB.setAttribute("role", "progressbar");
+    ProgressBarDivB.style.backgroundColor = "#87C7DE";
+    ProgressBarDivB.style.width = "0%";
+    ProgressDiv.appendChild(ProgressBarDivB);
     maindiv.append("\n");
-	
-	let row = document.createElement("div");
-	row.className = "row";
-	maindiv.appendChild(row);
-	maindiv.append("\n");
-	
-	
-	// ROW DIV A
-	let subrowdivA = document.createElement("div");
-	subrowdivA.className = "col-md-4";
-	row.appendChild(subrowdivA);
 
-	// ROW DIV A H5
-	let h5ML = document.createElement("h5");
-	h5ML.className = "progress-label";
+    let row = document.createElement("div");
+    row.className = "row";
+    maindiv.appendChild(row);
+    maindiv.append("\n");
+
+    // ROW DIV A
+    let subrowdivA = document.createElement("div");
+    subrowdivA.className = "col-md-4";
+    row.appendChild(subrowdivA);
+
+    // ROW DIV A H5
+    let h5ML = document.createElement("h5");
+    h5ML.className = "progress-label";
     subrowdivA.appendChild(h5ML);
-	
-	let h5ML_small = document.createElement("small");
-	h5ML.appendChild(h5ML_small);
-	h5ML_small.append("Monthly limit");
-	
-	let h5ML_br = document.createElement("br");
-	h5ML.appendChild(h5ML_br);
-	
-	let h5ML_strong = document.createElement("strong");
-	h5ML_strong.style.marginTop = "5px"; 
-	//h5ML_strong.style.backgroundColor = "";
-	h5ML.appendChild(h5ML_strong);
-	h5ML_strong.append(offPeakMonthlylimit + " GB");
-	
-	
-	// ROW DIV B
-	let subrowdivB = document.createElement("div");
-	subrowdivB.className = "col-md-4";
-	subrowdivB.style.textAlign = "center"; 
-	row.appendChild(subrowdivB);
 
-	// ROW DIV B H5
-	let h5Rem = document.createElement("h5");
-	h5Rem.className = "progress-label";
+    let h5ML_small = document.createElement("small");
+    h5ML.appendChild(h5ML_small);
+    h5ML_small.append("Monthly limit");
+
+    let h5ML_br = document.createElement("br");
+    h5ML.appendChild(h5ML_br);
+
+    let h5ML_strong = document.createElement("strong");
+    h5ML_strong.style.marginTop = "5px";
+    //h5ML_strong.style.backgroundColor = "";
+    h5ML.appendChild(h5ML_strong);
+    h5ML_strong.append(offPeakMonthlylimit + " GB");
+
+    // ROW DIV B
+    let subrowdivB = document.createElement("div");
+    subrowdivB.className = "col-md-4";
+    subrowdivB.style.textAlign = "center";
+    row.appendChild(subrowdivB);
+
+    // ROW DIV B H5
+    let h5Rem = document.createElement("h5");
+    h5Rem.className = "progress-label";
     subrowdivB.appendChild(h5Rem);
-	
-	let h5Rem_small = document.createElement("small");
-	h5Rem.appendChild(h5Rem_small);
-	h5Rem_small.append("Remaining");
-	
-	let h5Rem_br = document.createElement("br");
-	h5Rem.appendChild(h5Rem_br);
-	
-	let h5Rem_strong = document.createElement("strong");
-	h5Rem.appendChild(h5Rem_strong);
-	h5Rem_strong.append(offPeakRemaining + " GB");
-	
-	
-	// ROW DIV C
-	let subrowdivC = document.createElement("div");
-	subrowdivC.className = "col-md-4";
-	subrowdivC.style.textAlign = "right"; 
-	row.appendChild(subrowdivC);
 
-	// ROW DIV C H5
-	let h5Used = document.createElement("h5");
-	h5Used.className = "progress-label";
+    let h5Rem_small = document.createElement("small");
+    h5Rem.appendChild(h5Rem_small);
+    h5Rem_small.append("Remaining");
+
+    let h5Rem_br = document.createElement("br");
+    h5Rem.appendChild(h5Rem_br);
+
+    let h5Rem_strong = document.createElement("strong");
+    h5Rem.appendChild(h5Rem_strong);
+    h5Rem_strong.append(offPeakRemaining + " GB");
+
+    // ROW DIV C
+    let subrowdivC = document.createElement("div");
+    subrowdivC.className = "col-md-4";
+    subrowdivC.style.textAlign = "right";
+    row.appendChild(subrowdivC);
+
+    // ROW DIV C H5
+    let h5Used = document.createElement("h5");
+    h5Used.className = "progress-label";
     subrowdivC.appendChild(h5Used);
-	
-	let h5Used_small = document.createElement("small");
-	h5Used.appendChild(h5Used_small);
-	h5Used_small.append("Used");
-	
-	let h5Used_br = document.createElement("br");
-	h5Used.appendChild(h5Used_br);
-	
-	let h5Used_strong = document.createElement("strong");
-	h5Used.appendChild(h5Used_strong);
-	h5Used_strong.append(offPeakUsed + " GB");
-	
-	// Final code
-	let referenceNode = document.querySelector('#foreignDOMPogressContainer_Before');
-	referenceNode.after(docFragment);
-	//document.getElementById("foreignDOMPogressContainer_Before").appendChild(docFragment);
-}
 
+    let h5Used_small = document.createElement("small");
+    h5Used.appendChild(h5Used_small);
+    h5Used_small.append("Used");
+
+    let h5Used_br = document.createElement("br");
+    h5Used.appendChild(h5Used_br);
+
+    let h5Used_strong = document.createElement("strong");
+    h5Used.appendChild(h5Used_strong);
+    h5Used_strong.append(offPeakUsed + " GB");
+
+    // Final code
+    let referenceNode = document.querySelector('#foreignDOMPogressContainer_Before');
+    referenceNode.after(docFragment);
+    //document.getElementById("foreignDOMPogressContainer_Before").appendChild(docFragment);
+}
 
 function funInsertData2Page() {
 
@@ -402,7 +407,8 @@ function funInsertData2Page() {
     element.id = 'foreignDOMContainer';
 
     // INNER HTML
-    var docFragment = document.createDocumentFragment(); // contains all gathered nodes
+    var docFragment = document.createDocumentFragment();
+    // contains all gathered nodes
 
     let maindiv = document.createElement("div");
     maindiv.className = "col-md-12";
@@ -423,13 +429,13 @@ function funInsertData2Page() {
     table.className = "table-hover";
     maindiv.appendChild(table);
     table.append("\n");
-	
-	let tbody = document.createElement("tbody");
-	table.appendChild(tbody);
+
+    let tbody = document.createElement("tbody");
+    table.appendChild(tbody);
 
     // TR Head 01
     let trhead1 = document.createElement("tr");
-	trhead1.className = "info";
+    trhead1.className = "info";
     tbody.appendChild(trhead1);
     // ------------------------------------------------------
     let trhead1_td1 = document.createElement("td");
@@ -451,7 +457,6 @@ function funInsertData2Page() {
     // ------------------------------------------------------
     tbody.append("\n");
 
-
     // TR 01
     let tr1 = document.createElement("tr");
     tbody.appendChild(tr1);
@@ -469,14 +474,13 @@ function funInsertData2Page() {
     tr1_td3.style.padding = "2px 60px 2px 10px";
     tr1.appendChild(tr1_td3);
     tr1_td3.append("");
-	
-	let tr1_td3_span = document.createElement("span");
+
+    let tr1_td3_span = document.createElement("span");
     tr1_td3_span.className = "text-muted";
     tr1_td3.appendChild(tr1_td3_span);
     tr1_td3_span.append("(Data cap)");
     // ------------------------------------------------------
     tbody.append("\n");
-
 
     // TR 02
     let tr2 = document.createElement("tr");
@@ -502,7 +506,6 @@ function funInsertData2Page() {
     tr2_td3_span.append("(For the upcoming " + noOfComingDays + " days)");
     // ------------------------------------------------------
     tbody.append("\n");
-
 
     // TR 03
     let tr3 = document.createElement("tr");
@@ -554,7 +557,6 @@ function funInsertData2Page() {
     // ------------------------------------------------------
     tbody.append("\n");
 
-
     // TR 03 End 02
     let tr3e02 = document.createElement("tr");
     tbody.appendChild(tr3e02);
@@ -574,7 +576,6 @@ function funInsertData2Page() {
     tr3e02_td3.append("");
     // ------------------------------------------------------
     tbody.append("\n");
-
 
     // TR BR 01
     let trbr01 = document.createElement("tr");
@@ -598,7 +599,7 @@ function funInsertData2Page() {
 
     // TR Head 02
     let trhead2 = document.createElement("tr");
-	trhead2.className = "info";
+    trhead2.className = "info";
     tbody.appendChild(trhead2);
     // ------------------------------------------------------
     let trhead2_td1 = document.createElement("td");
@@ -620,7 +621,6 @@ function funInsertData2Page() {
     // ------------------------------------------------------
     tbody.append("\n");
 
-
     // TR 04
     let tr4 = document.createElement("tr");
     tbody.appendChild(tr4);
@@ -641,7 +641,6 @@ function funInsertData2Page() {
     // ------------------------------------------------------
     tbody.append("\n");
 
-
     // TR 05
     let tr5 = document.createElement("tr");
     tbody.appendChild(tr5);
@@ -659,14 +658,13 @@ function funInsertData2Page() {
     tr5_td3.style.padding = "2px 60px 2px 10px";
     tr5.appendChild(tr5_td3);
     //tr5_td3.append("");
-	
-	let tr5_td3_span = document.createElement("span");
+
+    let tr5_td3_span = document.createElement("span");
     tr5_td3_span.className = "text-muted";
     tr5_td3.appendChild(tr5_td3_span);
     tr5_td3_span.append("(" + percentagePeakRem + "%)");
     // ------------------------------------------------------
     tbody.append("\n");
-
 
     // TR 06
     let tr6 = document.createElement("tr");
@@ -685,14 +683,13 @@ function funInsertData2Page() {
     tr6_td3.style.padding = "2px 60px 2px 10px";
     tr6.appendChild(tr6_td3);
     //tr6_td3.append("");
-	
-	let tr6_td3_span = document.createElement("span");
+
+    let tr6_td3_span = document.createElement("span");
     tr6_td3_span.className = "text-muted";
     tr6_td3.appendChild(tr6_td3_span);
     tr6_td3_span.append("(" + percentagePeakUsed + "%)");
     // ------------------------------------------------------
     tbody.append("\n");
-
 
     // TR 06 01
     let tr601 = document.createElement("tr");
@@ -719,7 +716,6 @@ function funInsertData2Page() {
     // ------------------------------------------------------
     tbody.append("\n");
 
-
     // TR BR 02
     let trbr02 = document.createElement("tr");
     tbody.appendChild(trbr02);
@@ -740,10 +736,9 @@ function funInsertData2Page() {
     // ------------------------------------------------------
     tbody.append("\n");
 
-
     // TR Head 01
     let trhead3 = document.createElement("tr");
-	trhead3.className = "info";
+    trhead3.className = "info";
     tbody.appendChild(trhead3);
     // ------------------------------------------------------
     let trhead3_td1 = document.createElement("td");
@@ -765,7 +760,6 @@ function funInsertData2Page() {
     // ------------------------------------------------------
     tbody.append("\n");
 
-
     // TR 07
     let tr7 = document.createElement("tr");
     tbody.appendChild(tr7);
@@ -786,7 +780,6 @@ function funInsertData2Page() {
     // ------------------------------------------------------
     tbody.append("\n");
 
-
     // TR 08
     let tr8 = document.createElement("tr");
     tbody.appendChild(tr8);
@@ -804,14 +797,13 @@ function funInsertData2Page() {
     tr8_td3.style.padding = "2px 60px 2px 10px";
     tr8.appendChild(tr8_td3);
     //tr8_td3.append("");
-	
-	let tr8_td3_span = document.createElement("span");
+
+    let tr8_td3_span = document.createElement("span");
     tr8_td3_span.className = "text-muted";
     tr8_td3.appendChild(tr8_td3_span);
     tr8_td3_span.append("(" + percentageOffPeakRem + "%)");
     // ------------------------------------------------------
     tbody.append("\n");
-
 
     // TR 09
     let tr9 = document.createElement("tr");
@@ -830,8 +822,8 @@ function funInsertData2Page() {
     tr9_td3.style.padding = "2px 60px 2px 10px";
     tr9.appendChild(tr9_td3);
     //tr9_td3.append("");
-	
-	let tr9_td3_span = document.createElement("span");
+
+    let tr9_td3_span = document.createElement("span");
     tr9_td3_span.className = "text-muted";
     tr9_td3.appendChild(tr9_td3_span);
     tr9_td3_span.append("(" + percentageOffPeakUsed + "%)");
@@ -863,7 +855,6 @@ function funInsertData2Page() {
     // ------------------------------------------------------
     tbody.append("\n");
 
-
     // TR BR 03
     let trbr03 = document.createElement("tr");
     tbody.appendChild(trbr03);
@@ -884,10 +875,9 @@ function funInsertData2Page() {
     // ------------------------------------------------------
     tbody.append("\n");
 
-
     // TR Head 04
     let trhead4 = document.createElement("tr");
-	trhead4.className = "info";
+    trhead4.className = "info";
     tbody.appendChild(trhead4);
     // ------------------------------------------------------
     let trhead4_td1 = document.createElement("td");
@@ -908,7 +898,6 @@ function funInsertData2Page() {
     trhead4_td3.append("   ");
     // ------------------------------------------------------
     tbody.append("\n");
-
 
     // TR 10
     let tr10 = document.createElement("tr");
@@ -934,7 +923,6 @@ function funInsertData2Page() {
     // ------------------------------------------------------
     tbody.append("\n");
 
-
     // TR 11
     let tr11 = document.createElement("tr");
     tbody.appendChild(tr11);
@@ -958,7 +946,6 @@ function funInsertData2Page() {
     tr11_td3_span.append("(Available Peak Data/" + (daysInThisMonth - dayOfTheMonth) + ")");
     // ------------------------------------------------------
     tbody.append("\n");
-
 
     // TR 12
     let tr12 = document.createElement("tr");
@@ -984,7 +971,6 @@ function funInsertData2Page() {
     // ------------------------------------------------------
     tbody.append("\n");
 
-
     // TR BR 04
     let trbr04 = document.createElement("tr");
     tbody.appendChild(trbr04);
@@ -1005,10 +991,9 @@ function funInsertData2Page() {
     // ------------------------------------------------------
     tbody.append("\n");
 
-
     // TR Head 03
     let trhead5 = document.createElement("tr");
-	trhead5.className = "info";
+    trhead5.className = "info";
     tbody.appendChild(trhead5);
     // ------------------------------------------------------
     let trhead5_td1 = document.createElement("td");
@@ -1029,7 +1014,6 @@ function funInsertData2Page() {
     trhead5_td3.append("   ");
     // ------------------------------------------------------
     tbody.append("\n");
-
 
     // TR 13
     let tr13 = document.createElement("tr");
@@ -1055,7 +1039,6 @@ function funInsertData2Page() {
     // ------------------------------------------------------
     tbody.append("\n");
 
-
     // TR 14
     let tr14 = document.createElement("tr");
     tbody.appendChild(tr14);
@@ -1079,7 +1062,6 @@ function funInsertData2Page() {
     tr14_td3_span.append("(Available Off Peak Data/" + (daysInThisMonth - dayOfTheMonth) + ")");
     // ------------------------------------------------------
     tbody.append("\n");
-
 
     // TR 15
     let tr15 = document.createElement("tr");
@@ -1112,7 +1094,6 @@ function funInsertData2Page() {
     // Insert into original webpage
     document.getElementById("foreignDOMContainer").appendChild(docFragment);
 }
-
 
 function funCustomStyle01() {
 
