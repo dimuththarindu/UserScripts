@@ -6,7 +6,9 @@
 // @author       DT
 // @match        *://*.internetvas.slt.lk/SLTVasPortal-war/application/home.nable
 // @run-at       document-end
-// @grant        none
+// @grant        GM_addStyle
+// @downloadURL  https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/LK-SLT-Usage.js
+// @updateURL    https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/LK-SLT-Usage.js
 // ==/UserScript==
 
 
