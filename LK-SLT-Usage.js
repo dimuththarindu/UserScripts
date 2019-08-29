@@ -1,16 +1,17 @@
 // ==UserScript==
 // @name         LK-SLT-Usage
 // @namespace    http://tampermonkey.net/
-// @version      5.7
+// @version      0.1
 // @description  try to take over the world!
 // @author       DT
 // @match        *://*.internetvas.slt.lk/SLTVasPortal-war/application/home.nable
 // @run-at       document-end
+// @grant        GM_getResourceText
 // @grant        GM_addStyle
+// @grant        GM_xmlhttpRequest
 // @downloadURL  https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/LK-SLT-Usage.js
 // @updateURL    https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/LK-SLT-Usage.js
 // ==/UserScript==
-
 
 // Total Volume
 var totalMonthlylimit = 0;
