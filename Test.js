@@ -7,8 +7,11 @@
 // @match        *://*.internetvas.slt.lk/SLTVasPortal-war/application/home.nable
 // @run-at       document-end
 // @grant        none
+// @downloadURL  https://github.com/dimuththarindu/UserScripts/blob/master/LK-SLT-Usage.js
+// @updateURL    https://github.com/dimuththarindu/UserScripts/blob/master/LK-SLT-Usage.js
 // ==/UserScript==
 
+console.log("Test");
 
 // Total Volume
 var totalMonthlylimit = 0;
@@ -63,8 +66,7 @@ var percentageOffPeakUsed = 0;
 // Only clean, secure codes are allowed
 "use strict";
 
-// Automatic Update Test
-console.log("Update Test");
+console.log("Test");
 
 // This function has to execute before other functions
 funCalculation();
