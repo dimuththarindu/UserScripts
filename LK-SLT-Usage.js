@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         LK-SLT-Usage
 // @namespace    http://tampermonkey.net/
-// @version      5.7
-// @history      5.7 Firefox Extension Script
+// @version      5.7.1
+// @history      5.7.0 Firefox Extension Script
 // @description  Sri Lanka Telecom - Data Usage
 // @author       DT
 // @match        *://*.internetvas.slt.lk/SLTVasPortal-war/application/home.nable
