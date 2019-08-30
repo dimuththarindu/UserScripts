@@ -13,7 +13,7 @@
 // @match        *://*.internetvas.slt.lk/SLTVasPortal-war/application/home.nable
 // @run-at       document-end
 // @grant        GM_addStyle
-// @license      Apache License 2.0
+// @license      GNU Lesser General Public License v3.0
 // @history      5.7.4 Change support URL
 // @history      5.7.2 Small changes to the script
 // @history      5.7.1 Change the download & update URLs
