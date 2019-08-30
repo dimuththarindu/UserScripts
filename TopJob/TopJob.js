@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TopJob
 // @namespace    UserScripts
-// @version      3.1
+// @version      3.2
 // @author       DT
 // @description  TopJob Website User Experience
 // @source		 https://github.com/dimuththarindu/UserScripts
@@ -9,11 +9,12 @@
 // @icon64URL	 https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/TopJob/Icon-64.png
 // @updateURL  	 https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/TopJob/TopJob.js
 // @downloadURL  https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/TopJob/TopJob.js
-// @supportURL   https://github.com/dimuththarindu/UserScripts
+// @supportURL   https://github.com/dimuththarindu/UserScripts/issues
 // @match        *://*.topjobs.lk/*
 // @run-at		 document-end
 // @grant        GM_addStyle
 // @license      Apache License 2.0
+// @history      3.1 Change support URL
 // @history      3.0 Small changes to the script
 // @history      2.0 Change the download & update URLs
 // @history      1.0 Remove the right click restriction
