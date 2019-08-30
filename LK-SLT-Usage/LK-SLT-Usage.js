@@ -1,7 +1,9 @@
 // ==UserScript==
 // @name         LK-SLT-Usage
-// @namespace    http://tampermonkey.net/
-// @version      5.7.1
+// @namespace    UserScripts
+// @version      5.7.3
+// @history      5.7.2 Small changes to the script
+// @history      5.7.1 Change the download & update URLs
 // @history      5.7.0 Firefox Extension Script
 // @description  Sri Lanka Telecom - Data Usage
 // @author       DT
@@ -10,9 +12,34 @@
 // @grant        GM_getResourceText
 // @grant        GM_addStyle
 // @grant        GM_xmlhttpRequest
-// @downloadURL  https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/LK-SLT-Usage.js
-// @updateURL    https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/LK-SLT-Usage.js
+// @downloadURL  https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/LK-SLT-Usage/LK-SLT-Usage.js
+// @updateURL    https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/LK-SLT-Usage/LK-SLT-Usage.js
 // ==/UserScript==
+
+
+// @name         LK-SLT-Usage
+// @namespace    UserScripts
+// @version      5.7.3
+// @author       DT
+// @description  Sri Lanka Telecom - Data Usage
+// @source		 https://github.com/dimuththarindu/UserScripts
+@icon, @iconURL and @defaulticon
+@icon64 and @icon64URL
+@updateURL
+@downloadURL
+@supportURL
+@include
+@match
+@exclude
+@require
+@resource
+@connect
+@run-at
+@grant
+@noframes
+@unwrap
+@nocompat
+
 
 // Total Volume
 var totalMonthlylimit = 0;
