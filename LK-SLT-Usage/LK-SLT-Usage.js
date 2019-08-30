@@ -1,44 +1,24 @@
 // ==UserScript==
 // @name         LK-SLT-Usage
 // @namespace    UserScripts
-// @version      5.7.3
-// @history      5.7.2 Small changes to the script
-// @history      5.7.1 Change the download & update URLs
-// @history      5.7.0 Firefox Extension Script
-// @description  Sri Lanka Telecom - Data Usage
-// @author       DT
-// @match        *://*.internetvas.slt.lk/SLTVasPortal-war/application/home.nable
-// @run-at       document-end
-// @grant        GM_getResourceText
-// @grant        GM_addStyle
-// @grant        GM_xmlhttpRequest
-// @downloadURL  https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/LK-SLT-Usage/LK-SLT-Usage.js
-// @updateURL    https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/LK-SLT-Usage/LK-SLT-Usage.js
-// ==/UserScript==
-
-
-// @name         LK-SLT-Usage
-// @namespace    UserScripts
-// @version      5.7.3
+// @version      5.7.4
 // @author       DT
 // @description  Sri Lanka Telecom - Data Usage
 // @source		 https://github.com/dimuththarindu/UserScripts
-@icon, @iconURL and @defaulticon
-@icon64 and @icon64URL
-@updateURL
-@downloadURL
-@supportURL
-@include
-@match
-@exclude
-@require
-@resource
-@connect
-@run-at
-@grant
-@noframes
-@unwrap
-@nocompat
+// @icon 		 https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/LK-SLT-Usage/Icon-64.png
+// @icon64URL	 https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/LK-SLT-Usage/Icon-64.png
+// @updateURL  	 https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/LK-SLT-Usage/LK-SLT-Usage.js
+// @downloadURL  https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/LK-SLT-Usage/LK-SLT-Usage.js
+// @supportURL   https://github.com/dimuththarindu/UserScripts
+// @match 		 *://*.internetvas.slt.lk/SLTVasPortal-war/application/home.nable
+// @run-at		 document-end
+// @grant        GM_addStyle
+// @license      Apache License 2.0
+// @history      5.7.2 Small changes to the script
+// @history      5.7.1 Change the download & update URLs
+// @history      5.7.0 Firefox Extension Script
+// ==/UserScript==
+
 
 
 // Total Volume
