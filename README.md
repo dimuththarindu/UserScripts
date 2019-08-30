@@ -10,6 +10,6 @@ Safari: https://safari-extensions.apple.com/details/?id=net.tampermonkey.safari-
 UC Browser: https://play.google.com/store/apps/details?id=net.tampermonkey.uc  
 Dolphin Browser: https://play.google.com/store/apps/details?id=net.tampermonkey.dolphin
 
-Alternative UserScript Managers
+Alternative UserScript Managers  
 Violentmonkey: https://violentmonkey.github.io/get-it/  
-Greasemonkey: https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/
+Greasemonkey: https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/  
