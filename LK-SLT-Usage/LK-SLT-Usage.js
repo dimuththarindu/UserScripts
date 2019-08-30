@@ -4,14 +4,14 @@
 // @version      5.7.5
 // @author       DT
 // @description  Sri Lanka Telecom - Data Usage
-// @source		 https://github.com/dimuththarindu/UserScripts
-// @icon 		 https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/LK-SLT-Usage/Icon-64.png
+// @source       https://github.com/dimuththarindu/UserScripts
+// @icon         https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/LK-SLT-Usage/Icon-64.png
 // @icon64URL	 https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/LK-SLT-Usage/Icon-64.png
 // @updateURL  	 https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/LK-SLT-Usage/LK-SLT-Usage.js
 // @downloadURL  https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/LK-SLT-Usage/LK-SLT-Usage.js
 // @supportURL   https://github.com/dimuththarindu/UserScripts/issues
-// @match 		 *://*.internetvas.slt.lk/SLTVasPortal-war/application/home.nable
-// @run-at		 document-end
+// @match        *://*.internetvas.slt.lk/SLTVasPortal-war/application/home.nable
+// @run-at       document-end
 // @grant        GM_addStyle
 // @license      Apache License 2.0
 // @history      5.7.4 Change support URL

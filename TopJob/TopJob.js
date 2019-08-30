@@ -4,14 +4,14 @@
 // @version      3.2
 // @author       DT
 // @description  TopJob Website User Experience
-// @source		 https://github.com/dimuththarindu/UserScripts
-// @icon 		 https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/TopJob/Icon-64.png
+// @source       https://github.com/dimuththarindu/UserScripts
+// @icon         https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/TopJob/Icon-64.png
 // @icon64URL	 https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/TopJob/Icon-64.png
 // @updateURL  	 https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/TopJob/TopJob.js
 // @downloadURL  https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/TopJob/TopJob.js
 // @supportURL   https://github.com/dimuththarindu/UserScripts/issues
 // @match        *://*.topjobs.lk/*
-// @run-at		 document-end
+// @run-at       document-end
 // @grant        GM_addStyle
 // @license      Apache License 2.0
 // @history      3.1 Change support URL
