@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         LK-SLT-Usage
 // @namespace    UserScripts
-// @version      5.7.5
+// @version      5.7.6
 // @author       DT
 // @description  Sri Lanka Telecom - Data Usage
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -14,6 +14,7 @@
 // @run-at       document-end
 // @grant        GM_addStyle
 // @license      GNU Lesser General Public License v3.0
+// @history      5.7.5 License
 // @history      5.7.4 Change support URL
 // @history      5.7.2 Small changes to the script
 // @history      5.7.1 Change the download & update URLs
