@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      1.3
+// @version      1.4
 // @author       DT
 // @description  Clean Elakiri
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -10,7 +10,7 @@
 // @updateURL  	 https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Elakiri.user.js
 // @downloadURL  https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Elakiri.user.js
 // @supportURL   https://github.com/dimuththarindu/UserScripts/issues
-// @include      *://*.elakiri.com/*
+// @match      *://*.elakiri.com/*
 // @include      *://*.elakiri.lk/*
 // @run-at       document-end
 // @grant        GM_addStyle
@@ -54,11 +54,15 @@ funRemoveElement('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbo
 // Copyright bar
 funRemoveElement('/html/body/table/tbody/tr/td/div/div/div/div[9]');
 
+// Posting Rules / Sub Thread
+funRemoveElement('/html/body/table/tbody/tr/td/div[3]/div/div/table[5]');
+
+// Bookmarks / Sub Thread
+funRemoveElement('/html/body/table/tbody/tr/td/div[3]/div/div/table[2]');
+
 // Page generated 
 funRemoveElement('/html/body/center');
 
-// Posting Rules / Sub Thread
-funRemoveElement('/html/body/table/tbody/tr/td/div[3]/div/div/table[5]');
 
 function funNewDesign() {
     var css = "";
