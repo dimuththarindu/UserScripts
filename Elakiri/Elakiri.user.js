@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      1.5
+// @version      1.6
 // @author       DT
 // @description  Clean Elakiri
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -97,9 +97,7 @@ function funNewDesign() {
     document.head.appendChild(style);
 
     var element = document.evaluate('/html/body/table/tbody/tr/td/table[1]/tbody/tr[1]/td/a/img', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-    element.id = 'ElakiriInjectLogo';
-    document.getElementById("ElakiriInjectLogo").src = "https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Logo.png";
-
+    element.src = "https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Logo.png";
 }
 
 function funRemoveElement(pathValue) {
