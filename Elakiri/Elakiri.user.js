@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      1.4
+// @version      1.5
 // @author       DT
 // @description  Clean Elakiri
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -18,51 +18,63 @@
 // ==/UserScript==
 
 
-
 'use strict';
 
-// New Design
-funNewDesign();
+// Only work for EK Lite design
+try {
+	var element = document.evaluate('/html/body/table/tbody/tr/td/form/table/tbody/tr/td[1]/select/optgroup/option[2]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+	
+	if (element.selected) {
+		funStart();
+	}
+}
+catch(err) {
+	console.log("Error: " + err);
+} 
 
-// Downloads
-funRemoveElement('/html/body/table/tbody/tr/td/div/div/div/table[2]/tbody/tr/td[2]/div[4]');
+function funStart() {
+	// New Design
+	funNewDesign();
 
-// ElaKiri Exclusive!
-funRemoveElement('/html/body/table/tbody/tr/td/div/div/div/table[2]/tbody/tr/td[2]/div[1]');
+	// Downloads
+	funRemoveElement('/html/body/table/tbody/tr/td/div/div/div/table[2]/tbody/tr/td[2]/div[4]');
 
-// Checkout!
-funRemoveElement('/html/body/table/tbody/tr/td/div/div/div/table[2]/tbody/tr/td[3]/div[2]');
+	// ElaKiri Exclusive!
+	funRemoveElement('/html/body/table/tbody/tr/td/div/div/div/table[2]/tbody/tr/td[2]/div[1]');
 
-// Current Poll
-funRemoveElement('/html/body/table/tbody/tr/td/div/div/div/table[2]/tbody/tr/td[1]/form[2]');
+	// Checkout!
+	funRemoveElement('/html/body/table/tbody/tr/td/div/div/div/table[2]/tbody/tr/td[3]/div[2]');
 
-// ElaKiri Events!
-funRemoveElement('/html/body/table/tbody/tr/td/div/div/div/table[2]/tbody/tr/td[1]/div[4]');
+	// Current Poll
+	funRemoveElement('/html/body/table/tbody/tr/td/div/div/div/table[2]/tbody/tr/td[1]/form[2]');
 
-// Site Navigation
-funRemoveElement('/html/body/table/tbody/tr/td/div/div/div/table[2]/tbody/tr/td[1]/div[1]');
+	// ElaKiri Events!
+	funRemoveElement('/html/body/table/tbody/tr/td/div/div/div/table[2]/tbody/tr/td[1]/div[4]');
 
-// Navbar Downloads
-funRemoveElement('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[2]');
+	// Site Navigation
+	funRemoveElement('/html/body/table/tbody/tr/td/div/div/div/table[2]/tbody/tr/td[1]/div[1]');
 
-// Navbar FAQ
-funRemoveElement('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[2]');
+	// Navbar Downloads
+	funRemoveElement('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[2]');
 
-// Navbar Contact Us
-funRemoveElement('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[8]');
+	// Navbar FAQ
+	funRemoveElement('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[2]');
 
-// Copyright bar
-funRemoveElement('/html/body/table/tbody/tr/td/div/div/div/div[9]');
+	// Navbar Contact Us
+	funRemoveElement('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[8]');
 
-// Posting Rules / Sub Thread
-funRemoveElement('/html/body/table/tbody/tr/td/div[3]/div/div/table[5]');
+	// Copyright bar
+	funRemoveElement('/html/body/table/tbody/tr/td/div/div/div/div[9]');
 
-// Bookmarks / Sub Thread
-funRemoveElement('/html/body/table/tbody/tr/td/div[3]/div/div/table[2]');
+	// Posting Rules / Sub Thread
+	funRemoveElement('/html/body/table/tbody/tr/td/div[3]/div/div/table[5]');
 
-// Page generated 
-funRemoveElement('/html/body/center');
+	// Bookmarks / Sub Thread
+	funRemoveElement('/html/body/table/tbody/tr/td/div[3]/div/div/table[2]');
 
+	// Page generated 
+	funRemoveElement('/html/body/center');
+}
 
 function funNewDesign() {
     var css = "";
