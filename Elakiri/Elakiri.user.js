@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      1.9
+// @version      2.0
 // @author       DT
 // @description  Clean Elakiri
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -20,18 +20,19 @@
 
 'use strict';
 
-// Only work if...
+// Works only when certain criteria are met
 try {
-	// New Design
+	// Apply New Design
 	funNewDesign();
 	
-	// Logged in
-	var element = (document.evaluate('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[1]/a/text()', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue).data.toString();	
+	var element;
+	element = (document.evaluate('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[1]/a/text()', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue).data.toString();	
 
+	// Check login status
 	if(!element.includes("Register")){
-		// Selected EK Lite as the main design
-		var element = document.evaluate('/html/body/table/tbody/tr/td/form/table/tbody/tr/td[1]/select/optgroup/option[2]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-	
+		// Check selected theme. Only work for EK Lite theme
+		element = document.evaluate('/html/body/table/tbody/tr/td/form/table/tbody/tr/td[1]/select/optgroup/option[2]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+
 		if (element.selected) {
 			funRemoveAllElements();
 		}
@@ -39,7 +40,7 @@ try {
 }
 catch(err) {
 	console.log("Error: " + err);
-} 
+}
 
 function funRemoveAllElements() {
 	// Downloads
@@ -78,7 +79,7 @@ function funRemoveAllElements() {
 	// Bookmarks / Sub Thread
 	funRemoveElement('/html/body/table/tbody/tr/td/div[3]/div/div/table[2]');
 
-	// Page generated 
+	// Page generated
 	funRemoveElement('/html/body/center');
 }
 
@@ -108,10 +109,10 @@ function funNewDesign() {
 
 function funRemoveElement(pathValue) {
     var element = document.evaluate(pathValue, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-	
+
 	if(element) {
 		element.parentNode.removeChild(element);
-	}    
+	}
 }
 
 /*
