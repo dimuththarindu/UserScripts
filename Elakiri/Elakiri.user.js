@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      1.6
+// @version      1.7
 // @author       DT
-// @description  Custom Elakiri Design
+// @description  Clean Elakiri
 // @source       https://github.com/dimuththarindu/UserScripts
 // @icon         https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Icon-64.png
 // @icon64URL	 https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Icon-64.png
@@ -79,7 +79,7 @@ function funStart() {
 function funNewDesign() {
     var css = "";
 
-    css += ".page, table, tbody, .bginput, select, td, .header_box, .postbit_box, .panel, .button, center{background: black !important;border-color: #4B515D !important}";
+    css += ".page, table, tbody, .bginput, select, td, .header_box, .postbit_box, .panel, .button, .header_box_guest, center{background: black !important;border-color: #4B515D !important}";
 
     css += ".thead{background: #2E2E2E !important}";
 
