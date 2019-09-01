@@ -24,7 +24,7 @@
 try {
 	// Apply New Design
 	funNewDesign();
-	
+
 	var element;
 	element = (document.evaluate('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[1]/a/text()', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue).data.toString();	
 
