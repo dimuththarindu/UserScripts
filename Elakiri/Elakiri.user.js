@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      1.8
+// @version      1.9
 // @author       DT
 // @description  Clean Elakiri
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -22,15 +22,18 @@
 
 // Only work if...
 try {
+	// New Design
+	funNewDesign();
+	
 	// Logged in
-	var element = (document.evaluate('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[1]/a/text()', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue).data.toString();
+	var element = (document.evaluate('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[1]/a/text()', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue).data.toString();	
 
 	if(!element.includes("Register")){
 		// Selected EK Lite as the main design
 		var element = document.evaluate('/html/body/table/tbody/tr/td/form/table/tbody/tr/td[1]/select/optgroup/option[2]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
 	
 		if (element.selected) {
-			funStart();
+			funRemoveAllElements();
 		}
 	}
 }
@@ -38,10 +41,7 @@ catch(err) {
 	console.log("Error: " + err);
 } 
 
-function funStart() {
-	// New Design
-	funNewDesign();
-
+function funRemoveAllElements() {
 	// Downloads
 	funRemoveElement('/html/body/table/tbody/tr/td/div/div/div/table[2]/tbody/tr/td[2]/div[4]');
 
