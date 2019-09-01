@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      2.0
+// @version      2.1
 // @author       DT
 // @description  Clean Elakiri
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -45,7 +45,7 @@ catch(err) {
 function funNewDesign() {
     var css = "";
 
-    css += ".page, table, tbody, .bginput, select, td, .header_box, .postbit_box, .panel, .button, .header_box_guest, center{background: black !important;border-color: #4B515D !important}";
+    css += "html, body, .page, table, tbody, .bginput, select, td, .header_box, .postbit_box, .panel, .button, .header_box_guest, center{background: black !important;border-color: #4B515D !important}";
 
     css += ".thead{background: #2E2E2E !important}";
 
