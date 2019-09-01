@@ -10,7 +10,7 @@
 // @updateURL  	 https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Elakiri.user.js
 // @downloadURL  https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Elakiri.user.js
 // @supportURL   https://github.com/dimuththarindu/UserScripts/issues
-// @match      *://*.elakiri.com/*
+// @match        *://*.elakiri.com/*
 // @include      *://*.elakiri.lk/*
 // @run-at       document-end
 // @grant        GM_addStyle
