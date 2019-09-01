@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      1.7
+// @version      1.8
 // @author       DT
 // @description  Clean Elakiri
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -20,12 +20,18 @@
 
 'use strict';
 
-// Only work for EK Lite design
+// Only work if...
 try {
-	var element = document.evaluate('/html/body/table/tbody/tr/td/form/table/tbody/tr/td[1]/select/optgroup/option[2]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+	// Logged in
+	var element = (document.evaluate('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[1]/a/text()', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue).data.toString();
+
+	if(!element.includes("Register")){
+		// Selected EK Lite as the main design
+		var element = document.evaluate('/html/body/table/tbody/tr/td/form/table/tbody/tr/td[1]/select/optgroup/option[2]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
 	
-	if (element.selected) {
-		funStart();
+		if (element.selected) {
+			funStart();
+		}
 	}
 }
 catch(err) {
