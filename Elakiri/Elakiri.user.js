@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      2.1
+// @version      2.2
 // @author       DT
 // @description  Clean Elakiri
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -22,21 +22,26 @@
 
 // Works only when certain criteria are met
 try {
-	// Apply New Design
-	funNewDesign();
-
 	var element;
-	element = (document.evaluate('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[1]/a/text()', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue).data.toString();	
 
-	// Check login status
-	if(!element.includes("Register")){
-		// Check selected theme. Only work for EK Lite theme
-		element = document.evaluate('/html/body/table/tbody/tr/td/form/table/tbody/tr/td[1]/select/optgroup/option[2]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+	// Check selected theme. Only work for EK Lite theme
+	element = document.evaluate('/html/body/table/tbody/tr/td/form/table/tbody/tr/td[1]/select/optgroup/option[2]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
 
-		if (element.selected) {
+	// This custom design doesn't work with the EK Main theme
+	if (element.selected) {
+		// Apply New Design
+		funNewDesign();
+		
+		element = (document.evaluate('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[1]/a/text()', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue).data.toString();	
+
+		// Check login status
+		// Homepage and user Homepage are different
+		if(!element.includes("Register")){
 			funRemoveAllElements();
-		}
+		}	
 	}
+	
+	
 }
 catch(err) {
 	console.log("Error: " + err);
