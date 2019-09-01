@@ -5,10 +5,10 @@
 // @author       DT
 // @description  Clean Elakiri
 // @source       https://github.com/dimuththarindu/UserScripts
-// @icon         https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/TopJob/Icon-64.png
-// @icon64URL	 https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/TopJob/Icon-64.png
-// @updateURL  	 https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/TopJob/TopJob.js
-// @downloadURL  https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/TopJob/TopJob.js
+// @icon         https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Icon-64.png
+// @icon64URL	 https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Icon-64.png
+// @updateURL  	 https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Elakiri.user.js
+// @downloadURL  https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Elakiri.user.js
 // @supportURL   https://github.com/dimuththarindu/UserScripts/issues
 // @include      *://*.elakiri.com/*
 // @include      *://*.elakiri.lk/*
@@ -60,7 +60,7 @@
 })();
 
 function funNewDesign() {
-    var css = ".page, table, tbody, .bginput, select, td, .header_box, .postbit_box, .panel, .vBulletin_editor, .button, center { background: black !important; border-color: #4B515D !important;} .thead { background: #2E2E2E !important;} .alt1, .alt2 { background: #212121 !important;} .navbar, .vbmenu_control, .tfoot, .tcat { background: #01579b !important;} strong, a, .alt1, .alt2, .time, .smallfont, select, .postbit_box, label, .button { color: #F5F5F5 !important; }"
+    var css = ".page, table, tbody, .bginput, select, td, .header_box, .postbit_box, .panel, .button, center { background: black !important; border-color: #4B515D !important;} .thead { background: #2E2E2E !important;} .alt1, .alt2 { background: #212121 !important;} .navbar, .vbmenu_control, .tfoot, .tcat { background: #01579b !important;} .vBulletin_editor, .vBulletin_editor td { background: #e0e0e0 !important; } strong, a, .alt1, .alt2, .time, .smallfont, select, .postbit_box, label, .button { color: #F5F5F5 !important; }";
 	
 	var style = document.createElement("style");
 	style.type = "text/css";
@@ -69,7 +69,8 @@ function funNewDesign() {
 
 	var element = document.evaluate('/html/body/table/tbody/tr/td/table[1]/tbody/tr[1]/td/a/img', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
 	element.id = 'ElakiriInjectLogo';
-	document.getElementById("ElakiriInjectLogo").src = "https://i.ibb.co/Pzm9TQ9/310.png"; 
+	document.getElementById("ElakiriInjectLogo").src = "https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Logo.png"; 
+
 }
 
 function funRemoveElement(pathValue) {
