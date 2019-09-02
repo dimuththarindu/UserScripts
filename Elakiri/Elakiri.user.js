@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      3.9
+// @version      3.10
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -69,6 +69,8 @@ function funGetCookie(name) {
 function funNewDesign() {
     var css = "";
 
+	// Global
+	// Set background (black) and border color
     css += "body, .page, table.page, select, .header_box, .bginput, .button, .header_box_guest {background: black !important; border-color: #4B515D !important;}";
 
 	css += "body > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {background: black; border-color: #4B515D;}";
@@ -82,8 +84,6 @@ function funNewDesign() {
 	css += "#collapseobj_usercp_reputation .alt1Active {background: #212121;}";
 
 	css += ".postbit_box {background: #212121; border-color: #4B515D;}";
-	
-	css += ".statistics_group, #collapseobj_contactinfo div fieldset {border-color: #4B515D;}";
 
 	css += "#threadslist .subscribed {background: #212121;}";
 
@@ -99,23 +99,30 @@ function funNewDesign() {
 
 	css += ".alt1, .alt2{background: #212121 !important; border-color: #4B515D !important;}";
 
+	// Set hr color
 	css += ".alt1 .hr {background: #212121;}";
 
 	css += ".navbar, .vbmenu_control, .tfoot, .tcat{background: #01579b !important;}";
 
 	css += ".vBulletin_editor, .vBulletin_editor td{background: #e0e0e0 !important;}";
-
-	// fix image width
-	css += ".vb_postbit > div:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > div:nth-child(2) > img:nth-child(1) {max-width: 100%;}";
-
-	// fix image width
-	css += "div#posts div div.page div div div table.tborder tbody tr td div.vb_postbit img {max-width: 100%;}";
-
-	// fix image width //form div table.tborder tbody tr td div.vb_postbit img
-	css += "form div table.tborder tbody tr td div.vb_postbit img {max-width: 100%;}";
-
+	
 	css += "#vB_Editor_001_smiliebox table tbody tr td, #vB_Editor_001_smiliebox table tbody tr td a {color: #212121 !important;}";
 
+	// Fix image width
+	css += ".vb_postbit > div:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > div:nth-child(2) > img:nth-child(1) {max-width: 100%;}";
+	
+	// Fix image width
+	css += "div#posts div div.page div div div table.tborder tbody tr td div.vb_postbit img {max-width: 100%;}";
+
+	// Fix image width
+	css += "form div table.tborder tbody tr td div.vb_postbit img {max-width: 100%;}";
+
+	// Global
+	// Set border color
+	css += ".statistics_group, #collapseobj_contactinfo div fieldset {border-color: #4B515D;}";
+
+	// Global
+	// Text White
 	css += ".panel, strong, a, .alt1, .alt1 div, .alt2, .time, .smallfont, select, .postbit_box, label, .button, h1, h2, h3, h4, h5, h6, .poll {color: #F5F5F5 !important;}";
 
     var style = document.createElement("style");
