@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      3.11
+// @version      3.12
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -71,7 +71,7 @@ function funNewDesign() {
 
 	// Global
 	// Set background (black) and border color
-    css += "body, .page, table.page, select, .header_box, .bginput, .button, .header_box_guest {background: black !important; border-color: #4B515D !important;}";
+    css += "body, .page, table.page, select, .header_box, .bginput, .button, .header_box_guest, .alt1Active {background: black !important; border-color: #4B515D !important;}";
 
 	css += "body > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {background: black; border-color: #4B515D;}";
 
