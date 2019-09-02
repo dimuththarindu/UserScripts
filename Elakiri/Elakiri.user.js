@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      2.3
+// @version      2.4
 // @author       DT
-// @description  Clean Elakiri
+// @description  Custom Black Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
 // @icon         https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Icon-64.png
 // @icon64URL	 https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Icon-64.png
