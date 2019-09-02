@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      2.5
+// @version      2.6
 // @author       DT
 // @description  Custom Black Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -83,6 +83,12 @@ function funNewDesign() {
 	css += ".navbar, .vbmenu_control, .tfoot, .tcat{background: #01579b !important;}";
 
 	css += ".vBulletin_editor, .vBulletin_editor td{background: #e0e0e0 !important;}";
+	
+	// fix image width
+	css += ".vb_postbit > div:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > div:nth-child(2) > img:nth-child(1) {max-width: 100%;}";
+	
+	// fix image width
+	css += "div#posts div div.page div div div table.tborder tbody tr div.vb_postbit img {max-width: 100%;}";
 
 	css += "strong, a, .alt1, .alt1 div, .alt2, .time, .smallfont, select, .postbit_box, label, .button, h1, h2, h3, h4, h5, h6 {color: #F5F5F5 !important;}";
 
