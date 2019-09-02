@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      3.10
+// @version      3.11
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
-// @icon         https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Icon-64.png
-// @icon64URL	 https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Icon-64.png
+// @icon         https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Images/Icon-64.png
+// @icon64URL	 https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Images/Icon-64.png
 // @updateURL  	 https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Elakiri.user.js
 // @downloadURL  https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Elakiri.user.js
 // @supportURL   https://github.com/dimuththarindu/UserScripts/issues
@@ -135,7 +135,7 @@ function funNewDesign() {
 	// In some pages, Elakiri logo is not displayed.
 	// Example: http://www.elakiri.com/forum/showpost.php?p=24722077&postcount=1
 	if((element) && (element.src)) {
-		element.src = "https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Logo.png";
+		element.src = "https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Images/Logo.png";
 	}
 }
 
