@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      3.12
+// @version      3.13
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -71,7 +71,7 @@ function funNewDesign() {
 
 	// Global
 	// Set background (black) and border color
-    css += "body, .page, table.page, select, .header_box, .bginput, .button, .header_box_guest, .alt1Active {background: black !important; border-color: #4B515D !important;}";
+    css += "body, .page, table.page, select, .header_box, .bginput, .button, .header_box_guest {background: black !important; border-color: #4B515D !important;}";
 
 	css += "body > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {background: black; border-color: #4B515D;}";
 
@@ -86,8 +86,6 @@ function funNewDesign() {
 	css += ".postbit_box {background: #212121; border-color: #4B515D;}";
 
 	css += "#threadslist .subscribed {background: #212121;}";
-
-	css += ".poll {background: #212121;}";
 
 	css += ".thead {background: #2E2E2E !important;}";
 
@@ -116,6 +114,10 @@ function funNewDesign() {
 
 	// Fix image width
 	css += "form div table.tborder tbody tr td div.vb_postbit img {max-width: 100%;}";
+
+	// Global
+	// Set light black #212121
+	css += ".poll, .alt1Active {background: #212121;}";
 
 	// Global
 	// Set border color
