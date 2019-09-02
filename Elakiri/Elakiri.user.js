@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      2.6
+// @version      3.0
 // @author       DT
 // @description  Custom Black Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -19,36 +19,49 @@
 
 
 'use strict';
+funMain();
 
-// Works only when certain criteria are met
-try {
-	var element;
-
-	// Check selected theme. Only work for EK Lite theme
-	element = document.evaluate('/html/body/table/tbody/tr/td/form/table/tbody/tr/td[1]/select/optgroup/option[2]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-
-	// This custom design doesn't work with the EK Main theme
-	if (element.selected) {
-		// Apply New Design
-		funNewDesign();
-		
-		element = (document.evaluate('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[1]/a/text()', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue).data.toString();	
-
-		// Check login status
-		// Homepage and user Homepage are different
-		if(!element.includes("Register")){
+function funMain() {
+	try {
+		// This script only works in EK-Lite design
+		if(funGetCookie("bbstyleid") == 10) {		
+			funNewDesign();			
 			
-			if (window.location.href.indexOf("/forum/member.php?u=") < 1) {
-				funRemoveAllElements();
-			}			
-		}	
+			// Since the home page and user home page are different, 
+			// some features may not be properly deleted if the user is not logged in. 
+			// Therefore, the elements are removed only when the user logs in.
+			
+			// If the user is logged in, then there is no register link in the navbar.
+			var element = document.evaluate('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[1]/a/text()', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;	
+			
+			// Check whether value is null or not
+			if(element) {	
+				element = element.data.toString();
+				
+				// Check register link
+				if(!element.includes("Register")) {
+					// If the element is removed when the member profile is opened, 
+					// the profile page will not be formatted properly.
+					// Example: http://www.elakiri.com/forum/member.php?u=1
+					// Also, while in the search page, the elements cannot be removed.
+					
+					// Works only when profile page is not opened.
+					if ((window.location.href.indexOf("/forum/member.php?u=") < 1) && (window.location.href.indexOf("forum/search.php?") < 1)) {				
+						funRemoveAllElements();
+					}
+				}
+			}
+		}
 	}
-	
-	
-	
+	catch(err) {
+		console.log("Error: " + err);
+	}
 }
-catch(err) {
-	console.log("Error: " + err);
+
+// This can be used to get the selected style
+function funGetCookie(name) {
+    let a = `; ${document.cookie}`.match(`;\\s*${name}=([^;]+)`);
+    return a ? a[1] : '';
 }
 
 function funNewDesign() {
@@ -88,9 +101,12 @@ function funNewDesign() {
 	css += ".vb_postbit > div:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > div:nth-child(2) > img:nth-child(1) {max-width: 100%;}";
 	
 	// fix image width
-	css += "div#posts div div.page div div div table.tborder tbody tr div.vb_postbit img {max-width: 100%;}";
+	css += "div#posts div div.page div div div table.tborder tbody tr td div.vb_postbit img {max-width: 100%;}";
+	
+	// fix image width //form div table.tborder tbody tr td div.vb_postbit img 
+	css += "form div table.tborder tbody tr td div.vb_postbit img {max-width: 100%;}";
 
-	css += "strong, a, .alt1, .alt1 div, .alt2, .time, .smallfont, select, .postbit_box, label, .button, h1, h2, h3, h4, h5, h6 {color: #F5F5F5 !important;}";
+	css += ".panel, strong, a, .alt1, .alt1 div, .alt2, .time, .smallfont, select, .postbit_box, label, .button, h1, h2, h3, h4, h5, h6 {color: #F5F5F5 !important;}";
 
     var style = document.createElement("style");
     style.type = "text/css";
@@ -98,7 +114,12 @@ function funNewDesign() {
     document.head.appendChild(style);
 
     var element = document.evaluate('/html/body/table/tbody/tr/td/table[1]/tbody/tr[1]/td/a/img', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-    element.src = "https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Logo.png";
+	
+	// In some pages, Elakiri logo is not displayed.
+	// Example: http://www.elakiri.com/forum/showpost.php?p=24722077&postcount=1
+	if((element) && (element.src)) {
+		element.src = "https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Logo.png";
+	}
 }
 
 function funRemoveAllElements() {
