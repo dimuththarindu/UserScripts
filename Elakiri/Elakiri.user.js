@@ -45,7 +45,10 @@ function funMain() {
 					// Example: http://www.elakiri.com/forum/member.php?u=1
 					// Also, while in the search page, the elements cannot be removed.					
 					// Therefore, works only when the homepage is opened.
-					if ((window.location.href == "http://www.elakiri.com/") || (window.location.href == "http://www.elakiri.com/")) {
+					if ((window.location.href == "http://www.elakiri.com/") || 
+					 (window.location.href == "https://www.elakiri.com/") ||
+					 (window.location.href == "http://www.elakiri.lk/") ||
+					 (window.location.href == "https://www.elakiri.lk/")) {
 						funRemoveAllElements();
 					}
 				}
