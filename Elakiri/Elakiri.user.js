@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      3.0
+// @version      3.1
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -80,6 +80,8 @@ function funNewDesign() {
 	css += "#collapseobj_usercp_reputation .alt1Active {background: #212121;}";
 
 	css += ".postbit_box {background: #212121;}";
+	
+	css += "#threadslist .subscribed {background: #212121;}";
 
 	css += ".thead {background: #2E2E2E !important;}";
 
