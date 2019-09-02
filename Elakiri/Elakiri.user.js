@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      2.2
+// @version      2.3
 // @author       DT
 // @description  Clean Elakiri
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -37,9 +37,13 @@ try {
 		// Check login status
 		// Homepage and user Homepage are different
 		if(!element.includes("Register")){
-			funRemoveAllElements();
+			
+			if (window.location.href.indexOf("/forum/member.php?u=") < 1) {
+				funRemoveAllElements();
+			}			
 		}	
 	}
+	
 	
 	
 }
@@ -50,17 +54,35 @@ catch(err) {
 function funNewDesign() {
     var css = "";
 
-    css += "html, body, .page, table, tbody, .bginput, select, td, .header_box, .postbit_box, .panel, .button, .header_box_guest, center{background: black !important;border-color: #4B515D !important}";
+    css += "html, body, .page, table.page, select, .header_box, .bginput, .button {background: black !important; border-color: #4B515D !important;}";
 
-    css += ".thead{background: #2E2E2E !important}";
+	css += "body > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {background: black; border-color: #4B515D;}";
 
-    css += ".alt1, .alt2{background: #212121 !important}";
+	css += "body > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {background: black; border-color: #4B515D;}";
 
-    css += ".navbar, .vbmenu_control, .tfoot, .tcat{background: #01579b !important}";
+	css += ".panelsurround, .panelsurround .panel{background: #212121; border-color: #4B515D;}";
+		
+	css += ".vbmenu_popup, .vbmenu_option_alink {background: #212121;}";
+	
+	css += "#collapseobj_usercp_reputation .alt1Active {background: #212121;}";
 
-    css += ".vBulletin_editor, .vBulletin_editor td{background: #e0e0e0 !important}";
+	css += ".postbit_box {background: #212121;}";
 
-    css += "strong, a, .alt1, .alt1 div, .alt2, .time, .smallfont, select, .postbit_box, label, .button{color: #F5F5F5 !important}";
+	css += ".thead {background: #2E2E2E !important;}";
+
+	css += "body > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {background: black;}";
+
+	css += ".tborder {background: #2E2E2E; border-color: #4B515D;}";
+
+	css += "#visitor_messaging, #link_bar, #stats_mini, #friends_mini, #visitors {background: black; border-color: #4B515D; }";
+
+	css += ".alt1, .alt2{background: #212121 !important; border-color: #4B515D !important;}";
+
+	css += ".navbar, .vbmenu_control, .tfoot, .tcat{background: #01579b !important;}";
+
+	css += ".vBulletin_editor, .vBulletin_editor td{background: #e0e0e0 !important;}";
+
+	css += "strong, a, .alt1, .alt1 div, .alt2, .time, .smallfont, select, .postbit_box, label, .button, h1, h2, h3, h4, h5, h6 {color: #F5F5F5 !important;}";
 
     var style = document.createElement("style");
     style.type = "text/css";
