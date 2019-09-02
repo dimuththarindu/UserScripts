@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      3.14
+// @version      4.0
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -67,6 +67,9 @@ function funGetCookie(name) {
 }
 
 function funNewDesign() {
+	// Replace Elakiri logo
+	funReplaceMainBanner();
+
     var css = "";
 
 	// Global
@@ -103,17 +106,15 @@ function funNewDesign() {
 	css += ".navbar, .vbmenu_control, .tfoot, .tcat{background: #01579b !important;}";
 
 	css += ".vBulletin_editor, .vBulletin_editor td{background: #e0e0e0 !important;}";
-	
+
 	css += "#vB_Editor_001_smiliebox table tbody tr td, #vB_Editor_001_smiliebox table tbody tr td a {color: #212121 !important;}";
 
 	// Fix image width
 	css += ".vb_postbit > div:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > div:nth-child(2) > img:nth-child(1) {max-width: 100%;}";
-	
-	// Fix image width
 	css += "div#posts div div.page div div div table.tborder tbody tr td div.vb_postbit img {max-width: 100%;}";
-
-	// Fix image width
 	css += "form div table.tborder tbody tr td div.vb_postbit img {max-width: 100%;}";
+	//css += "img {max-width: 100%;}";
+	// ^ Error: Effect vB_Editor_QR_controls
 
 	// Global
 	// Set light black #212121
@@ -131,7 +132,9 @@ function funNewDesign() {
     style.type = "text/css";
     style.appendChild(document.createTextNode(css));
     document.head.appendChild(style);
+}
 
+function funReplaceMainBanner() {
     var element = document.evaluate('/html/body/table/tbody/tr/td/table[1]/tbody/tr[1]/td/a/img', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
 
 	// In some pages, Elakiri logo is not displayed.
