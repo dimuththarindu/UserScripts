@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      2.4
+// @version      2.5
 // @author       DT
 // @description  Custom Black Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -77,6 +77,8 @@ function funNewDesign() {
 	css += "#visitor_messaging, #link_bar, #stats_mini, #friends_mini, #visitors {background: black; border-color: #4B515D; }";
 
 	css += ".alt1, .alt2{background: #212121 !important; border-color: #4B515D !important;}";
+	
+	css += ".alt1 .hr {background: #212121;}";
 
 	css += ".navbar, .vbmenu_control, .tfoot, .tcat{background: #01579b !important;}";
 
@@ -98,7 +100,7 @@ function funRemoveAllElements() {
 	funRemoveElement('/html/body/table/tbody/tr/td/div/div/div/table[2]/tbody/tr/td[2]/div[4]');
 
 	// ElaKiri Exclusive!
-	funRemoveElement('/html/body/table/tbody/tr/td/div/div/div/table[2]/tbody/tr/td[2]/div[1]');
+	//funRemoveElement('/html/body/table/tbody/tr/td/div/div/div/table[2]/tbody/tr/td[2]/div[1]');
 
 	// Checkout!
 	funRemoveElement('/html/body/table/tbody/tr/td/div/div/div/table[2]/tbody/tr/td[3]/div[2]');
