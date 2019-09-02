@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      3.13
+// @version      3.14
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -117,7 +117,7 @@ function funNewDesign() {
 
 	// Global
 	// Set light black #212121
-	css += ".poll, .alt1Active {background: #212121;}";
+	css += ".poll, .alt1Active, #navbar_search_menu .vbmenu_option {background: #212121;}";
 
 	// Global
 	// Set border color
