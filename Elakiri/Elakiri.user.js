@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      3.3
+// @version      3.4
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -109,6 +109,8 @@ function funNewDesign() {
 	
 	// fix image width //form div table.tborder tbody tr td div.vb_postbit img 
 	css += "form div table.tborder tbody tr td div.vb_postbit img {max-width: 100%;}";
+
+	css += "#vB_Editor_001_smiliebox table tbody tr td, #vB_Editor_001_smiliebox table tbody tr td a {color: #212121 !important;}";
 
 	css += ".panel, strong, a, .alt1, .alt1 div, .alt2, .time, .smallfont, select, .postbit_box, label, .button, h1, h2, h3, h4, h5, h6, .poll {color: #F5F5F5 !important;}";
 
