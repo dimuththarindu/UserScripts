@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      3.1
+// @version      3.2
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -67,7 +67,7 @@ function funGetCookie(name) {
 function funNewDesign() {
     var css = "";
 
-    css += "html, body, .page, table.page, select, .header_box, .bginput, .button {background: black !important; border-color: #4B515D !important;}";
+    css += "body, .page, table.page, select, .header_box, .bginput, .button {background: black !important; border-color: #4B515D !important;}";
 
 	css += "body > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {background: black; border-color: #4B515D;}";
 
@@ -82,6 +82,8 @@ function funNewDesign() {
 	css += ".postbit_box {background: #212121;}";
 	
 	css += "#threadslist .subscribed {background: #212121;}";
+	
+	css += ".poll {background: #212121;}";
 
 	css += ".thead {background: #2E2E2E !important;}";
 
@@ -108,7 +110,7 @@ function funNewDesign() {
 	// fix image width //form div table.tborder tbody tr td div.vb_postbit img 
 	css += "form div table.tborder tbody tr td div.vb_postbit img {max-width: 100%;}";
 
-	css += ".panel, strong, a, .alt1, .alt1 div, .alt2, .time, .smallfont, select, .postbit_box, label, .button, h1, h2, h3, h4, h5, h6 {color: #F5F5F5 !important;}";
+	css += ".panel, strong, a, .alt1, .alt1 div, .alt2, .time, .smallfont, select, .postbit_box, label, .button, h1, h2, h3, h4, h5, h6, .poll {color: #F5F5F5 !important;}";
 
     var style = document.createElement("style");
     style.type = "text/css";
