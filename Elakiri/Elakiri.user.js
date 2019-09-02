@@ -3,7 +3,7 @@
 // @namespace    UserScripts
 // @version      3.0
 // @author       DT
-// @description  Custom Black Elakiri Design
+// @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
 // @icon         https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Icon-64.png
 // @icon64URL	 https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Icon-64.png
