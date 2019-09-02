@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      3.4
+// @version      3.5
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -43,10 +43,9 @@ function funMain() {
 					// If the element is removed when the member profile is opened, 
 					// the profile page will not be formatted properly.
 					// Example: http://www.elakiri.com/forum/member.php?u=1
-					// Also, while in the search page, the elements cannot be removed.
-					
-					// Works only when profile page is not opened.
-					if ((window.location.href.indexOf("/forum/member.php?u=") < 1) && (window.location.href.indexOf("forum/search.php?") < 1)) {				
+					// Also, while in the search page, the elements cannot be removed.					
+					// Therefore, works only when the homepage is opened.
+					if ((window.location.href == "http://www.elakiri.com/") || (window.location.href == "http://www.elakiri.com/")) {
 						funRemoveAllElements();
 					}
 				}
