@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      4.0
+// @version      5.0
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -74,40 +74,40 @@ function funNewDesign() {
 
 	// Global
 	// Set background (black) and border color
-    css += "body, .page, table.page, select, .header_box, .bginput, .button, .header_box_guest {background: black !important; border-color: #4B515D !important;}";
+    css += "body, .page, table.page, select, .header_box, .bginput, .button, .header_box_guest {background: black !important; border-color: #0c0c0c !important;}";
 
-	css += "body > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {background: black; border-color: #4B515D;}";
+	css += "body > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {background: black; border-color: #0c0c0c;}";
 
-	css += "body > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {background: black; border-color: #4B515D;}";
+	css += "body > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {background: black; border-color: #0c0c0c;}";
 
-	css += ".panelsurround, .panelsurround .panel{background: #212121; border-color: #4B515D;}";
+	css += ".panelsurround, .panelsurround .panel{background: #141414; border-color: #0c0c0c;}";
 
-	css += ".vbmenu_popup, .vbmenu_option_alink {background: #212121;}";
+	css += ".vbmenu_popup, .vbmenu_option_alink {background: #141414;}";
 
-	css += "#collapseobj_usercp_reputation .alt1Active {background: #212121;}";
+	css += "#collapseobj_usercp_reputation .alt1Active {background: #141414;}";
 
-	css += ".postbit_box {background: #212121; border-color: #4B515D;}";
+	css += ".postbit_box {background: #141414; border-color: #0c0c0c;}";
 
-	css += "#threadslist .subscribed {background: #212121;}";
+	css += "#threadslist .subscribed {background: #141414;}";
 
 	css += ".thead {background: #2E2E2E !important;}";
 
 	css += "body > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {background: black;}";
 
-	css += ".tborder {background: #2E2E2E; border-color: #4B515D;}";
+	css += ".tborder {background: #2E2E2E; border-color: #0c0c0c;}";
 
-	css += "#visitor_messaging, #link_bar, #stats_mini, #friends_mini, #visitors {background: black; border-color: #4B515D; }";
+	css += "#visitor_messaging, #link_bar, #stats_mini, #friends_mini, #visitors {background: black; border-color: #0c0c0c; }";
 
-	css += ".alt1, .alt2{background: #212121 !important; border-color: #4B515D !important;}";
+	css += ".alt1, .alt2{background: #141414 !important; border-color: #0c0c0c !important;}";
 
 	// Set hr color
-	css += ".alt1 .hr {background: #212121;}";
+	css += ".alt1 .hr {background: #141414;}";
 
 	css += ".navbar, .vbmenu_control, .tfoot, .tcat{background: #01579b !important;}";
 
 	css += ".vBulletin_editor, .vBulletin_editor td{background: #e0e0e0 !important;}";
 
-	css += "#vB_Editor_001_smiliebox table tbody tr td, #vB_Editor_001_smiliebox table tbody tr td a {color: #212121 !important;}";
+	css += "#vB_Editor_001_smiliebox table tbody tr td, #vB_Editor_001_smiliebox table tbody tr td a {color: #141414 !important;}";
 
 	// Fix image width
 	css += ".vb_postbit > div:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > div:nth-child(2) > img:nth-child(1) {max-width: 100%;}";
@@ -117,12 +117,12 @@ function funNewDesign() {
 	// ^ Error: Effect vB_Editor_QR_controls
 
 	// Global
-	// Set light black #212121
-	css += ".poll, .alt1Active, #navbar_search_menu .vbmenu_option {background: #212121;}";
+	// Set light black #141414
+	css += ".poll, .alt1Active, #navbar_search_menu .vbmenu_option {background: #141414;}";
 
 	// Global
 	// Set border color
-	css += ".statistics_group, #collapseobj_contactinfo div fieldset {border-color: #4B515D;}";
+	css += ".statistics_group, #collapseobj_contactinfo div fieldset {border-color: #0c0c0c;}";
 
 	// Global
 	// Text White
