@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      8.2
+// @version      8.4
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -181,6 +181,9 @@ function funNewDesign() {
 	css += "form div table.tborder tbody tr td div.vb_postbit img {max-width: 100%;}";
 	//css += "img {max-width: 100%;}";
 	// ^ Error: Effect vB_Editor_QR_controls
+	
+	// Threads
+	css += "img[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/post_new.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/post_old.gif'] {display: none;}";
 	
 	// ElaKiri Community Rules
 	css += "body table tbody tr td div div.page div form table.tborder tbody tr td.panelsurround div.panel div fieldset.fieldset legend {color: #e0e0e0; font-weight: bold; font-size: 14px;}";
