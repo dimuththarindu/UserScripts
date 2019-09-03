@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      6.1
+// @version      6.2
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -111,6 +111,9 @@ function funNewDesign() {
 	css += ".vBulletin_editor, .vBulletin_editor td{background: #e0e0e0 !important;}";
 
 	css += "#vB_Editor_001_smiliebox table tbody tr td, #vB_Editor_001_smiliebox table tbody tr td a {color: #141414 !important;}";
+	
+	// Username and password text color and more (bginput)
+	css += "#navbar_username, #navbar_password, .bginput {color: darkgray;}";
 	
 	// Page generated notice
 	// Page generated notice: Color
