@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      6.0
+// @version      6.1
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -121,7 +121,7 @@ function funNewDesign() {
 	// Quote: Border style
 	css += "div.vb_postbit div table tbody tr td.alt2 {border-color: #2c3e50 !important; border-width: 1px 1px 1px 10px !important; }";
 	// Quote: Font style
-	css += "div.vb_postbit div table tbody tr td.alt2 div font font {font-size: 1em;}";
+	css += "div.vb_postbit div table tbody tr td.alt2 div font, div.vb_postbit div table tbody tr td.alt2 div font font {font-size: 1em;}";
 	// Quote: Font color
 	//css += "div.vb_postbit div table tbody tr td.alt2 div font font, div.vb_postbit div table tbody tr td.alt2 div, div.vb_postbit div table tbody tr td.alt2 div strong {color: #424242 !important;}";
 	// Quote: Brightness
