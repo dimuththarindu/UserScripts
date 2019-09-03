@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      8.0
+// @version      8.1
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -24,7 +24,7 @@ funMain();
 function funMain() {
 	try {
 		// This script only works in EK-Lite design
-		if(funGetCookie("bbstyleid") !== 7) {
+		if((funGetCookie("bbstyleid") !== 7) && (!window.location.href.includes("elakiri.com/forum/archive")) && (!window.location.href.includes("elakiri.lk/forum/archive"))) {
 			funNewDesign();
 
 			if ((window.location.href == "http://www.elakiri.com/") ||
@@ -51,10 +51,8 @@ function funMain() {
 		}
 		
 		// Remove scrollbar in register page
-		if ((window.location.href == "http://www.elakiri.com/forum/register.php") ||
-		   (window.location.href == "https://www.elakiri.com/forum/register.php") ||
-		   (window.location.href == "http://www.elakiri.lk/forum/register.php") ||
-		   (window.location.href == "https://www.elakiri.lk/forum/register.php")) {
+		if ((window.location.href.includes("elakiri.com/forum/register.php")) ||
+		   (window.location.href.includes("elakiri.lk/forum/register.php"))) {
 			funRemoveStyle('/html/body/table/tbody/tr/td/div/div/div/form/table/tbody/tr[2]/td/div[1]/div/fieldset/table/tbody/tr[2]/td/div[1]');
 		}
 	}
@@ -183,6 +181,10 @@ function funNewDesign() {
 	css += "form div table.tborder tbody tr td div.vb_postbit img {max-width: 100%;}";
 	//css += "img {max-width: 100%;}";
 	// ^ Error: Effect vB_Editor_QR_controls
+	
+	// ElaKiri Community Rules
+	css += "body table tbody tr td div div.page div form table.tborder tbody tr td.panelsurround div.panel div fieldset.fieldset legend {color: #e0e0e0; font-weight: bold; font-size: 14px;}";
+	css += "body table tbody tr td div div.page div form table.tborder tbody tr td.panelsurround div input.button {padding: 5px 10px 5px 10px;}";
 
 	// Global
 	// Set light black #141414
