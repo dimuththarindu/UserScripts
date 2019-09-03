@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      7.7
+// @version      8.0
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -136,9 +136,16 @@ function funNewDesign() {
 	
 	// User Online Status Indicator
 	// Online Status: Online
-	css += "div#posts div div.page div div div table.tborder tbody tr td.alt2 table tbody tr td div img.inlineimg[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/user_online.gif'] {cursor:pointer; margin-bottom: 5px; border: 1px solid #01579b; opacity: 0.5; filter: alpha(opacity=50); /* For IE8 and earlier */}";
+	css += "div#posts div div.page div div div table.tborder tbody tr td.alt2 table tbody tr td div img.inlineimg[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/user_online.gif'] {cursor:pointer; margin-bottom: 5px; }";
 	// Online Status: Offline
-	css += "div#posts div div.page div div div table.tborder tbody tr td.alt2 table tbody tr td div img.inlineimg[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/user_offline.gif'] {cursor:pointer; margin-bottom: 5px; border: 1px solid #01579b; opacity: 0.5; filter: alpha(opacity=50); /* For IE8 and earlier */}";
+	css += "div#posts div div.page div div div table.tborder tbody tr td.alt2 table tbody tr td div img.inlineimg[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/user_offline.gif'] {cursor:pointer; margin-bottom: 5px;}";
+
+	// img
+	// img[src='xxx']
+	css += "img[src='http://www.elakiri.com/forum/images/bluesaint/buttons/firstnew.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/thread_hot_new.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/buttons/lastpost.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/misc/paperclip.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/misc/tag.png'], img[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/thread_new.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/thread_hot.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/buttons/collapse_tcat.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/buttons/collapse_tcat_collapsed.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/misc/navbits_start.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/misc/navbits_finallink_ltr.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/user_online.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/user_offline.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/buttons/collapse_thead.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/buttons/collapse_thead_collapsed.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/buttons/reputation.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/buttons/viewpost.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/thread_dot_hot_new.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/thread_dot.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/thread_lock.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/thread.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/thread_dot_hot.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/misc/poll_posticon.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/buttons/sortasc.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/buttons/sortdesc.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/buttons/collapse_alt_collapsed.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/buttons/collapse_alt.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/misc/subscribed.gif'] {border: 1px solid #01579b; opacity: 0.6; filter: alpha(opacity=60); /* For IE8 and earlier */}";
+
+	// Rep Power
+	css += "body table tbody tr td div div.page div table.page tbody tr td div table.tborder tbody#collapseobj_module_9 tr td.alt1 div.smallfont div {font-weight: bold; line-height: 1.8;}";
 
 	// Contacts & Friends
 	css += "fieldset.fieldset form#buddylist_change_form.floatcontainer ul#buddylist li {background-color: #2E2E2E !important;}";
@@ -167,6 +174,8 @@ function funNewDesign() {
 	//css += "div.vb_postbit div table tbody tr td.alt2 div font font, div.vb_postbit div table tbody tr td.alt2 div, div.vb_postbit div table tbody tr td.alt2 div strong {color: #424242 !important;}";
 	// Quote: Brightness
 	css += "div.vb_postbit div table tbody tr td.alt2 div font font, div.vb_postbit div table tbody tr td.alt2 div, div.vb_postbit div table tbody tr td.alt2 div strong {filter: brightness(75%);}";
+	// Quote: Hide viewpost img
+	css += "div.vb_postbit div table tbody tr td.alt2 div a img.inlineimg[src='http://www.elakiri.com/forum/images/bluesaint/buttons/viewpost.gif'] {display: none;}";
 
 	// Fix image width
 	css += ".vb_postbit > div:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > div:nth-child(2) > img:nth-child(1) {max-width: 100%;}";
