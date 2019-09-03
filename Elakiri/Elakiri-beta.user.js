@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      7.4
+// @version      7.6
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -50,12 +50,11 @@ function funMain() {
 			}
 		}
 		
+		// Remove scrollbar in register page
 		if ((window.location.href == "http://www.elakiri.com/forum/register.php") ||
 		   (window.location.href == "https://www.elakiri.com/forum/register.php") ||
 		   (window.location.href == "http://www.elakiri.lk/forum/register.php") ||
 		   (window.location.href == "https://www.elakiri.lk/forum/register.php")) {
-
-			// Remove scrollbar in register page
 			funRemoveStyle('/html/body/table/tbody/tr/td/div/div/div/form/table/tbody/tr[2]/td/div[1]/div/fieldset/table/tbody/tr[2]/td/div[1]');
 		}
 	}
@@ -109,6 +108,32 @@ function funNewDesign() {
 	css += ".vBulletin_editor, .vBulletin_editor td{background: #e0e0e0 !important;}";
 
 	css += "#vB_Editor_001_smiliebox table tbody tr td, #vB_Editor_001_smiliebox table tbody tr td a {color: #141414 !important;}";
+	
+	// User Reputation image
+	css += "td.alt2 table tbody tr td div span img.inlineimg {width: 7px; border: 1px solid #000; opacity: 0.6; filter: alpha(opacity=50); /* For IE8 and earlier */}";
+	// User Reputation image: Positive
+	//css += "td.alt2 table tbody tr td div span img.inlineimg[src='http://www.elakiri.com/forum/images/bluesaint/reputation/reputation_pos.gif'] {background-color: blue;}";
+	//css += "td.alt2 table tbody tr td div span img.inlineimg[src='http://www.elakiri.com/forum/images/bluesaint/reputation/reputation_highpos.gif'] {background-color: blue;}";
+	// User Reputation image: Negative
+	//css += "td.alt2 table tbody tr td div span img.inlineimg[src='http://www.elakiri.com/forum/images/bluesaint/reputation/reputation_neg.gif'] {background-color: red;}";
+	//css += "td.alt2 table tbody tr td div span img.inlineimg[src='http://www.elakiri.com/forum/images/bluesaint/reputation/reputation_highneg.gif'] {background-color: red;}";
+	
+	// Usercp Reputation
+	// Reputation: Positive
+	//css += "table.tborder tbody#collapseobj_usercp_reputation tr td.alt2 img[src='http://www.elakiri.com/forum/images/bluesaint/reputation/reputation_pos.gif'] {background-color: blue;}";
+	// Reputation: Negative
+	//css += "table.tborder tbody#collapseobj_usercp_reputation tr td.alt2 img[src='http://www.elakiri.com/forum/images/bluesaint/reputation/reputation_neg.gif'] {background-color: red;}";
+	
+	// Reputation
+	// Reputation: Positive
+	css += "img[src='http://www.elakiri.com/forum/images/bluesaint/reputation/reputation_pos.gif'] {background-color: blue;}";
+	css += "img[src='http://www.elakiri.com/forum/images/bluesaint/reputation/reputation_highpos.gif'] {background-color: blue;}";
+	// Reputation: Negative
+	css += "img[src='http://www.elakiri.com/forum/images/bluesaint/reputation/reputation_neg.gif'] {background-color: red;}";
+	css += "img[src='http://www.elakiri.com/forum/images/bluesaint/reputation/reputation_highneg.gif'] {background-color: red;}";
+	// Reputation: None
+	css += "img[src='http://www.elakiri.com/forum/images/bluesaint/reputation/reputation_balance.gif'] {background-color: white;}";
+	
 
 	// Contacts & Friends
 	css += "fieldset.fieldset form#buddylist_change_form.floatcontainer ul#buddylist li {background-color: #2E2E2E !important;}";
