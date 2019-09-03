@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      8.1
+// @version      8.5
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -149,14 +149,17 @@ function funNewDesign() {
 	css += "fieldset.fieldset form#buddylist_change_form.floatcontainer ul#buddylist li {background-color: #2E2E2E !important;}";
 
 	// Button style
-	// Button: General
+	// Button: General A
+	css += "input.bginput {background-color: black; border-block-color: black; border: 1px solid gray; color: whitesmoke;}";
+	// Button: General B
 	css += "input.button {background-color: #0c0c0c !important; border: 2px solid #757575; transition: 0.3s; cursor:pointer;}";
-	// Button: General hover
+	// Button: General B hover
 	css += "input.button:hover {background-color: #757575 !important;}";
 	// Button: Input form
 	css += "input#qr_submit.button, input#qr_preview.button {background-color: #424242 !important; padding: 10px; border: none; transition: 0.3s; text-align: center; cursor:pointer;}";
 	// Button: Input form hover
 	css += "input#qr_submit.button:hover, input#qr_preview.button:hover {background-color: #263238 !important; }";
+	
 
 	// Page generated notice
 	// Page generated notice: Color
@@ -181,6 +184,9 @@ function funNewDesign() {
 	css += "form div table.tborder tbody tr td div.vb_postbit img {max-width: 100%;}";
 	//css += "img {max-width: 100%;}";
 	// ^ Error: Effect vB_Editor_QR_controls
+	
+	// Threads
+	css += "img[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/post_new.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/post_old.gif'] {display: none;}";
 	
 	// ElaKiri Community Rules
 	css += "body table tbody tr td div div.page div form table.tborder tbody tr td.panelsurround div.panel div fieldset.fieldset legend {color: #e0e0e0; font-weight: bold; font-size: 14px;}";
