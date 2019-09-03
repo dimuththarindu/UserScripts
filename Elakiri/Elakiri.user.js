@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      5.0
+// @version      6.0
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -70,6 +70,9 @@ function funNewDesign() {
 	// Replace Elakiri logo
 	funReplaceMainBanner();
 
+	// HTML Colors 
+	// - https://mdbootstrap.com/docs/jquery/css/colors/
+	// - https://htmlcolorcodes.com/
     var css = "";
 
 	// Global
@@ -108,6 +111,21 @@ function funNewDesign() {
 	css += ".vBulletin_editor, .vBulletin_editor td{background: #e0e0e0 !important;}";
 
 	css += "#vB_Editor_001_smiliebox table tbody tr td, #vB_Editor_001_smiliebox table tbody tr td a {color: #141414 !important;}";
+	
+	// Page generated notice
+	// Page generated notice: Color
+	// Ex: Page generated in 0.00906 seconds with 9 queries
+	css += "body center span.smallfont {color: #424242 !important;}";
+	
+	// Quote
+	// Quote: Border style
+	css += "div.vb_postbit div table tbody tr td.alt2 {border-color: #2c3e50 !important; border-width: 1px 1px 1px 10px !important; }";
+	// Quote: Font style
+	css += "div.vb_postbit div table tbody tr td.alt2 div font font {font-size: 1em;}";
+	// Quote: Font color
+	//css += "div.vb_postbit div table tbody tr td.alt2 div font font, div.vb_postbit div table tbody tr td.alt2 div, div.vb_postbit div table tbody tr td.alt2 div strong {color: #424242 !important;}";
+	// Quote: Brightness
+	css += "div.vb_postbit div table tbody tr td.alt2 div font font, div.vb_postbit div table tbody tr td.alt2 div, div.vb_postbit div table tbody tr td.alt2 div strong {filter: brightness(75%);}";	
 
 	// Fix image width
 	css += ".vb_postbit > div:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > div:nth-child(2) > img:nth-child(1) {max-width: 100%;}";
