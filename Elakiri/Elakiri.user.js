@@ -174,9 +174,15 @@ function funNewDesign() {
 	// Quote: Font color
 	//css += "div.vb_postbit div table tbody tr td.alt2 div font font, div.vb_postbit div table tbody tr td.alt2 div, div.vb_postbit div table tbody tr td.alt2 div strong {color: #424242 !important;}";
 	// Quote: Brightness
-	css += "div.vb_postbit div table tbody tr td.alt2 div font font, div.vb_postbit div table tbody tr td.alt2 div, div.vb_postbit div table tbody tr td.alt2 div strong {filter: brightness(75%);}";
+	css += "div.vb_postbit div table tbody tr td.alt2 {filter: brightness(75%); transition: 1.5s;}";
+	// Quote: Brightness: Hover
+	css += "div.vb_postbit div table tbody tr td.alt2:hover {max-width: 100% !important; filter: none !important;}";
 	// Quote: Hide viewpost img
 	css += "div.vb_postbit div table tbody tr td.alt2 div a img.inlineimg[src='http://www.elakiri.com/forum/images/bluesaint/buttons/viewpost.gif'] {display: none;}";
+	// Quote: Image
+	css += "div.vb_postbit div table tbody tr td.alt2 div img {max-width: 10% !important; transition: 1s; transition-delay: 1s;}";
+	// Quote: Hover
+	css += "div.vb_postbit div table tbody tr td.alt2 div img:hover {max-width: 80% !important;}";
 
 	// Fix image width
 	css += ".vb_postbit > div:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > div:nth-child(2) > img:nth-child(1) {max-width: 100%;}";
