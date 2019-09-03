@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      7.0
+// @version      7.1
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -100,6 +100,9 @@ function funNewDesign() {
 	css += ".vBulletin_editor, .vBulletin_editor td{background: #e0e0e0 !important;}";
 
 	css += "#vB_Editor_001_smiliebox table tbody tr td, #vB_Editor_001_smiliebox table tbody tr td a {color: #141414 !important;}";
+	
+	// Contacts & Friends 
+	css += "fieldset.fieldset form#buddylist_change_form.floatcontainer ul#buddylist li {background-color: #2E2E2E !important;}";
 
 	// Button style
 	// Button: General
