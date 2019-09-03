@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      7.2
+// @version      7.3
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -66,7 +66,7 @@ function funNewDesign() {
 
 	// Global
 	// Set background (black) and border color
-    css += "body, .page, table.page, select, .header_box, .header_box_guest {background: black !important; border-color: #0c0c0c !important;}";
+    css += "body, .page, table.page, select, .header_box, .header_box_guest, .sticky {background: black !important; border-color: #0c0c0c !important;}";
 
 	css += "body > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {background: black; border-color: #0c0c0c;}";
 
@@ -147,7 +147,7 @@ function funNewDesign() {
 	// Global
 	// Text White
 	// Backup Color #F5F5F5
-	css += ".panel, strong, a, .alt1, .alt1 div, .alt2, .time, .smallfont, select, .postbit_box, label, .button, h1, h2, h3, h4, h5, h6, .poll {color: #e0e0e0 !important;}";
+	css += ".panel, strong, a, .alt1, .alt1 div, .alt2, .time, .smallfont, select, .postbit_box, label, .button, h1, h2, h3, h4, h5, h6, .poll, td.sticky div {color: #e0e0e0 !important;}";
 
     var style = document.createElement("style");
     style.type = "text/css";
