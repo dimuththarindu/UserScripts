@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      7.7
+// @version      7.8
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -134,6 +134,11 @@ function funNewDesign() {
 	// Reputation: None
 	css += "img[src='http://www.elakiri.com/forum/images/bluesaint/reputation/reputation_balance.gif'] {background-color: white;}";
 	
+	// User Online Status Indicator
+	// Online Status: Online
+	css += "div#posts div div.page div div div table.tborder tbody tr td.alt2 table tbody tr td div img.inlineimg[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/user_online.gif'] {cursor:pointer; margin-bottom: 5px; border: 1px solid #01579b; opacity: 0.5; filter: alpha(opacity=50); /* For IE8 and earlier */}";
+	// Online Status: Offline
+	css += "div#posts div div.page div div div table.tborder tbody tr td.alt2 table tbody tr td div img.inlineimg[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/user_offline.gif'] {cursor:pointer; margin-bottom: 5px; border: 1px solid #01579b; opacity: 0.5; filter: alpha(opacity=50); /* For IE8 and earlier */}";
 
 	// Contacts & Friends
 	css += "fieldset.fieldset form#buddylist_change_form.floatcontainer ul#buddylist li {background-color: #2E2E2E !important;}";
