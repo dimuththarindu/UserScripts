@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      6.3
+// @version      7.0
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -27,29 +27,24 @@ function funMain() {
 		if(funGetCookie("bbstyleid") !== 7) {
 			funNewDesign();
 
-			// Since the home page and user home page are different,
-			// some features may not be properly deleted if the user is not logged in.
-			// Therefore, the elements are removed only when the user logs in.
+			if ((window.location.href == "http://www.elakiri.com/") ||
+			   (window.location.href == "https://www.elakiri.com/") ||
+			   (window.location.href == "http://www.elakiri.lk/") ||
+			   (window.location.href == "https://www.elakiri.lk/")) {
 
-			// If the user is logged in, then there is no register link in the navbar.
-			var element = document.evaluate('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[1]/a/text()', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;	
+				// Guess home page and user home page are different
+				// If the user is logged in, then there is no register link in the navbar.				
+				var element = document.evaluate('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[1]/a/text()', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+				
+				// Check whether value is null or not
+				if(element) {
+					element = element.data.toString();
 
-			// Check whether value is null or not
-			if(element) {
-				element = element.data.toString();
-
-				// Check register link
-				if(!element.includes("Register")) {
-					// If the element is removed when the member profile is opened,
-					// the profile page will not be formatted properly.
-					// Example: http://www.elakiri.com/forum/member.php?u=1
-					// Also, while in the search page, the elements cannot be removed.
-					// Therefore, works only when the homepage is opened.
-					if ((window.location.href == "http://www.elakiri.com/") ||
-					 (window.location.href == "https://www.elakiri.com/") ||
-					 (window.location.href == "http://www.elakiri.lk/") ||
-					 (window.location.href == "https://www.elakiri.lk/")) {
-						funRemoveAllElements();
+					// Check register link
+					if(element.includes("Register")) {
+						funRemoveElementsGuess();
+					} else if(element.includes("User CP")) {
+						funRemoveElementsUser();
 					}
 				}
 			}
@@ -60,24 +55,18 @@ function funMain() {
 	}
 }
 
-// This can be used to get the selected style
-function funGetCookie(name) {
-    let a = `; ${document.cookie}`.match(`;\\s*${name}=([^;]+)`);
-    return a ? a[1] : '';
-}
-
 function funNewDesign() {
 	// Replace Elakiri logo
 	funReplaceMainBanner();
 
-	// HTML Colors 
+	// HTML Colors
 	// - https://mdbootstrap.com/docs/jquery/css/colors/
 	// - https://htmlcolorcodes.com/
     var css = "";
 
 	// Global
 	// Set background (black) and border color
-    css += "body, .page, table.page, select, .header_box, .bginput, .button, .header_box_guest {background: black !important; border-color: #0c0c0c !important;}";
+    css += "body, .page, table.page, select, .header_box, .header_box_guest {background: black !important; border-color: #0c0c0c !important;}";
 
 	css += "body > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {background: black; border-color: #0c0c0c;}";
 
@@ -111,16 +100,22 @@ function funNewDesign() {
 	css += ".vBulletin_editor, .vBulletin_editor td{background: #e0e0e0 !important;}";
 
 	css += "#vB_Editor_001_smiliebox table tbody tr td, #vB_Editor_001_smiliebox table tbody tr td a {color: #141414 !important;}";
-	
-	// Input box color
-	// Username, password, Reputation box, etc
-	css += "#navbar_username, #navbar_password, .bginput {color: darkgray; background-color: #F5F5F5 !important;}";
-	
+
+	// Button style
+	// Button: General
+	css += "input.button {background-color: #0c0c0c !important; border: 2px solid #757575; transition: 0.3s; cursor:pointer;}";
+	// Button: General hover
+	css += "input.button:hover {background-color: #757575 !important;}";
+	// Button: Input form
+	css += "input#qr_submit.button, input#qr_preview.button {background-color: #424242 !important; padding: 10px; border: none; transition: 0.3s; text-align: center; cursor:pointer;}";
+	// Button: Input form hover
+	css += "input#qr_submit.button:hover, input#qr_preview.button:hover {background-color: #263238 !important; }";
+
 	// Page generated notice
 	// Page generated notice: Color
 	// Ex: Page generated in 0.00906 seconds with 9 queries
 	css += "body center span.smallfont {color: #424242 !important;}";
-	
+
 	// Quote
 	// Quote: Border style
 	css += "div.vb_postbit div table tbody tr td.alt2 {border-color: #2c3e50 !important; border-width: 1px 1px 1px 10px !important; }";
@@ -129,7 +124,7 @@ function funNewDesign() {
 	// Quote: Font color
 	//css += "div.vb_postbit div table tbody tr td.alt2 div font font, div.vb_postbit div table tbody tr td.alt2 div, div.vb_postbit div table tbody tr td.alt2 div strong {color: #424242 !important;}";
 	// Quote: Brightness
-	css += "div.vb_postbit div table tbody tr td.alt2 div font font, div.vb_postbit div table tbody tr td.alt2 div, div.vb_postbit div table tbody tr td.alt2 div strong {filter: brightness(75%);}";	
+	css += "div.vb_postbit div table tbody tr td.alt2 div font font, div.vb_postbit div table tbody tr td.alt2 div, div.vb_postbit div table tbody tr td.alt2 div strong {filter: brightness(75%);}";
 
 	// Fix image width
 	css += ".vb_postbit > div:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > div:nth-child(2) > img:nth-child(1) {max-width: 100%;}";
@@ -166,7 +161,41 @@ function funReplaceMainBanner() {
 	}
 }
 
-function funRemoveAllElements() {
+// Remove item from guess homepage 
+function funRemoveElementsGuess() {
+	// Downloads
+	funRemoveElement('/html/body/table/tbody/tr/td/div/div/div/table[2]/tbody/tr/td[2]/div[4]');
+
+	// ElaKiri Exclusive!
+	//funRemoveElement('/html/body/table/tbody/tr/td/div/div/div/table[2]/tbody/tr/td[2]/div[1]');
+
+	// Checkout!
+	funRemoveElement('/html/body/table/tbody/tr/td/div/div/div/table[2]/tbody/tr/td[3]/div');
+
+	// Current Poll
+	funRemoveElement('/html/body/table/tbody/tr/td/div/div/div/table[2]/tbody/tr/td[1]/form[2]');
+
+	// ElaKiri Events!
+	funRemoveElement('/html/body/table/tbody/tr/td/div/div/div/table[2]/tbody/tr/td[1]/div[3]');
+
+	// Site Navigation
+	funRemoveElement('/html/body/table/tbody/tr/td/div/div/div/table[2]/tbody/tr/td[1]/div[1]');
+
+	// Navbar Downloads
+	funRemoveElement('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[2]');
+
+	// Navbar FAQ
+	funRemoveElement('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[3]');
+
+	// Navbar Contact Us
+	//funRemoveElement('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[8]');
+
+	// Copyright bar
+	funRemoveElement('/html/body/table/tbody/tr/td/div/div/div/div[8]');
+}
+
+// Remove item from user homepage
+function funRemoveElementsUser() {
 	// Downloads
 	funRemoveElement('/html/body/table/tbody/tr/td/div/div/div/table[2]/tbody/tr/td[2]/div[4]');
 
@@ -221,3 +250,9 @@ function funRemoveStyle(pathValue) {
     element.removeAttribute("style");
 }
 */
+
+// This can be used to get the selected style
+function funGetCookie(name) {
+    let a = `; ${document.cookie}`.match(`;\\s*${name}=([^;]+)`);
+    return a ? a[1] : '';
+}
