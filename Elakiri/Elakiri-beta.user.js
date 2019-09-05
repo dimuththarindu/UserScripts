@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      9.0
+// @version      9.2
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -49,7 +49,7 @@ function funMain() {
 				}
 			}
 		}
-		
+
 		// Remove scrollbar in register page
 		if ((window.location.href.includes("elakiri.com/forum/register.php")) ||
 		   (window.location.href.includes("elakiri.lk/forum/register.php"))) {
@@ -72,7 +72,23 @@ function funNewDesign() {
 
 	// Global
 	// Set background (black) and border color
-    css += "body, .page, table.page, select, .header_box, .header_box_guest, .sticky {background: black !important; border-color: #0c0c0c !important;}";
+    css += "body, .page, table.page, .header_box, .header_box_guest, .sticky {background: black !important; border-color: #0c0c0c !important;}";
+	
+	// Font
+    css += "* {font-family: tahoma, verdana, geneva, lucida, lucida grande, arial, helvetica, sans-serif, 'nirmala ui';}";
+	css += "body, .page, div, table, th, td, a, font, p, strong, b, .vb_postbit {font-family: tahoma, verdana, geneva, lucida, lucida grande, arial, helvetica, sans-serif, 'nirmala ui';}";
+	css += ".vb_postbit {font-size: calc(1px + 1vw);}";
+
+	// Drop-down
+    css += "select, select optgroup option {background: #141414 !important; border: 1px solid #494949 !important; }";
+	css += "select optgroup {background: black !important; color: #e0e0e0 !important;}";
+
+	// menu_popup
+	css += "div.vbmenu_popup {border: 1px solid #494949 !important;}";
+
+	css += "fieldset {border: 2px solid #494949;}";
+
+	//css += ".vb_postbit {padding: 2px 2px 2px 10px;}";
 
 	css += "body > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {background: black; border-color: #0c0c0c;}";
 
@@ -106,7 +122,7 @@ function funNewDesign() {
 	css += ".vBulletin_editor, .vBulletin_editor td{background: #e0e0e0 !important;}";
 
 	css += "#vB_Editor_001_smiliebox table tbody tr td, #vB_Editor_001_smiliebox table tbody tr td a {color: #141414 !important;}";
-	
+
 	// User Reputation image
 	css += "td.alt2 table tbody tr td div span img.inlineimg {width: 7px; border: 1px solid #000; opacity: 0.6; filter: alpha(opacity=50); /* For IE8 and earlier */}";
 	// User Reputation image: Positive
@@ -115,13 +131,13 @@ function funNewDesign() {
 	// User Reputation image: Negative
 	//css += "td.alt2 table tbody tr td div span img.inlineimg[src='http://www.elakiri.com/forum/images/bluesaint/reputation/reputation_neg.gif'] {background-color: red;}";
 	//css += "td.alt2 table tbody tr td div span img.inlineimg[src='http://www.elakiri.com/forum/images/bluesaint/reputation/reputation_highneg.gif'] {background-color: red;}";
-	
+
 	// Usercp Reputation
 	// Reputation: Positive
 	//css += "table.tborder tbody#collapseobj_usercp_reputation tr td.alt2 img[src='http://www.elakiri.com/forum/images/bluesaint/reputation/reputation_pos.gif'] {background-color: blue;}";
 	// Reputation: Negative
 	//css += "table.tborder tbody#collapseobj_usercp_reputation tr td.alt2 img[src='http://www.elakiri.com/forum/images/bluesaint/reputation/reputation_neg.gif'] {background-color: red;}";
-	
+
 	// Reputation
 	// Reputation: Positive
 	css += "img[src='http://www.elakiri.com/forum/images/bluesaint/reputation/reputation_pos.gif'] {background-color: blue;}";
@@ -131,7 +147,7 @@ function funNewDesign() {
 	css += "img[src='http://www.elakiri.com/forum/images/bluesaint/reputation/reputation_highneg.gif'] {background-color: red;}";
 	// Reputation: None
 	css += "img[src='http://www.elakiri.com/forum/images/bluesaint/reputation/reputation_balance.gif'] {background-color: white;}";
-	
+
 	// User Online Status Indicator
 	// Online Status: Online
 	css += "div#posts div div.page div div div table.tborder tbody tr td.alt2 table tbody tr td div img.inlineimg[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/user_online.gif'] {cursor:pointer; margin-bottom: 5px; }";
@@ -141,13 +157,13 @@ function funNewDesign() {
 	// img
 	// img[src='xxx']
 	css += "img[src='http://www.elakiri.com/forum/images/bluesaint/buttons/firstnew.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/thread_hot_new.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/buttons/lastpost.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/misc/paperclip.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/misc/tag.png'], img[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/thread_new.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/thread_hot.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/buttons/collapse_tcat.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/buttons/collapse_tcat_collapsed.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/misc/navbits_start.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/misc/navbits_finallink_ltr.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/user_online.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/user_offline.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/buttons/collapse_thead.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/buttons/collapse_thead_collapsed.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/buttons/reputation.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/buttons/viewpost.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/thread_dot_hot_new.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/thread_dot.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/thread_lock.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/thread.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/thread_dot_hot.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/misc/poll_posticon.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/buttons/sortasc.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/buttons/sortdesc.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/buttons/collapse_alt_collapsed.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/buttons/collapse_alt.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/misc/subscribed.gif'] {border: 1px solid #01579b; opacity: 0.6; filter: alpha(opacity=60); /* For IE8 and earlier */}";
-	
+
 	// img
 	// Instant Messaging
 	css += "img[src='http://www.elakiri.com/forum/images/bluesaint/misc/im_skype.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/misc/im_yahoo.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/misc/im_msn.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/misc/im_aim.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/misc/im_icq.gif'] {opacity: 0.6; filter: alpha(opacity=60); /* For IE8 and earlier */}";
-	
+
 	// img
-	// Smilie List 
+	// Smilie List
 	//css += "img[src='http://www.elakiri.com/forum/images/smilies/sq/oo7dt.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/rofl8yi.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/angry6wn.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/love.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/yes4lo.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/wink0st.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/sorry8bj.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/shocked7fl.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/sad9cd.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/growl5cj.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/frown3qg.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/no6xn.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/nerd6bs.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/laugh8kb.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/happy8se.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/eek4wd.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/cool.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/confused1bb.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/biggrin9gp.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/rolleyes5cz.gif'], img[src='http://www.elakiri.com/forum/images/smilies/P.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/baffled5wh.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/dull8ay.gif'] {opacity: 0.6; filter: alpha(opacity=60); /* For IE8 and earlier */}";
 	// ^ Error: Not working
 
@@ -159,16 +175,16 @@ function funNewDesign() {
 
 	// Button style
 	// Button: General A
-	css += "input.bginput {background-color: black; border-block-color: black; border: 1px solid gray; color: whitesmoke;}";
+	css += "input.bginput {background-color: black; border-block-color: black; border: 1px solid #494949; color: whitesmoke;}";
 	// Button: General B
-	css += "input.button {background-color: #0c0c0c !important; border: 2px solid #757575; transition: 0.3s; cursor:pointer;}";
+	css += "input.button {background-color: #0c0c0c !important; border: 1px solid #494949; transition: 0.3s; cursor:pointer;}";
 	// Button: General B hover
-	css += "input.button:hover {background-color: #757575 !important;}";
+	css += "input.button:hover {background-color: #202020 !important;}";
 	// Button: Input form
 	css += "input#qr_submit.button, input#qr_preview.button {background-color: #424242 !important; padding: 10px; border: none; transition: 0.3s; text-align: center; cursor:pointer;}";
 	// Button: Input form hover
 	css += "input#qr_submit.button:hover, input#qr_preview.button:hover {background-color: #263238 !important; }";
-	
+
 
 	// Page generated notice
 	// Page generated notice: Color
@@ -199,13 +215,13 @@ function funNewDesign() {
 	css += "form div table.tborder tbody tr td div.vb_postbit img {max-width: 100%;}";
 	//css += "img {max-width: 100%;}";
 	// ^ Error: Effect the vB_Editor_QR_controls
-	
+
 	// Threads
 	css += "img[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/post_new.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/post_old.gif'] {display: none;}";
-	
+
 	// ElaKiri Community Rules
 	//css += "body table tbody tr td div div.page div form table.tborder tbody tr td.panelsurround div.panel div fieldset.fieldset legend {color: #e0e0e0; font-weight: bold; font-size: 14px;}";
-	// ^ Error: Effect fonts in other pages 
+	// ^ Error: Effect fonts in other pages
 	css += "body table tbody tr td div div.page div form table.tborder tbody tr td.panelsurround div input.button {padding: 5px 10px 5px 10px;}";
 	css += "body table tbody tr td div div.page div form table.tborder tbody tr td.panelsurround div.panel div fieldset.fieldset legend {color: #e0e0e0; font-weight: bold}";
 	css += "body table tbody tr td div div.page div form table.tborder tbody tr td.panelsurround div.panel div fieldset.fieldset table tbody tr td div.page {background-color: #262525 !important; padding: 10px; margin: 5px;}";
@@ -218,10 +234,14 @@ function funNewDesign() {
 	// Set border color
 	css += ".statistics_group, #collapseobj_contactinfo div fieldset {border-color: #0c0c0c;}";
 
+	// Text
+	// Black font color change
+	css += "font[color='black'] {color: #6b6b6b;}";
+
 	// Global
 	// Text White
 	// Backup Color #F5F5F5
-	css += ".panel, strong, a, .alt1, .alt1 div, .alt2, .time, .smallfont, select, .postbit_box, label, .button, h1, h2, h3, h4, h5, h6, p, .poll, td.sticky div {color: #e0e0e0 !important;}";
+	css += ".panel, strong, a, .alt1, .alt1 div, .alt2, .time, .smallfont, select, select optgroup option, .postbit_box, label, .button, h1, h2, h3, h4, h5, h6, p, .poll, td.sticky div {color: #e0e0e0 !important;}";
 
     var style = document.createElement("style");
     style.type = "text/css";
