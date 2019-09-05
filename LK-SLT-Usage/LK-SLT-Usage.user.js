@@ -7,8 +7,8 @@
 // @source       https://github.com/dimuththarindu/UserScripts
 // @icon         https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/LK-SLT-Usage/Images/Icon-64.png
 // @icon64URL	 https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/LK-SLT-Usage/Images/Icon-64.png
-// @updateURL  	 https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/LK-SLT-Usage/LK-SLT-Usage.js
-// @downloadURL  https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/LK-SLT-Usage/LK-SLT-Usage.js
+// @updateURL  	 https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/LK-SLT-Usage/LK-SLT-Usage.user.js
+// @downloadURL  https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/LK-SLT-Usage/LK-SLT-Usage.user.js
 // @supportURL   https://github.com/dimuththarindu/UserScripts/issues
 // @match        *://*.internetvas.slt.lk/SLTVasPortal-war/application/home.nable
 // @run-at       document-end
