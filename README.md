@@ -19,3 +19,12 @@ UserScript Manager: <a href="https://www.tampermonkey.net">Tampermonkey</a>
 Alternative UserScript Managers  
 - Violentmonkey: <a href="https://violentmonkey.github.io/get-it/">link</a>  
 - Greasemonkey: <a href="https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/">link</a>  
+
+## Instructions
+
+Please install a UserScript manager and then install the Script.  
+Recommended UserScript Manager: Tampermonkey  
+
+## Troubleshoot
+
+Please remove the script from the UserScript manager and then install it again.  
