@@ -141,15 +141,6 @@ function funNewDesign() {
 	// img
 	// img[src='xxx']
 	css += "img[src='http://www.elakiri.com/forum/images/bluesaint/buttons/firstnew.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/thread_hot_new.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/buttons/lastpost.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/misc/paperclip.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/misc/tag.png'], img[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/thread_new.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/thread_hot.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/buttons/collapse_tcat.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/buttons/collapse_tcat_collapsed.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/misc/navbits_start.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/misc/navbits_finallink_ltr.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/user_online.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/user_offline.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/buttons/collapse_thead.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/buttons/collapse_thead_collapsed.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/buttons/reputation.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/buttons/viewpost.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/thread_dot_hot_new.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/thread_dot.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/thread_lock.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/thread.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/thread_dot_hot.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/misc/poll_posticon.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/buttons/sortasc.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/buttons/sortdesc.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/buttons/collapse_alt_collapsed.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/buttons/collapse_alt.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/misc/subscribed.gif'] {border: 1px solid #01579b; opacity: 0.6; filter: alpha(opacity=60); /* For IE8 and earlier */}";
-	
-	// img
-	// Instant Messaging
-	css += "img[src='http://www.elakiri.com/forum/images/bluesaint/misc/im_skype.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/misc/im_yahoo.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/misc/im_msn.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/misc/im_aim.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/misc/im_icq.gif'] {opacity: 0.6; filter: alpha(opacity=60); /* For IE8 and earlier */}";
-	
-	// img
-	// Smilie List 
-	//css += "img[src='http://www.elakiri.com/forum/images/smilies/sq/oo7dt.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/rofl8yi.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/angry6wn.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/love.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/yes4lo.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/wink0st.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/sorry8bj.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/shocked7fl.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/sad9cd.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/growl5cj.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/frown3qg.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/no6xn.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/nerd6bs.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/laugh8kb.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/happy8se.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/eek4wd.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/cool.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/confused1bb.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/biggrin9gp.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/rolleyes5cz.gif'], img[src='http://www.elakiri.com/forum/images/smilies/P.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/baffled5wh.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/dull8ay.gif'] {opacity: 0.6; filter: alpha(opacity=60); /* For IE8 and earlier */}";
-	// ^ Error: Not working
 
 	// Rep Power
 	css += "body table tbody tr td div div.page div table.page tbody tr td div table.tborder tbody#collapseobj_module_9 tr td.alt1 div.smallfont div {font-weight: bold; line-height: 1.8;}";
@@ -183,32 +174,31 @@ function funNewDesign() {
 	// Quote: Font color
 	//css += "div.vb_postbit div table tbody tr td.alt2 div font font, div.vb_postbit div table tbody tr td.alt2 div, div.vb_postbit div table tbody tr td.alt2 div strong {color: #424242 !important;}";
 	// Quote: Brightness
-	css += "div.vb_postbit div table tbody tr td.alt2 {filter: brightness(75%); transition-property: filter;  transition-duration: 1s;}";
+	css += "div.vb_postbit div table tbody tr td.alt2 {filter: brightness(75%); transition: 1.5s;}";
 	// Quote: Brightness: Hover
 	css += "div.vb_postbit div table tbody tr td.alt2:hover {max-width: 100% !important; filter: none !important;}";
 	// Quote: Hide viewpost img
 	css += "div.vb_postbit div table tbody tr td.alt2 div a img.inlineimg[src='http://www.elakiri.com/forum/images/bluesaint/buttons/viewpost.gif'] {display: none;}";
 	// Quote: Image
-	css += "div.vb_postbit div table tbody tr td.alt2 div img {max-width: 10% !important; transition-property: max-width; transition-duration: 1s;}";
+	css += "div.vb_postbit div table tbody tr td.alt2 div img {max-width: 10% !important; transition: 1s; transition-delay: 1s;}";
 	// Quote: Hover
-	css += "div.vb_postbit div table tbody tr td.alt2 div img:hover {max-width: 80% !important; transition-property: max-width;  transition-duration: 1s; transition-delay: 1s;}";
+	css += "div.vb_postbit div table tbody tr td.alt2 div img:hover {max-width: 80% !important;}";
 
 	// Fix image width
 	css += ".vb_postbit > div:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > div:nth-child(2) > img:nth-child(1) {max-width: 100%;}";
 	css += "div#posts div div.page div div div table.tborder tbody tr td div.vb_postbit img {max-width: 100%;}";
 	css += "form div table.tborder tbody tr td div.vb_postbit img {max-width: 100%;}";
 	//css += "img {max-width: 100%;}";
-	// ^ Error: Effect the vB_Editor_QR_controls
+	// ^ Error: Effect vB_Editor_QR_controls
 	
 	// Threads
 	css += "img[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/post_new.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/post_old.gif'] {display: none;}";
 	
+	// Elakiri Register
 	// ElaKiri Community Rules
-	//css += "body table tbody tr td div div.page div form table.tborder tbody tr td.panelsurround div.panel div fieldset.fieldset legend {color: #e0e0e0; font-weight: bold; font-size: 14px;}";
-	// ^ Error: Effect fonts in other pages 
+	css += "body table tbody tr td div div.page div form table.tborder tbody tr td.panelsurround div.panel div fieldset.fieldset legend {color: #e0e0e0; font-weight: bold; font-size: 14px;}";
 	css += "body table tbody tr td div div.page div form table.tborder tbody tr td.panelsurround div input.button {padding: 5px 10px 5px 10px;}";
-	css += "body table tbody tr td div div.page div form table.tborder tbody tr td.panelsurround div.panel div fieldset.fieldset legend {color: #e0e0e0; font-weight: bold}";
-	css += "body table tbody tr td div div.page div form table.tborder tbody tr td.panelsurround div.panel div fieldset.fieldset table tbody tr td div.page {background-color: #262525 !important; padding: 10px; margin: 5px;}";
+	css += "body table tbody tr td div div.page div form table.tborder tbody tr td.panelsurround div.panel div fieldset.fieldset table tbody tr td div.page {background-color: #141414 !important; padding: 12px;}";
 
 	// Global
 	// Set light black #141414

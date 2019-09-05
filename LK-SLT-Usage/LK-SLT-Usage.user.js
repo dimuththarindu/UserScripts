@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name         LK-SLT-Usage
 // @namespace    UserScripts
-// @version      5.8
+// @version      5.9.0
 // @author       DT
 // @description  Sri Lanka Telecom - Data Usage
 // @source       https://github.com/dimuththarindu/UserScripts
-// @icon         https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/LK-SLT-Usage/Icon-64.png
-// @icon64URL	 https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/LK-SLT-Usage/Icon-64.png
+// @icon         https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/LK-SLT-Usage/Images/Icon-64.png
+// @icon64URL	 https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/LK-SLT-Usage/Images/Icon-64.png
 // @updateURL  	 https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/LK-SLT-Usage/LK-SLT-Usage.js
 // @downloadURL  https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/LK-SLT-Usage/LK-SLT-Usage.js
 // @supportURL   https://github.com/dimuththarindu/UserScripts/issues
@@ -14,11 +14,11 @@
 // @run-at       document-end
 // @grant        GM_addStyle
 // @license      GNU Lesser General Public License v3.0
+// @history      5.8.0 Change the image path
 // @history      5.7.5 License
 // @history      5.7.4 Change support URL
 // @history      5.7.2 Small changes to the script
 // @history      5.7.1 Change the download & update URLs
-// @history      5.7.0 Firefox Extension Script
 // ==/UserScript==
 
 
