@@ -14,7 +14,7 @@
 // @run-at       document-end
 // @grant        GM_addStyle
 // @license      GNU Lesser General Public License v3.0
-// @history      5.8.0 Change the image path
+// @history      5.8.0 Change the image and update URL paths
 // @history      5.7.5 License
 // @history      5.7.4 Change support URL
 // @history      5.7.2 Small changes to the script
