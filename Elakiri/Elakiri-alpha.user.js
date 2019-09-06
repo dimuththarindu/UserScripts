@@ -150,15 +150,22 @@ function funNewDesign() {
 
 	// Button style
 	// Button: General A
-	css += "input.bginput {background-color: black; border-block-color: black; border: 1px solid gray; color: whitesmoke;}";
+	css += "input.bginput {background-color: black; border-block-color: black; border: 1px solid #292929; color: #e0e0e0; padding: 5px;}";
 	// Button: General B
-	css += "input.button {background-color: #0c0c0c !important; border: 2px solid #757575; transition: 0.3s; cursor:pointer;}";
+	// Removed: border: 2px solid #757575;
+	// Removed: background-color: #0c0c0c !important;
+	css += "input.button {background-color: #424242 !important; transition: 0.3s; cursor:pointer; padding: 6px; border: none; }";
 	// Button: General B hover
 	css += "input.button:hover {background-color: #757575 !important;}";
 	// Button: Input form
-	css += "input#qr_submit.button, input#qr_preview.button {background-color: #424242 !important; padding: 10px; border: none; transition: 0.3s; text-align: center; cursor:pointer;}";
+	css += "input#qr_submit.button, input#qr_preview.button {background-color: #424242 !important; text-align: center; cursor:pointer;}";
 	// Button: Input form hover
 	css += "input#qr_submit.button:hover, input#qr_preview.button:hover {background-color: #263238 !important; }";
+	
+	// Select
+	// 5px is too much.
+	css += "select {padding: 3px; border: 1px solid #292929 !important;}";
+	css += "table.page td.tfoot select {padding: 1px !important;}";
 	
 
 	// Page generated notice

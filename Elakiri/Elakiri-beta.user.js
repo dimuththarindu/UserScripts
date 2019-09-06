@@ -78,6 +78,8 @@ function funNewDesign() {
     css += "* {font-family: tahoma, verdana, geneva, lucida, lucida grande, arial, helvetica, sans-serif, 'nirmala ui';}";
 	css += "body, .page, div, table, th, td, a, font, p, strong, b, .vb_postbit {font-family: tahoma, verdana, geneva, lucida, lucida grande, arial, helvetica, sans-serif, 'nirmala ui';}";
 	css += ".vb_postbit {font-size: calc(1px + 1vw);}";
+	// Black font color change
+	css += "font[color='black'] {color: #6b6b6b;}";
 
 	// Drop-down
     css += "select, select optgroup option {background: #141414 !important; border: 1px solid #494949 !important; }";
@@ -166,7 +168,7 @@ function funNewDesign() {
 	// Smilie List
 	//css += "img[src='http://www.elakiri.com/forum/images/smilies/sq/oo7dt.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/rofl8yi.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/angry6wn.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/love.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/yes4lo.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/wink0st.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/sorry8bj.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/shocked7fl.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/sad9cd.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/growl5cj.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/frown3qg.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/no6xn.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/nerd6bs.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/laugh8kb.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/happy8se.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/eek4wd.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/cool.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/confused1bb.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/biggrin9gp.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/rolleyes5cz.gif'], img[src='http://www.elakiri.com/forum/images/smilies/P.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/baffled5wh.gif'], img[src='http://www.elakiri.com/forum/images/smilies/sq/dull8ay.gif'] {opacity: 0.6; filter: alpha(opacity=60); /* For IE8 and earlier */}";
 	// ^ Error: Not working
-
+	
 	// Rep Power
 	css += "body table tbody tr td div div.page div table.page tbody tr td div table.tborder tbody#collapseobj_module_9 tr td.alt1 div.smallfont div {font-weight: bold; line-height: 1.8;}";
 
@@ -175,16 +177,28 @@ function funNewDesign() {
 
 	// Button style
 	// Button: General A
-	css += "input.bginput {background-color: black; border-block-color: black; border: 1px solid #494949; color: whitesmoke;}";
+	css += "input.bginput {background-color: black; border-block-color: black; border: 1px solid #292929; color: #e0e0e0; padding: 5px;}";
 	// Button: General B
-	css += "input.button {background-color: #0c0c0c !important; border: 1px solid #494949; transition: 0.3s; cursor:pointer;}";
+	// Removed: border: 2px solid #757575;
+	// Removed: background-color: #0c0c0c !important;
+	css += "input.button {background-color: #424242 !important; transition: 0.3s; cursor:pointer; padding: 6px; border: none; }";
 	// Button: General B hover
-	css += "input.button:hover {background-color: #202020 !important;}";
+	css += "input.button:hover {background-color: #757575 !important;}";
 	// Button: Input form
-	css += "input#qr_submit.button, input#qr_preview.button {background-color: #424242 !important; padding: 10px; border: none; transition: 0.3s; text-align: center; cursor:pointer;}";
+	css += "input#qr_submit.button, input#qr_preview.button {background-color: #424242 !important; text-align: center; cursor:pointer;}";
 	// Button: Input form hover
 	css += "input#qr_submit.button:hover, input#qr_preview.button:hover {background-color: #263238 !important; }";
-
+	// input: Homepage Log in
+	//css += "tbody#collapseobj_module_9 tr td.alt1 div.smallfont input.bginput {width: 90%;}";
+	// ^ Error: Conflict with the Remember me button
+	
+	
+	// Select
+	// 5px is too much.
+	css += "select {padding: 4px; border: 1px solid #292929 !important;}";
+	css += "table.page td.tfoot select {padding: 1px !important;}";
+	
+	
 
 	// Page generated notice
 	// Page generated notice: Color
@@ -233,10 +247,6 @@ function funNewDesign() {
 	// Global
 	// Set border color
 	css += ".statistics_group, #collapseobj_contactinfo div fieldset {border-color: #0c0c0c;}";
-
-	// Text
-	// Black font color change
-	css += "font[color='black'] {color: #6b6b6b;}";
 
 	// Global
 	// Text White
