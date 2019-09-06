@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      10.1
+// @version      10.2
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -180,7 +180,7 @@ function funNewDesign() {
 
 	// Button style
 	// Button: General A
-	css += "input.bginput {background-color: black; border-block-color: black; border: 1px solid #292929; color: #e0e0e0; padding: 5px;}";
+	css += "input.bginput {background-color: black; border: 1px solid #292929; color: #e0e0e0; padding: 5px;}";
 	// Button: General B
 	// Removed: border: 2px solid #757575;
 	// Removed: background-color: #0c0c0c !important;
@@ -199,6 +199,9 @@ function funNewDesign() {
 	// 5px is too much.
 	css += "select {padding: 4px; border: 1px solid #292929 !important;}";
 	css += "table.page td.tfoot select {padding: 1px !important;}";
+	
+	// Textarea
+	css += "textarea {background-color: black; border: 1px solid #292929; color: #e0e0e0; padding: 5px;}";
 	
 	// Page generated notice
 	// Page generated notice: Color
