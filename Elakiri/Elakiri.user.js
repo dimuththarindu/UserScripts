@@ -24,7 +24,7 @@ funMain();
 function funMain() {
 	try {
 		// This script only works in EK-Lite design
-		if((funGetCookie("bbstyleid") !== 7) && (!window.location.href.includes("elakiri.com/forum/archive")) && (!window.location.href.includes("elakiri.lk/forum/archive"))) {
+		if((funGetCookie("bbstyleid") != 7) && (!window.location.href.includes("elakiri.com/forum/archive")) && (!window.location.href.includes("elakiri.lk/forum/archive"))) {
 			funNewDesign();
 			//funReplaceEmojies();
 
