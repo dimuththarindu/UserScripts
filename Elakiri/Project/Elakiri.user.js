@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      10.8
+// @version      10.9
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
 // @icon         https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Images/Icon-64.png
 // @icon64URL	 https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Images/Icon-64.png
-// @updateURL  	 https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Elakiri.user.js
-// @downloadURL  https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Elakiri.user.js
+// @updateURL  	 https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Project/Elakiri.user.js
+// @downloadURL  https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Project/Elakiri.user.js
 // @supportURL   https://github.com/dimuththarindu/UserScripts/issues
 // @match        *://*.elakiri.com/*
 // @include      *://*.elakiri.lk/*

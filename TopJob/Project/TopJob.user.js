@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name         TopJob
 // @namespace    UserScripts
-// @version      4.1
+// @version      4.2
 // @author       DT
 // @description  TopJob Website User Experience
 // @source       https://github.com/dimuththarindu/UserScripts
 // @icon         https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/TopJob/Images/Icon-64.png
 // @icon64URL	 https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/TopJob/Images/Icon-64.png
-// @updateURL  	 https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/TopJob/TopJob.user.js
-// @downloadURL  https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/TopJob/TopJob.user.js
+// @updateURL  	 https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/TopJob/Project/TopJob.user.js
+// @downloadURL  https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/TopJob/Project/TopJob.user.js
 // @supportURL   https://github.com/dimuththarindu/UserScripts/issues
 // @match        *://*.topjobs.lk/*
 // @run-at       document-end
