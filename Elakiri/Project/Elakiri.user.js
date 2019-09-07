@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      11.0
+// @version      11.01
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -218,7 +218,7 @@ function funNewDesign() {
 	css += "html[dir='ltr'], html body.wysiwyg {background: #a4a4a4 !important;}";
 	css += "td#vB_Editor_001.vBulletin_editor table tbody tr td.controlbar fieldset#vB_Editor_001_smiliebox {border: 2px solid #b9b9b9;}";
 	// Basic
-	css += "div#vB_Editor_QR.vBulletin_editor, div#vB_Editor_QR_controls.controlbar table tbody tr td, div#vB_Editor_QR_controls.controlbar table tbody tr td div.imagebutton {background: #494949 !important;}";
+	css += "div#vB_Editor_QR.vBulletin_editor, div#vB_Editor_QR_controls.controlbar table tbody tr td, div#vB_Editor_QR_controls.controlbar table tbody tr td div.imagebutton {background: #e0e0e0 !important;}";
 	// Common
 	css += "td#vB_Editor_001.vBulletin_editor, div#vB_Editor_QR.vBulletin_editor {border: 2px solid #494949; padding: 10px;}";
 
