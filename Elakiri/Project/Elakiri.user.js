@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      12.6
+// @version      13.0
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -24,11 +24,13 @@ funMain();
 function funMain() {
 	try {
 		// This script only works in EK-Lite design
-		if((funGetCookie("bbstyleid") != 7) && (!window.location.href.includes("elakiri.com/forum/archive")) && (!window.location.href.includes("elakiri.lk/forum/archive"))) {
+		if((funGetCookie("bbstyleid") != 7) && (!window.location.pathname.includes("/forum/archive"))) {
 			funNewDesign();
 			funReplaceEmojies();
+			funRemEleNavbarGuess();
+			funRemEleNavbarUser();
 
-			/* // window.location.origin = http://www.elakiri.com
+			// window.location.origin = http://www.elakiri.com
 			// window.location.origin = http://www.elakiri.lk
 			// window.location.origin = https://www.elakiri.com
 			// window.location.origin = https://www.elakiri.lk
@@ -48,22 +50,6 @@ function funMain() {
 					} else if(element.includes("User CP")) {
 						funRemEleHomeUser();
 					}
-				}
-			} */
-
-			// Guess home page and user home page are different
-			// If the user is logged in, then there is no register link in the navbar.
-			var element = document.evaluate('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[1]/a/text()', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-
-			// Check whether value is null or not
-			if(element) {
-				element = element.data.toString();
-
-				// Check register link
-				if(element.includes("Register")) {
-					funRemEleHomeGuess();
-				} else if(element.includes("User CP")) {
-					funRemEleHomeUser();
 				}
 			}
 		}
@@ -308,6 +294,11 @@ function funRemEleHomeGuess() {
 	// Site Navigation
 	funRemoveElement('/html/body/table/tbody/tr/td/div/div/div/table[2]/tbody/tr/td[1]/div[1]');
 
+	// Copyright bar
+	funRemoveElement('/html/body/table/tbody/tr/td/div/div/div/div[8]');
+}
+
+function funRemEleNavbarGuess() {
 	// Navbar Downloads
 	funRemoveElement('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[2]');
 
@@ -316,9 +307,6 @@ function funRemEleHomeGuess() {
 
 	// Navbar Contact Us
 	//funRemoveElement('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[8]');
-
-	// Copyright bar
-	funRemoveElement('/html/body/table/tbody/tr/td/div/div/div/div[8]');
 }
 
 // Remove item from user homepage
@@ -341,15 +329,6 @@ function funRemEleHomeUser() {
 	// Site Navigation
 	funRemoveElement('/html/body/table/tbody/tr/td/div/div/div/table[2]/tbody/tr/td[1]/div[1]');
 
-	// Navbar Downloads
-	funRemoveElement('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[2]');
-
-	// Navbar FAQ
-	funRemoveElement('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[2]');
-
-	// Navbar Contact Us
-	funRemoveElement('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[8]');
-
 	// Copyright bar
 	funRemoveElement('/html/body/table/tbody/tr/td/div/div/div/div[9]');
 
@@ -361,6 +340,17 @@ function funRemEleHomeUser() {
 
 	// Page generated
 	funRemoveElement('/html/body/center');
+}
+
+function funRemEleNavbarUser() {
+	// Navbar Downloads
+	funRemoveElement('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[2]');
+
+	// Navbar FAQ
+	funRemoveElement('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[2]');
+
+	// Navbar Contact Us
+	funRemoveElement('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[8]');
 }
 
 function funRemoveElement(pathValue) {
