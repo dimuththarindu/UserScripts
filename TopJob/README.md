@@ -1,7 +1,7 @@
 # UserScripts
 
 ## Scripts
-- TopJob: <a href="https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/TopJob/TopJob.user.js">link</a>  
+- TopJob: <a href="https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/TopJob/Project/TopJob.user.js">link</a>  
 
 ## UserScripts Manager
 UserScript Manager: <a href="https://www.tampermonkey.net">Tampermonkey</a>  

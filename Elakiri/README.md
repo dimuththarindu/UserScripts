@@ -1,7 +1,7 @@
 # UserScripts
 
 ## Scripts
-- Elakiri: <a href="https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Elakiri.user.js">link</a>  
+- Elakiri: <a href="https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Project/Elakiri.user.js">link</a>  
 
 ## UserScripts Manager
 UserScript Manager: <a href="https://www.tampermonkey.net">Tampermonkey</a>  
