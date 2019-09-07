@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      10.3
+// @version      10.4
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -222,9 +222,9 @@ function funNewDesign() {
 	// Quote: Hide viewpost img
 	css += "div.vb_postbit div table tbody tr td.alt2 div a img.inlineimg[src='http://www.elakiri.com/forum/images/bluesaint/buttons/viewpost.gif'] {display: none;}";
 	// Quote: Image
-	css += "div.vb_postbit div table tbody tr td.alt2 div img {max-width: 10% !important; transition-property: max-width; transition-duration: 1s;}";
+	css += "div.vb_postbit div table tbody tr td.alt2 div img {max-width: 10% !important; transition-property: max-width; transition-duration: 1s; cursor:pointer;}";
 	// Quote: Hover
-	css += "div.vb_postbit div table tbody tr td.alt2 div img:hover {max-width: 80% !important; transition-property: max-width;  transition-duration: 1s; transition-delay: 1s;}";
+	css += "div.vb_postbit div table tbody tr td.alt2 div img:hover {max-width: 80% !important; transition-property: max-width;  transition-duration: 1s; transition-delay: 1s; cursor:pointer;}";
 
 	// Fix image width
 	css += ".vb_postbit > div:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > div:nth-child(2) > img:nth-child(1) {max-width: 100%;}";
