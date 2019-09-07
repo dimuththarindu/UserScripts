@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         LK-SLT-Usage
 // @namespace    UserScripts
-// @version      5.9.3
+// @version      5.9.4
 // @author       DT
 // @description  Sri Lanka Telecom - Data Usage
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -97,7 +97,7 @@ function funCalculation() {
 
     // Get data from the page
     totalMonthlylimit = funCircumference('//*[@id="myUsagePanel"]/div/div[1]/div[1]/div[2]/div[1]/div[1]/div/div[2]/div[1]/h5/strong/text()');
-    // 90.0GB 
+    // 90.0GB
     totalRemaining = funCircumference('//*[@id="myUsagePanel"]/div/div[1]/div[1]/div[2]/div[1]/div[1]/div/div[2]/div[2]/h5/strong/text()');
     // 73.3GB
     totalUsed = funCircumference('//*[@id="myUsagePanel"]/div/div[1]/div[1]/div[2]/div[1]/div[1]/div/div[2]/div[3]/h5/strong/text()');
@@ -196,7 +196,7 @@ function funDebug() {
     console.log("dayOfTheMonth: " + dayOfTheMonth);
     console.log("noOfComingDays: " + noOfComingDays);
 
-    // Given data 
+    // Given data
     console.log("");
     console.log("%cGiven data", "font-weight: bold;");
     console.log("peakDataPerDay: " + peakDataPerDay);
