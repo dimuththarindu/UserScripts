@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      12.3
+// @version      12.4
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -53,8 +53,7 @@ function funMain() {
 		}
 
 		// Remove scrollbar in register page
-		if ((window.location.href.includes("elakiri.com/forum/register.php")) ||
-		   (window.location.href.includes("elakiri.lk/forum/register.php"))) {
+		if (window.location.href == window.location.origin + "/forum/register.php") {
 			funRemoveStyle('/html/body/table/tbody/tr/td/div/div/div/form/table/tbody/tr[2]/td/div[1]/div/fieldset/table/tbody/tr[2]/td/div[1]');
 		}
 	}
