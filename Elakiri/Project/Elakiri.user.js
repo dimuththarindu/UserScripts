@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      10.14
+// @version      10.15
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -74,7 +74,7 @@ function funNewDesign() {
 	// Global
 	// Set background (black) and border color
     css += "html, body, .page, table.page, .header_box, .header_box_guest, .sticky {background: black !important; border-color: #0c0c0c !important;}";
-	
+
 	// Set light black
 	css += "td.alt2Active {background: #141414 !important; border-color: #0c0c0c !important; color: #e0e0e0 !important;}";
 
@@ -88,7 +88,7 @@ function funNewDesign() {
 	css += "font[color='black'] {color: #6b6b6b;}";
 
 	// Drop-down
-	// Remove: border: 1px solid #494949 !important; 
+	// Remove: border: 1px solid #494949 !important;
 	css += "select {background: #141414 !important; border: 1px solid #494949 !important;}";
     css += "select option, select option.fjdpth1 {background: #141414 !important;}";
 	css += "select optgroup, select option.fjdpth0 {background: black !important; color: #e0e0e0 !important;}";
