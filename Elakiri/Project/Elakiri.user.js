@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      12.5
+// @version      12.6
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -28,7 +28,7 @@ function funMain() {
 			funNewDesign();
 			funReplaceEmojies();
 
-			// window.location.origin = http://www.elakiri.com
+			/* // window.location.origin = http://www.elakiri.com
 			// window.location.origin = http://www.elakiri.lk
 			// window.location.origin = https://www.elakiri.com
 			// window.location.origin = https://www.elakiri.lk
@@ -48,6 +48,22 @@ function funMain() {
 					} else if(element.includes("User CP")) {
 						funRemEleHomeUser();
 					}
+				}
+			} */
+
+			// Guess home page and user home page are different
+			// If the user is logged in, then there is no register link in the navbar.
+			var element = document.evaluate('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[1]/a/text()', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+
+			// Check whether value is null or not
+			if(element) {
+				element = element.data.toString();
+
+				// Check register link
+				if(element.includes("Register")) {
+					funRemEleHomeGuess();
+				} else if(element.includes("User CP")) {
+					funRemEleHomeUser();
 				}
 			}
 		}
