@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      10.5
+// @version      10.6
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -227,10 +227,11 @@ function funNewDesign() {
 	css += "div.vb_postbit div table tbody tr td.alt2 div img:hover {max-width: 80% !important; transition-property: max-width;  transition-duration: 1s; transition-delay: 1s; cursor:pointer;}";
 
 	// Fix image width
-	css += ".vb_postbit > div:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > div:nth-child(2) > img:nth-child(1) {max-width: 100%;}";
+	css += ".vb_postbit > div:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > div:nth-child(2) > img:nth-child(1) {max-width: 100%; height: auto;}";
 	css += "div#posts div div.page div div div table.tborder tbody tr td div.vb_postbit img {max-width: 100%;}";
-	css += "form div table.tborder tbody tr td div.vb_postbit img {max-width: 100%;}";
-	css += "img {max-width: 100% !important;}";
+	css += "form div table.tborder tbody tr td div.vb_postbit img {max-width: 100%; height: auto;}";
+	//css += "img {max-width: 100% !important;}";
+	// ^ Error: Effect small images
 
 	// Threads
 	css += "img[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/post_new.gif'], img[src='http://www.elakiri.com/forum/images/bluesaint/statusicon/post_old.gif'] {display: none;}";
