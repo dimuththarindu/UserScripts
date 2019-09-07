@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      12.0
+// @version      12.1
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -32,7 +32,7 @@ function funMain() {
 			// window.location.origin = http://www.elakiri.lk
 			// window.location.origin = https://www.elakiri.com
 			// window.location.origin = https://www.elakiri.lk
-			if (window.location.href == window.location.origin) {
+			if (window.location.href == window.location.origin + "/") {
 
 				// Guess home page and user home page are different
 				// If the user is logged in, then there is no register link in the navbar.
