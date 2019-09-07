@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      10.6
+// @version      10.7
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -228,7 +228,7 @@ function funNewDesign() {
 
 	// Fix image width
 	css += ".vb_postbit > div:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > div:nth-child(2) > img:nth-child(1) {max-width: 100%; height: auto;}";
-	css += "div#posts div div.page div div div table.tborder tbody tr td div.vb_postbit img {max-width: 100%;}";
+	css += "div#posts div div.page div div div table.tborder tbody tr td div.vb_postbit img, div.page div div#collapseobj_threadreview table.tborder tbody tr td.alt1 img {max-width: 100%; height: auto;}";
 	css += "form div table.tborder tbody tr td div.vb_postbit img {max-width: 100%; height: auto;}";
 	//css += "img {max-width: 100% !important;}";
 	// ^ Error: Effect small images
