@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri Image
 // @namespace    UserScripts
-// @version      9.3
+// @version      9.4
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
