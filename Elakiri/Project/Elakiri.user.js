@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      10.12
+// @version      10.13
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -73,7 +73,7 @@ function funNewDesign() {
 
 	// Global
 	// Set background (black) and border color
-    css += "body, .page, table.page, .header_box, .header_box_guest, .sticky {background: black !important; border-color: #0c0c0c !important;}";
+    css += "html, body, .page, table.page, .header_box, .header_box_guest, .sticky {background: black !important; border-color: #0c0c0c !important;}";
 
 	css += ".last_visit {background-color: #222222;}";
 
@@ -85,8 +85,10 @@ function funNewDesign() {
 	css += "font[color='black'] {color: #6b6b6b;}";
 
 	// Drop-down
-    css += "select, select optgroup option {background: #141414 !important; border: 1px solid #494949 !important; }";
-	css += "select optgroup {background: black !important; color: #e0e0e0 !important;}";
+	// Remove: border: 1px solid #494949 !important; 
+	css += "select {background: #141414 !important; border: 1px solid #494949 !important;}";
+    css += "select option, select option.fjdpth1 {background: #141414 !important;}";
+	css += "select optgroup, select option.fjdpth0 {background: black !important; color: #e0e0e0 !important;}";
 
 	// menu_popup
 	css += "div.vbmenu_popup {border: 1px solid #494949 !important;}";
