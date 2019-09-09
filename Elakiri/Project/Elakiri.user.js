@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      14.2
+// @version      14.3
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -328,7 +328,8 @@ function funRemEleHomeUser() {
 	funRemoveElement('/html/body/table/tbody/tr/td/div/div/div/table[2]/tbody/tr/td[1]/div[1]');
 
 	// Copyright bar
-	funRemoveElement('/html/body/table/tbody/tr/td/div/div/div/div[9]');
+	//funRemoveElement('/html/body/table/tbody/tr/td/div/div/div/div[9]');
+	// ^ Error: Your notification will not work when this is enabled.
 
 	// Posting Rules / Sub Thread
 	funRemoveElement('/html/body/table/tbody/tr/td/div[3]/div/div/table[5]');
