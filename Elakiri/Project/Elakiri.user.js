@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      14.0
+// @version      14.1
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -221,8 +221,6 @@ function funNewDesign() {
 	css += "div.vb_postbit div table tbody tr td.alt2 {filter: brightness(75%); transition-property: filter;  transition-duration: 1s;}";
 	// Quote: Brightness: Hover
 	css += "div.vb_postbit div table tbody tr td.alt2:hover {max-width: 100% !important; filter: none !important;}";
-	// Quote: Hide viewpost img
-	css += "div.vb_postbit div table tbody tr td.alt2 div a img.inlineimg[src='" + window.location.origin + "/forum/images/bluesaint/buttons/viewpost.gif'] {display: none;}";
 	// Quote: Image
 	css += "div.vb_postbit div table tbody tr td.alt2 div img {max-width: 10% !important; transition-property: max-width; transition-duration: 1s; cursor:pointer;}";
 	// Quote: Hover
