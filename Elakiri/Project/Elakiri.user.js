@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      16.3
+// @version      17.00
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -12,6 +12,8 @@
 // @supportURL   https://github.com/dimuththarindu/UserScripts/issues
 // @match        *://*.elakiri.com/*
 // @include      *://*.elakiri.lk/*
+// @include      *://elakiri.com/*
+// @include      *://elakiri.lk/*
 // @run-at       document-end
 // @grant        GM_addStyle
 // @license      Apache License 2.0
@@ -25,30 +27,39 @@ function funMain() {
 	try {
 		// This script only works in EK-Lite design
 		if((funGetCookie("bbstyleid") != 7) && (!window.location.pathname.includes("/forum/archive"))) {
-			funNewDesign();
-			funReplaceEmojies();
-			//funRemEleNavbarGuess();
-			//funRemEleNavbarUser();
+			
+			// Go to www.elakiri.com
+			if (!window.location.origin.includes("www.elakiri.com"))
+			{
+				window.location.href = window.location.href.replace(window.location.origin, window.location.protocol + "//www.elakiri.com");
+			}
+			else
+			{
+				funNewDesign();
+				funReplaceEmojies();
+				//funRemEleNavbarGuess();
+				//funRemEleNavbarUser();
 
-			// window.location.origin = http://www.elakiri.com
-			// window.location.origin = http://www.elakiri.lk
-			// window.location.origin = https://www.elakiri.com
-			// window.location.origin = https://www.elakiri.lk
-			if (window.location.href == window.location.origin + "/") {
+				// window.location.origin = http://www.elakiri.com
+				// window.location.origin = http://www.elakiri.lk
+				// window.location.origin = https://www.elakiri.com
+				// window.location.origin = https://www.elakiri.lk
+				if (window.location.href == window.location.origin + "/") {
 
-				// Guess home page and user home page are different
-				// If the user is logged in, then there is no register link in the navbar.
-				var element = document.evaluate('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[1]/a/text()', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+					// Guess home page and user home page are different
+					// If the user is logged in, then there is no register link in the navbar.
+					var element = document.evaluate('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[1]/a/text()', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
 
-				// Check whether value is null or not
-				if(element) {
-					element = element.data.toString();
+					// Check whether value is null or not
+					if(element) {
+						element = element.data.toString();
 
-					// Check register link
-					if(element.includes("Register")) {
-						funRemEleHomeGuess();
-					} else if(element.includes("User CP")) {
-						funRemEleHomeUser();
+						// Check register link
+						if(element.includes("Register")) {
+							funRemEleHomeGuess();
+						} else if(element.includes("User CP")) {
+							funRemEleHomeUser();
+						}
 					}
 				}
 			}
