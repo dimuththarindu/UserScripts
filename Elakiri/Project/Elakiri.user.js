@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      16.0
+// @version      16.1
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -27,8 +27,8 @@ function funMain() {
 		if((funGetCookie("bbstyleid") != 7) && (!window.location.pathname.includes("/forum/archive"))) {
 			funNewDesign();
 			funReplaceEmojies();
-			funRemEleNavbarGuess();
-			funRemEleNavbarUser();
+			//funRemEleNavbarGuess();
+			//funRemEleNavbarUser();
 
 			// window.location.origin = http://www.elakiri.com
 			// window.location.origin = http://www.elakiri.lk
@@ -64,198 +64,203 @@ function funMain() {
 	}
 }
 
-function funNewDesign() {
-	// HTML Colors
-	// - https://mdbootstrap.com/docs/jquery/css/colors/
-	// - https://htmlcolorcodes.com/
-    var css = "";
-	// Global
-	// Set background (black) and border color
-    css += "html[class='gr__elakiri_com'], html[class='gr__elakiri_lk'], body, .page, table.page, .header_box, .header_box_guest, .sticky {background: black !important; border-color: #0c0c0c !important;}";
+function funNewDesign() {	
+	if(localStorage.getItem("css_custom_style")===null) 
+	{
+		// HTML Colors
+		// - https://mdbootstrap.com/docs/jquery/css/colors/
+		// - https://htmlcolorcodes.com/
+		var css = "";
+		// Global
+		// Set background (black) and border color
+		css += "html[class='gr__elakiri_com'], html[class='gr__elakiri_lk'], body, .page, table.page, .header_box, .header_box_guest, .sticky {background: black !important; border-color: #0c0c0c !important;}";
 
-	// Set light black
-	css += "td.alt2Active {background: #141414 !important; border-color: #0c0c0c !important; color: #e0e0e0 !important;}";
+		// Set light black
+		css += "td.alt2Active {background: #141414 !important; border-color: #0c0c0c !important; color: #e0e0e0 !important;}";
 
-	css += ".last_visit {background-color: #222222;}";
+		css += ".last_visit {background-color: #222222;}";
 
-	// Font
-    css += "* {font-family: tahoma, verdana, geneva, lucida, lucida grande, arial, helvetica, sans-serif, 'nirmala ui';}";
-	css += "body, .page, div, table, th, td, a, font, p, strong, b, .vb_postbit {font-family: tahoma, verdana, geneva, lucida, lucida grande, arial, helvetica, sans-serif, 'nirmala ui';}";
-	css += ".vb_postbit {font-size: calc(1px + 1vw);}";
-	// Black font color change
-	css += "font[color='black'] {color: #6b6b6b;}";
+		// Font
+		css += "* {font-family: tahoma, verdana, geneva, lucida, lucida grande, arial, helvetica, sans-serif, 'nirmala ui';}";
+		css += "body, .page, div, table, th, td, a, font, p, strong, b, .vb_postbit {font-family: tahoma, verdana, geneva, lucida, lucida grande, arial, helvetica, sans-serif, 'nirmala ui';}";
+		css += ".vb_postbit {font-size: calc(1px + 1vw);}";
+		// Black font color change
+		css += "font[color='black'] {color: #6b6b6b;}";
 
-	// Drop-down
-	// Remove: border: 1px solid #494949 !important;
-	css += "select {background: #141414 !important; border: 1px solid #494949 !important;}";
-    css += "select option, select option.fjdpth1 {background: #141414 !important;}";
-	css += "select optgroup, select option.fjdpth0 {background: black !important; color: #e0e0e0 !important;}";
+		// Drop-down
+		// Remove: border: 1px solid #494949 !important;
+		css += "select {background: #141414 !important; border: 1px solid #494949 !important;}";
+		css += "select option, select option.fjdpth1 {background: #141414 !important;}";
+		css += "select optgroup, select option.fjdpth0 {background: black !important; color: #e0e0e0 !important;}";
 
-	// menu_popup
-	css += "div.vbmenu_popup {border: 1px solid #494949 !important;}";
+		// menu_popup
+		css += "div.vbmenu_popup {border: 1px solid #494949 !important;}";
 
-	css += "fieldset {border: 2px solid #494949;}";
-	
-	css += "body > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {background: black; border-color: #0c0c0c;}";
+		css += "fieldset {border: 2px solid #494949;}";
+		
+		css += "body > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {background: black; border-color: #0c0c0c;}";
 
-	css += "body > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {background: black; border-color: #0c0c0c;}";
+		css += "body > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {background: black; border-color: #0c0c0c;}";
 
-	css += ".panelsurround, .panelsurround .panel{background: #141414; border-color: #0c0c0c;}";
+		css += ".panelsurround, .panelsurround .panel{background: #141414; border-color: #0c0c0c;}";
 
-	css += ".vbmenu_popup, .vbmenu_option_alink {background: #141414;}";
+		css += ".vbmenu_popup, .vbmenu_option_alink {background: #141414;}";
 
-	css += "#collapseobj_usercp_reputation .alt1Active {background: #141414;}";
+		css += "#collapseobj_usercp_reputation .alt1Active {background: #141414;}";
 
-	css += ".postbit_box {background: #141414; border-color: #0c0c0c;}";
+		css += ".postbit_box {background: #141414; border-color: #0c0c0c;}";
 
-	css += "#threadslist .subscribed {background: #141414;}";
+		css += "#threadslist .subscribed {background: #141414;}";
 
-	css += ".thead {background: #2E2E2E !important;}";
+		css += ".thead {background: #2E2E2E !important;}";
 
-	css += "body > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {background: black;}";
+		css += "body > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {background: black;}";
 
-	css += ".tborder {background: #2E2E2E; border-color: #0c0c0c;}";
+		css += ".tborder {background: #2E2E2E; border-color: #0c0c0c;}";
 
-	css += "#visitor_messaging, #link_bar, #stats_mini, #friends_mini, #visitors {background: black; border-color: #0c0c0c; }";
+		css += "#visitor_messaging, #link_bar, #stats_mini, #friends_mini, #visitors {background: black; border-color: #0c0c0c; }";
 
-	css += ".alt1, .alt2{background: #141414 !important; border-color: #0c0c0c !important;}";
+		css += ".alt1, .alt2{background: #141414 !important; border-color: #0c0c0c !important;}";
 
-	// Set hr color
-	css += ".alt1 .hr {background: #141414;}";
+		// Set hr color
+		css += ".alt1 .hr {background: #141414;}";
 
-	css += ".navbar, .vbmenu_control, .tfoot, .tcat{background: #01579b !important;}";
+		css += ".navbar, .vbmenu_control, .tfoot, .tcat{background: #01579b !important;}";
 
-	css += ".vBulletin_editor, .vBulletin_editor td{background: #e0e0e0 !important;}";
+		css += ".vBulletin_editor, .vBulletin_editor td{background: #e0e0e0 !important;}";
 
-	css += "#vB_Editor_001_smiliebox table tbody tr td, #vB_Editor_001_smiliebox table tbody tr td a {color: #141414 !important;}";
+		css += "#vB_Editor_001_smiliebox table tbody tr td, #vB_Editor_001_smiliebox table tbody tr td a {color: #141414 !important;}";
 
-	// User Reputation image
-	css += "td.alt2 table tbody tr td div span img.inlineimg {width: 7px; border: 1px solid #000; opacity: 0.6; filter: alpha(opacity=50); /* For IE8 and earlier */}";
+		// User Reputation image
+		css += "td.alt2 table tbody tr td div span img.inlineimg {width: 7px; border: 1px solid #000; opacity: 0.6; filter: alpha(opacity=50); /* For IE8 and earlier */}";
 
-	// Reputation
-	// Reputation: Positive
-	css += "img[src='" + window.location.origin + "/forum/images/bluesaint/reputation/reputation_pos.gif'] {background-color: blue;}";
-	css += "img[src='" + window.location.origin + "/forum/images/bluesaint/reputation/reputation_highpos.gif'] {background-color: blue;}";
-	// Reputation: Negative
-	css += "img[src='" + window.location.origin + "/forum/images/bluesaint/reputation/reputation_neg.gif'] {background-color: red;}";
-	css += "img[src='" + window.location.origin + "/forum/images/bluesaint/reputation/reputation_highneg.gif'] {background-color: red;}";
-	// Reputation: None
-	css += "img[src='" + window.location.origin + "/forum/images/bluesaint/reputation/reputation_balance.gif'] {background-color: white;}";
+		// Reputation
+		// Reputation: Positive
+		css += "img[src='" + window.location.origin + "/forum/images/bluesaint/reputation/reputation_pos.gif'] {background-color: blue;}";
+		css += "img[src='" + window.location.origin + "/forum/images/bluesaint/reputation/reputation_highpos.gif'] {background-color: blue;}";
+		// Reputation: Negative
+		css += "img[src='" + window.location.origin + "/forum/images/bluesaint/reputation/reputation_neg.gif'] {background-color: red;}";
+		css += "img[src='" + window.location.origin + "/forum/images/bluesaint/reputation/reputation_highneg.gif'] {background-color: red;}";
+		// Reputation: None
+		css += "img[src='" + window.location.origin + "/forum/images/bluesaint/reputation/reputation_balance.gif'] {background-color: white;}";
 
-	// User Online Status Indicator
-	// Online Status: Online
-	css += "div#posts div div.page div div div table.tborder tbody tr td.alt2 table tbody tr td div img.inlineimg[src='" + window.location.origin + "/forum/images/bluesaint/statusicon/user_online.gif'] {cursor:pointer; margin-bottom: 5px; }";
-	// Online Status: Offline
-	css += "div#posts div div.page div div div table.tborder tbody tr td.alt2 table tbody tr td div img.inlineimg[src='" + window.location.origin + "/forum/images/bluesaint/statusicon/user_offline.gif'] {cursor:pointer; margin-bottom: 5px;}";
+		// User Online Status Indicator
+		// Online Status: Online
+		css += "div#posts div div.page div div div table.tborder tbody tr td.alt2 table tbody tr td div img.inlineimg[src='" + window.location.origin + "/forum/images/bluesaint/statusicon/user_online.gif'] {cursor:pointer; margin-bottom: 5px; }";
+		// Online Status: Offline
+		css += "div#posts div div.page div div div table.tborder tbody tr td.alt2 table tbody tr td div img.inlineimg[src='" + window.location.origin + "/forum/images/bluesaint/statusicon/user_offline.gif'] {cursor:pointer; margin-bottom: 5px;}";
 
-	// img
-	// With border style
-	// Removed: img[src='" + window.location.origin + "/forum/images/bluesaint/misc/poll_posticon.gif']
-	// img[src='xxx']
-	css += "img[src='" + window.location.origin + "/forum/images/bluesaint/buttons/firstnew.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/statusicon/thread_hot_new.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/buttons/lastpost.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/misc/paperclip.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/statusicon/thread_new.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/statusicon/thread_hot.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/buttons/collapse_tcat.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/buttons/collapse_tcat_collapsed.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/misc/navbits_start.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/misc/navbits_finallink_ltr.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/statusicon/user_online.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/statusicon/user_offline.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/buttons/collapse_thead.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/buttons/collapse_thead_collapsed.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/buttons/reputation.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/statusicon/thread_dot_hot_new.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/statusicon/thread_dot.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/statusicon/thread_lock.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/statusicon/thread.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/statusicon/thread_dot_hot.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/buttons/sortasc.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/buttons/sortdesc.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/buttons/collapse_alt_collapsed.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/buttons/collapse_alt.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/misc/subscribed.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/statusicon/thread_dot_new.gif'] {border: 1px solid #01579b; opacity: 0.6; filter: alpha(opacity=60); /* For IE8 and earlier */}";
+		// img
+		// With border style
+		// Removed: img[src='" + window.location.origin + "/forum/images/bluesaint/misc/poll_posticon.gif']
+		// img[src='xxx']
+		css += "img[src='" + window.location.origin + "/forum/images/bluesaint/buttons/firstnew.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/statusicon/thread_hot_new.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/buttons/lastpost.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/misc/paperclip.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/statusicon/thread_new.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/statusicon/thread_hot.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/buttons/collapse_tcat.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/buttons/collapse_tcat_collapsed.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/misc/navbits_start.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/misc/navbits_finallink_ltr.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/statusicon/user_online.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/statusicon/user_offline.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/buttons/collapse_thead.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/buttons/collapse_thead_collapsed.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/buttons/reputation.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/statusicon/thread_dot_hot_new.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/statusicon/thread_dot.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/statusicon/thread_lock.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/statusicon/thread.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/statusicon/thread_dot_hot.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/buttons/sortasc.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/buttons/sortdesc.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/buttons/collapse_alt_collapsed.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/buttons/collapse_alt.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/misc/subscribed.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/statusicon/thread_dot_new.gif'] {border: 1px solid #01579b; opacity: 0.6; filter: alpha(opacity=60); /* For IE8 and earlier */}";
 
-	// img
-	// Without border style
-	css += "img[src='" + window.location.origin + "/forum/images/bluesaint/misc/tag.png']{opacity: 0.6; filter: alpha(opacity=60); /* For IE8 and earlier */}";
+		// img
+		// Without border style
+		css += "img[src='" + window.location.origin + "/forum/images/bluesaint/misc/tag.png']{opacity: 0.6; filter: alpha(opacity=60); /* For IE8 and earlier */}";
 
-	// img
-	// Instant Messaging
-	css += "img[src='" + window.location.origin + "/forum/images/bluesaint/misc/im_skype.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/misc/im_yahoo.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/misc/im_msn.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/misc/im_aim.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/misc/im_icq.gif'] {opacity: 0.6; filter: alpha(opacity=60); /* For IE8 and earlier */}";
+		// img
+		// Instant Messaging
+		css += "img[src='" + window.location.origin + "/forum/images/bluesaint/misc/im_skype.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/misc/im_yahoo.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/misc/im_msn.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/misc/im_aim.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/misc/im_icq.gif'] {opacity: 0.6; filter: alpha(opacity=60); /* For IE8 and earlier */}";
 
-	// Rep Power
-	css += "body table tbody tr td div div.page div table.page tbody tr td div table.tborder tbody#collapseobj_module_9 tr td.alt1 div.smallfont div {font-weight: bold; line-height: 1.8;}";
+		// Rep Power
+		css += "body table tbody tr td div div.page div table.page tbody tr td div table.tborder tbody#collapseobj_module_9 tr td.alt1 div.smallfont div {font-weight: bold; line-height: 1.8;}";
 
-	// Contacts & Friends
-	css += "fieldset.fieldset form#buddylist_change_form.floatcontainer ul#buddylist li {background-color: #2E2E2E !important;}";
+		// Contacts & Friends
+		css += "fieldset.fieldset form#buddylist_change_form.floatcontainer ul#buddylist li {background-color: #2E2E2E !important;}";
 
-	// Button style
-	// Button: General A
-	css += "input.bginput {background-color: black; border: 1px solid #292929; color: #e0e0e0; padding: 5px;}";
-	// Button: General B
-	// Removed: border: 2px solid #757575;
-	// Removed: background-color: #0c0c0c !important;
-	css += "input.button {background-color: #424242 !important; transition: 0.3s; cursor:pointer; padding: 6px; border: none; }";
-	// Button: General B hover
-	css += "input.button:hover {background-color: #757575 !important;}";
-	// Button: Input form
-	css += "input#qr_submit.button, input#qr_preview.button {background-color: #424242 !important; text-align: center; cursor:pointer;}";
-	// Button: Input form hover
-	css += "input#qr_submit.button:hover, input#qr_preview.button:hover {background-color: #263238 !important; }";
-	// input: Homepage Log in
-	//css += "tbody#collapseobj_module_9 tr td.alt1 div.smallfont input.bginput {width: 90%;}";
-	// ^ Error: Conflict with the Remember me button
+		// Button style
+		// Button: General A
+		css += "input.bginput {background-color: black; border: 1px solid #292929; color: #e0e0e0; padding: 5px;}";
+		// Button: General B
+		// Removed: border: 2px solid #757575;
+		// Removed: background-color: #0c0c0c !important;
+		css += "input.button {background-color: #424242 !important; transition: 0.3s; cursor:pointer; padding: 6px; border: none; }";
+		// Button: General B hover
+		css += "input.button:hover {background-color: #757575 !important;}";
+		// Button: Input form
+		css += "input#qr_submit.button, input#qr_preview.button {background-color: #424242 !important; text-align: center; cursor:pointer;}";
+		// Button: Input form hover
+		css += "input#qr_submit.button:hover, input#qr_preview.button:hover {background-color: #263238 !important; }";
+		// input: Homepage Log in
+		//css += "tbody#collapseobj_module_9 tr td.alt1 div.smallfont input.bginput {width: 90%;}";
+		// ^ Error: Conflict with the Remember me button
 
-	// Select
-	// 5px is too much.
-	css += "select {padding: 4px; border: 1px solid #292929 !important;}";
-	css += "table.page td.tfoot select {padding: 1px !important;}";
+		// Select
+		// 5px is too much.
+		css += "select {padding: 4px; border: 1px solid #292929 !important;}";
+		css += "table.page td.tfoot select {padding: 1px !important;}";
 
-	// Textarea
-	css += "textarea {background-color: black; border: 1px solid #292929; color: #e0e0e0; padding: 5px;}";
+		// Textarea
+		css += "textarea {background-color: black; border: 1px solid #292929; color: #e0e0e0; padding: 5px;}";
 
-	// User Post input
-	// Advanced
-	css += "html[dir='ltr'] body.wysiwyg {background: #a4a4a4 !important;}";
-	css += "td#vB_Editor_001.vBulletin_editor table tbody tr td.controlbar fieldset#vB_Editor_001_smiliebox {border: 2px solid #b9b9b9;}";
-	// Basic
-	css += "div#vB_Editor_QR.vBulletin_editor, div#vB_Editor_QR_controls.controlbar table tbody tr td, div#vB_Editor_QR_controls.controlbar table tbody tr td div.imagebutton {background: #e0e0e0 !important;}";
-	// Common
-	css += "td#vB_Editor_001.vBulletin_editor, div#vB_Editor_QR.vBulletin_editor {border: 2px solid #494949; padding: 10px;}";
+		// User Post input
+		// Advanced
+		css += "html[dir='ltr'] body.wysiwyg {background: #a4a4a4 !important;}";
+		css += "td#vB_Editor_001.vBulletin_editor table tbody tr td.controlbar fieldset#vB_Editor_001_smiliebox {border: 2px solid #b9b9b9;}";
+		// Basic
+		css += "div#vB_Editor_QR.vBulletin_editor, div#vB_Editor_QR_controls.controlbar table tbody tr td, div#vB_Editor_QR_controls.controlbar table tbody tr td div.imagebutton {background: #e0e0e0 !important;}";
+		// Common
+		css += "td#vB_Editor_001.vBulletin_editor, div#vB_Editor_QR.vBulletin_editor {border: 2px solid #494949; padding: 10px;}";
 
-	// Page generated notice
-	// Page generated notice: Color
-	// Ex: Page generated in 0.00906 seconds with 9 queries
-	css += "body center span.smallfont {color: #424242 !important;}";
+		// Page generated notice
+		// Page generated notice: Color
+		// Ex: Page generated in 0.00906 seconds with 9 queries
+		css += "body center span.smallfont {color: #424242 !important;}";
 
-	// Quote
-	// Quote: Border style
-	css += "div.vb_postbit div table tbody tr td.alt2 {border-color: #2c3e50 !important; border-width: 1px 1px 1px 10px !important; }";
-	// Quote: Font style
-	css += "div.vb_postbit div table tbody tr td.alt2 div font, div.vb_postbit div table tbody tr td.alt2 div font font {font-size: 1em;}";
-	// Quote: Font color
-	//css += "div.vb_postbit div table tbody tr td.alt2 div font font, div.vb_postbit div table tbody tr td.alt2 div, div.vb_postbit div table tbody tr td.alt2 div strong {color: #424242 !important;}";
-	// Quote: Brightness
-	css += "div.vb_postbit div table tbody tr td.alt2 {filter: brightness(75%); transition-property: filter;  transition-duration: 1s;}";
-	// Quote: Brightness: Hover
-	css += "div.vb_postbit div table tbody tr td.alt2:hover {max-width: 100% !important; filter: none !important;}";
-	// Quote: Image
-	css += "div.vb_postbit div table tbody tr td.alt2 div img {max-width: 10% !important; transition-property: max-width; transition-duration: 1s; cursor:pointer;}";
-	// Quote: Hover
-	css += "div.vb_postbit div table tbody tr td.alt2 div img:hover {max-width: 80% !important; transition-property: max-width;  transition-duration: 1s; transition-delay: 1s; cursor:pointer;}";
+		// Quote
+		// Quote: Border style
+		css += "div.vb_postbit div table tbody tr td.alt2 {border-color: #2c3e50 !important; border-width: 1px 1px 1px 10px !important; }";
+		// Quote: Font style
+		css += "div.vb_postbit div table tbody tr td.alt2 div font, div.vb_postbit div table tbody tr td.alt2 div font font {font-size: 1em;}";
+		// Quote: Font color
+		//css += "div.vb_postbit div table tbody tr td.alt2 div font font, div.vb_postbit div table tbody tr td.alt2 div, div.vb_postbit div table tbody tr td.alt2 div strong {color: #424242 !important;}";
+		// Quote: Brightness
+		css += "div.vb_postbit div table tbody tr td.alt2 {filter: brightness(75%); transition-property: filter;  transition-duration: 1s;}";
+		// Quote: Brightness: Hover
+		css += "div.vb_postbit div table tbody tr td.alt2:hover {max-width: 100% !important; filter: none !important;}";
+		// Quote: Image
+		css += "div.vb_postbit div table tbody tr td.alt2 div img {max-width: 10% !important; transition-property: max-width; transition-duration: 1s; cursor:pointer;}";
+		// Quote: Hover
+		css += "div.vb_postbit div table tbody tr td.alt2 div img:hover {max-width: 80% !important; transition-property: max-width;  transition-duration: 1s; transition-delay: 1s; cursor:pointer;}";
 
-	// Fix image width
-	css += ".vb_postbit > div:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > div:nth-child(2) > img:nth-child(1) {max-width: 100%; height: auto;}";
-	css += "div#posts div div.page div div div table.tborder tbody tr td div.vb_postbit img, div.page div div#collapseobj_threadreview table.tborder tbody tr td.alt1 img {max-width: 100%; height: auto;}";
-	css += "form div table.tborder tbody tr td div.vb_postbit img {max-width: 100%; height: auto;}";
-	//css += "img {max-width: 100% !important;}";
-	// ^ Error: Effect small images
+		// Fix image width
+		css += ".vb_postbit > div:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > div:nth-child(2) > img:nth-child(1) {max-width: 100%; height: auto;}";
+		css += "div#posts div div.page div div div table.tborder tbody tr td div.vb_postbit img, div.page div div#collapseobj_threadreview table.tborder tbody tr td.alt1 img {max-width: 100%; height: auto;}";
+		css += "form div table.tborder tbody tr td div.vb_postbit img {max-width: 100%; height: auto;}";
+		//css += "img {max-width: 100% !important;}";
+		// ^ Error: Effect small images
 
-	// Threads
-	css += "img[src='" + window.location.origin + "/forum/images/bluesaint/statusicon/post_new.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/statusicon/post_old.gif'] {display: none;}";
+		// Threads
+		css += "img[src='" + window.location.origin + "/forum/images/bluesaint/statusicon/post_new.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/statusicon/post_old.gif'] {display: none;}";
 
-	// ElaKiri Community Rules
-	//css += "body table tbody tr td div div.page div form table.tborder tbody tr td.panelsurround div.panel div fieldset.fieldset legend {color: #e0e0e0; font-weight: bold; font-size: 14px;}";
-	// ^ Error: Effect fonts in other pages
-	css += "body table tbody tr td div div.page div form table.tborder tbody tr td.panelsurround div input.button {padding: 5px 10px 5px 10px;}";
-	css += "body table tbody tr td div div.page div form table.tborder tbody tr td.panelsurround div.panel div fieldset.fieldset legend {color: #e0e0e0; font-weight: bold}";
-	css += "body table tbody tr td div div.page div form table.tborder tbody tr td.panelsurround div.panel div fieldset.fieldset table tbody tr td div.page {background-color: #262525 !important; padding: 10px; margin: 5px;}";
+		// ElaKiri Community Rules
+		//css += "body table tbody tr td div div.page div form table.tborder tbody tr td.panelsurround div.panel div fieldset.fieldset legend {color: #e0e0e0; font-weight: bold; font-size: 14px;}";
+		// ^ Error: Effect fonts in other pages
+		css += "body table tbody tr td div div.page div form table.tborder tbody tr td.panelsurround div input.button {padding: 5px 10px 5px 10px;}";
+		css += "body table tbody tr td div div.page div form table.tborder tbody tr td.panelsurround div.panel div fieldset.fieldset legend {color: #e0e0e0; font-weight: bold}";
+		css += "body table tbody tr td div div.page div form table.tborder tbody tr td.panelsurround div.panel div fieldset.fieldset table tbody tr td div.page {background-color: #262525 !important; padding: 10px; margin: 5px;}";
 
-	// Global
-	// Set light black #141414
-	css += ".poll, .alt1Active, #navbar_search_menu .vbmenu_option {background: #141414;}";
+		// Global
+		// Set light black #141414
+		css += ".poll, .alt1Active, #navbar_search_menu .vbmenu_option {background: #141414;}";
 
-	// Global
-	// Set border color
-	css += ".statistics_group, #collapseobj_contactinfo div fieldset {border-color: #0c0c0c;}";
+		// Global
+		// Set border color
+		css += ".statistics_group, #collapseobj_contactinfo div fieldset {border-color: #0c0c0c;}";
 
-	// Global
-	// Text White
-	// Backup Color #F5F5F5
-	css += ".panel, strong, a, .alt1, .alt1 div, .alt2, .time, .smallfont, select, select optgroup option, .postbit_box, label, .button, h1, h2, h3, h4, h5, h6, p, .poll, td.sticky div {color: #e0e0e0 !important;}";
+		// Global
+		// Text White
+		// Backup Color #F5F5F5
+		css += ".panel, strong, a, .alt1, .alt1 div, .alt2, .time, .smallfont, select, select optgroup option, .postbit_box, label, .button, h1, h2, h3, h4, h5, h6, p, .poll, td.sticky div {color: #e0e0e0 !important;}";
+		
+		localStorage.setItem("css_custom_style", css);
+	}
 
     var style = document.createElement("style");
     style.type = "text/css";
-    style.appendChild(document.createTextNode(css));
+    style.appendChild(document.createTextNode(localStorage.getItem("css_custom_style")));
     document.head.appendChild(style);
 }
 
@@ -288,7 +293,7 @@ function funRemEleNavbarGuess() {
 	funRemoveElement('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[2]');
 
 	// Navbar FAQ
-	funRemoveElement('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[3]');
+	//funRemoveElement('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[3]');
 
 	// Navbar Contact Us
 	//funRemoveElement('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[8]');
@@ -333,10 +338,10 @@ function funRemEleNavbarUser() {
 	funRemoveElement('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[2]');
 
 	// Navbar FAQ
-	funRemoveElement('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[2]');
+	//funRemoveElement('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[2]');
 
 	// Navbar Contact Us
-	funRemoveElement('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[8]');
+	//funRemoveElement('/html/body/table/tbody/tr/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[8]');
 }
 
 function funRemoveElement(pathValue) {
