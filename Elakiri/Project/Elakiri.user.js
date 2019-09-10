@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      16.1
+// @version      16.2
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -65,7 +65,7 @@ function funMain() {
 }
 
 function funNewDesign() {	
-	if(localStorage.getItem("css_custom_style")===null) 
+	if(localStorage.getItem("css_custom_style_string")===null) 
 	{
 		// HTML Colors
 		// - https://mdbootstrap.com/docs/jquery/css/colors/
@@ -255,12 +255,12 @@ function funNewDesign() {
 		// Backup Color #F5F5F5
 		css += ".panel, strong, a, .alt1, .alt1 div, .alt2, .time, .smallfont, select, select optgroup option, .postbit_box, label, .button, h1, h2, h3, h4, h5, h6, p, .poll, td.sticky div {color: #e0e0e0 !important;}";
 		
-		localStorage.setItem("css_custom_style", css);
+		localStorage.setItem("css_custom_style_string", css);
 	}
 
     var style = document.createElement("style");
     style.type = "text/css";
-    style.appendChild(document.createTextNode(localStorage.getItem("css_custom_style")));
+    style.appendChild(document.createTextNode(localStorage.getItem("css_custom_style_string")));
     document.head.appendChild(style);
 }
 
