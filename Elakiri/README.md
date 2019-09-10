@@ -1,4 +1,4 @@
-# UserScripts
+# Elakiri: Custom Dark Theme
 
 ## Scripts
 - Elakiri: <a href="https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Project/Elakiri.user.js">link</a>  
