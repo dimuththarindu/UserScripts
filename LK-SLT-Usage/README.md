@@ -1,4 +1,4 @@
-# UserScripts - LK-SLT-Usage
+# LK-SLT-Usage
 
 ## Scripts
 
