@@ -1,7 +1,12 @@
-# UserScripts
+# UserScripts - LK-SLT-Usage
 
 ## Scripts
-- LK-SLT-Usage: <a href="https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/LK-SLT-Usage/Project/LK-SLT-Usage.user.js">link</a>  
+
+LK-SLT-Usage: <a href="https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/LK-SLT-Usage/Project/LK-SLT-Usage.user.js">Download</a>  
+
+<img src="https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/LK-SLT-Usage/Images/Screenshots/Screenshot_01.png" />  
+
+<img src="https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/LK-SLT-Usage/Images/Screenshots/Screenshot_02.png" />  
 
 ## UserScripts Manager
 UserScript Manager: <a href="https://www.tampermonkey.net">Tampermonkey</a>  
