@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         LK-SLT-Usage
 // @namespace    UserScripts
-// @version      5.9.4
+// @version      6.1.0
 // @author       DT
 // @description  Sri Lanka Telecom - Data Usage
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -14,11 +14,11 @@
 // @run-at       document-end
 // @grant        GM_addStyle
 // @license      GNU Lesser General Public License v3.0
+// @history      6.0.0 Update the warning sign color
 // @history      5.8.0 Change the image and update URL paths
 // @history      5.7.5 License
 // @history      5.7.4 Change support URL
 // @history      5.7.2 Small changes to the script
-// @history      5.7.1 Change the download & update URLs
 // ==/UserScript==
 
 
@@ -560,7 +560,7 @@ function funInsertData2Page() {
     tr3e01_td3.append("");
 
     let tr3e01_td3_span = document.createElement("span");
-    tr3e01_td3_span.className = "text-muted";
+    tr3e01_td3_span.className = "text-danger";
     tr3e01_td3.appendChild(tr3e01_td3_span);
     tr3e01_td3_span.append(dataExceededWarning);
     // ------------------------------------------------------
@@ -719,7 +719,7 @@ function funInsertData2Page() {
     tr601_td3.append("");
 
     let tr601_td3_span = document.createElement("span");
-    tr601_td3_span.className = "text-muted";
+    tr601_td3_span.className = "text-danger";
     tr601_td3.appendChild(tr601_td3_span);
     tr601_td3_span.append(peakDataExceededWarning);
     // ------------------------------------------------------
@@ -858,7 +858,7 @@ function funInsertData2Page() {
     tr901_td3.append("");
 
     let tr901_td3_span = document.createElement("span");
-    tr901_td3_span.className = "text-muted";
+    tr901_td3_span.className = "text-danger";
     tr901_td3.appendChild(tr901_td3_span);
     tr901_td3_span.append(offPeakDataExceededWarning);
     // ------------------------------------------------------
