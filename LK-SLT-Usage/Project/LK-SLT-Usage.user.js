@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         LK-SLT-Usage
 // @namespace    UserScripts
-// @version      6.1.0
+// @version      7.0.0
 // @author       DT
 // @description  Sri Lanka Telecom - Data Usage
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -14,13 +14,12 @@
 // @run-at       document-end
 // @grant        GM_addStyle
 // @license      GNU Lesser General Public License v3.0
-// @history      6.0.0 Update the warning sign color
-// @history      5.8.0 Change the image and update URL paths
-// @history      5.7.5 License
-// @history      5.7.4 Change support URL
-// @history      5.7.2 Small changes to the script
+// history       7.0.0 Fix minor errors in JS 
+// history       6.0.0 Update the warning sign color
+// history       5.8.0 Change the image and update URL paths
+// history       5.7.5 License
+// history       5.7.4 Change support URL
 // ==/UserScript==
-
 
 
 // Total Volume
@@ -97,7 +96,7 @@ function funCalculation() {
 
     // Get data from the page
     totalMonthlylimit = funCircumference('//*[@id="myUsagePanel"]/div/div[1]/div[1]/div[2]/div[1]/div[1]/div/div[2]/div[1]/h5/strong/text()');
-    // 90.0GB
+    // 90.0GB 
     totalRemaining = funCircumference('//*[@id="myUsagePanel"]/div/div[1]/div[1]/div[2]/div[1]/div[1]/div/div[2]/div[2]/h5/strong/text()');
     // 73.3GB
     totalUsed = funCircumference('//*[@id="myUsagePanel"]/div/div[1]/div[1]/div[2]/div[1]/div[1]/div/div[2]/div[3]/h5/strong/text()');
@@ -196,7 +195,7 @@ function funDebug() {
     console.log("dayOfTheMonth: " + dayOfTheMonth);
     console.log("noOfComingDays: " + noOfComingDays);
 
-    // Given data
+    // Given data 
     console.log("");
     console.log("%cGiven data", "font-weight: bold;");
     console.log("peakDataPerDay: " + peakDataPerDay);
@@ -241,11 +240,15 @@ function funDebug() {
 function funCircumference(xPathValue) {
     let x = 0;
     try {
-        x = parseFloat((document.evaluate(xPathValue, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue).data.toString().replace(/[^\d.]/g, '')) || 0;
+		// Documentation: https://developer.mozilla.org/en-US/docs/Web/API/Document/evaluate 
+		// Documentation: https://developer.mozilla.org/en-US/docs/Web/API/XPathResult
+		
+        //x = parseFloat((document.evaluate(xPathValue, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue).data.toString().replace(/[^\d.]/g, '')) || 0;
+		x = parseFloat(document.evaluate(xPathValue, document, null, XPathResult.STRING_TYPE, null).stringValue.replace(/[^\d.]/g, '')) || 0;
     } catch (err) {
         x = 0;
         console.log("Error: " + err);
-    } finally {}
+    } //finally {}
     return x;
 }
 
@@ -253,7 +256,7 @@ function funVolExceed(inputVal, inputAvg) {
     let inputWarning = "";
     try {
         inputVal = Number((inputVal / inputAvg).toFixed(0)) || 0;
-        if (inputVal > noOfComingDays) {
+        if (inputVal >= noOfComingDays) {
             inputVal = noOfComingDays;
         } else {
             inputWarning = "⚠";
@@ -261,7 +264,7 @@ function funVolExceed(inputVal, inputAvg) {
     } catch (err) {
         inputVal = 0;
         console.log("Error: " + err);
-    } finally {}
+    } //finally {}
     return {
         val: inputVal,
         warning: inputWarning,
