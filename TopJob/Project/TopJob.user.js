@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TopJob
 // @namespace    UserScripts
-// @version      4.5
+// @version      5.0
 // @author       DT
 // @description  TopJob Website User Experience
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -14,6 +14,7 @@
 // @run-at       document-end
 // @grant        GM_addStyle
 // @license      Apache License 2.0
+// @history      4.0 Change URLs
 // @history      3.2 Added Image folder
 // @history      3.1 Change support URL
 // @history      3.0 Small changes to the script
@@ -42,4 +43,12 @@
     element.parentNode.removeChild(element);
 
     document.oncontextmenu = undefined;
+
+	// replace all URLs
+    var links = document.links;
+    for (var i = 0; i < links.length; i++) {
+        links[i].href = links[i].href.substring(0, links[i].href.indexOf(".jsp'") + 4);
+        links[i].href = links[i].href.replace("javascript:openSizeWindow('..", window.location.origin);
+        links[i].target = "_blank";
+    }
 })();
