@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TopJob
 // @namespace    UserScripts
-// @version      5.0
+// @version      6.0
 // @author       DT
 // @description  TopJob Website User Experience
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -14,6 +14,7 @@
 // @run-at       document-end
 // @grant        GM_addStyle
 // @license      Apache License 2.0
+// @history      5.0 Re-enable right click
 // @history      4.0 Change URLs
 // @history      3.2 Added Image folder
 // @history      3.1 Change support URL
@@ -26,8 +27,20 @@
 
 (function() {
     'use strict';
+	
+	// Remove unwanted elements
+	funRemoveElements();
+	
+	// Re-enable right click menu
+	funReenableRightClick();
+	
+	// Fix URLs
+	funReplaceCrazyURLs();
+})();
 
-    var pathValue = "";
+function funRemoveElements()
+{
+	var pathValue = "";
     var element = "";
 
     pathValue = '/html/body/div[9]/div';
@@ -41,9 +54,18 @@
     pathValue = '//*[@id="redBG"]';
     element = document.evaluate(pathValue, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
     element.parentNode.removeChild(element);
+}
 
+// Re-enable right click
+function funReenableRightClick()
+{
     document.oncontextmenu = undefined;
+	javascript:void(document.oncontextmenu=null);
+	//document.querySelectorAll('*').forEach(e => e.oncontextmenu = null)
+}
 
+function funReplaceCrazyURLs()
+{
 	// replace all URLs
     var links = document.links;
     for (var i = 0; i < links.length; i++) {
@@ -51,4 +73,4 @@
         links[i].href = links[i].href.replace("javascript:openSizeWindow('..", window.location.origin);
         links[i].target = "_blank";
     }
-})();
+}
