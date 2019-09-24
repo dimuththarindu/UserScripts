@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TopJob
 // @namespace    UserScripts
-// @version      6.1
+// @version      6.3
 // @author       DT
 // @description  TopJob Website User Experience
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -27,13 +27,13 @@
 
 (function() {
     'use strict';
-	
-	// Remove unwanted elements
-	//funRemoveElements();
-	
+
 	// Re-enable right click menu
 	funReenableRightClick();
 	
+	// Remove unwanted elements
+	funRemoveElements();
+
 	// Fix URLs
 	funReplaceCrazyURLs();
 })();
@@ -45,15 +45,19 @@ function funRemoveElements()
 
     pathValue = '/html/body/div[9]/div';
     element = document.evaluate(pathValue, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-    element.removeAttribute("style");
+	if(element) {element.removeAttribute("style");}
 
-    pathValue = '//*[@id="header"]';
+	pathValue = '//*[@id="hotjobs"]/div[2]';
     element = document.evaluate(pathValue, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-    element.parentNode.removeChild(element);
+	if(element) {element.removeAttribute("style");}
 
-    pathValue = '//*[@id="redBG"]';
-    element = document.evaluate(pathValue, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-    element.parentNode.removeChild(element);
+    //pathValue = '//*[@id="header"]';
+    //element = document.evaluate(pathValue, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+    //element.parentNode.removeChild(element);
+
+    //pathValue = '//*[@id="redBG"]';
+    //element = document.evaluate(pathValue, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+    //element.parentNode.removeChild(element);
 }
 
 // Re-enable right click
