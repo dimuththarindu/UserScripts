@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TopJob
 // @namespace    UserScripts
-// @version      6.0
+// @version      6.1
 // @author       DT
 // @description  TopJob Website User Experience
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -29,7 +29,7 @@
     'use strict';
 	
 	// Remove unwanted elements
-	funRemoveElements();
+	//funRemoveElements();
 	
 	// Re-enable right click menu
 	funReenableRightClick();
