@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TopJob
 // @namespace    UserScripts
-// @version      6.5
+// @version      6.6
 // @author       DT
 // @description  TopJob Website User Experience
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -74,14 +74,23 @@ function funReplaceCrazyURLs()
     var links = document.links;
     for (var i = 0; i < links.length; i++) {
 		
-		// javascript:openSizeWindow('../employer/JobAdvertismentServlet?rid=3&ac=0000000419
-		// &jc=0000689612&ec=0000000552&pg=applicant/vacancybyfunctionalarea.jsp',1098,631,
-		// 'quickvacancysearch_17DH+5vzluofT1dbd2GGz7-Nf')
-		
 		if(links[i].href.includes("javascript:openSizeWindow('../employer/JobAdvertismentServlet"))
 		{
+			// Href URL: javascript:openSizeWindow('../employer/JobAdvertismentServlet?rid=3&ac=0000000419
+			// &jc=0000689612&ec=0000000552&pg=applicant/vacancybyfunctionalarea.jsp',1098,631,
+			// 'quickvacancysearch_17DH+5vzluofT1dbd2GGz7-Nf')
+			
 			links[i].href = links[i].href.substring(0, links[i].href.indexOf(".jsp'") + 4);
 			links[i].href = links[i].href.replace("javascript:openSizeWindow('..", window.location.origin);
+			links[i].target = "_blank";
+		}
+		else if(links[i].href.includes("javascript:openSizeWindow('employer/JobAdvertismentServlet"))
+		{
+			// Href URL: javascript:openSizeWindow('employer/JobAdvertismentServlet?ac=DEFZZZ&ec=DEFZZZ&jc=0000689952&pg=index.jsp',1098,631,'tjadv')
+			// Generated URL: http://topjobs.lk/employer/JobAdvertismentServlet?ac=DEFZZZ&ec=DEFZZZ&jc=0000689952&pg=index.jsp
+			
+			links[i].href = links[i].href.substring(0, links[i].href.indexOf(".jsp'") + 4);
+			links[i].href = links[i].href.replace("javascript:openSizeWindow('", window.location.origin + "/");
 			links[i].target = "_blank";
 		}
     }
