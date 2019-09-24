@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TopJob
 // @namespace    UserScripts
-// @version      6.4
+// @version      6.5
 // @author       DT
 // @description  TopJob Website User Experience
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -78,7 +78,7 @@ function funReplaceCrazyURLs()
 		// &jc=0000689612&ec=0000000552&pg=applicant/vacancybyfunctionalarea.jsp',1098,631,
 		// 'quickvacancysearch_17DH+5vzluofT1dbd2GGz7-Nf')
 		
-		if(links[i].includes("javascript:openSizeWindow('../employer/JobAdvertismentServlet?"))
+		if(links[i].href.includes("javascript:openSizeWindow('../employer/JobAdvertismentServlet"))
 		{
 			links[i].href = links[i].href.substring(0, links[i].href.indexOf(".jsp'") + 4);
 			links[i].href = links[i].href.replace("javascript:openSizeWindow('..", window.location.origin);
