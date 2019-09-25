@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TopJob
 // @namespace    UserScripts
-// @version      6.6
+// @version      7.0
 // @author       DT
 // @description  TopJob Website User Experience
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -40,24 +40,28 @@
 
 function funRemoveElements()
 {
-	var pathValue = "";
-    var element = "";
+	document.querySelectorAll('*').forEach(element => element.style.overflow  = null);
+	
+	//var pathValue = "";
+    //var element = "";
 
-    pathValue = '/html/body/div[9]/div';
-    element = document.evaluate(pathValue, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-	if(element) {element.removeAttribute("style");}
-
-	pathValue = '//*[@id="hotjobs"]/div[2]';
-    element = document.evaluate(pathValue, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-	if(element) {element.removeAttribute("style");}
+	//// Remove scrollbars
+    //pathValue = '/html/body/div[9]/div';
+    //element = document.evaluate(pathValue, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+	//if(element) {element.removeAttribute("style");}
+    
+	//// Remove scrollbars
+	//pathValue = '//*[@id="hotjobs"]/div[2]';
+    //element = document.evaluate(pathValue, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+	//if(element) {element.removeAttribute("style");}
 
     //pathValue = '//*[@id="header"]';
     //element = document.evaluate(pathValue, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-    //element.parentNode.removeChild(element);
+    //if(element) {element.parentNode.removeChild(element);}
 
     //pathValue = '//*[@id="redBG"]';
     //element = document.evaluate(pathValue, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-    //element.parentNode.removeChild(element);
+    //if(element) {element.parentNode.removeChild(element);}
 }
 
 // Re-enable right click
@@ -65,7 +69,7 @@ function funReenableRightClick()
 {
     document.oncontextmenu = undefined;
 	javascript:void(document.oncontextmenu=null);
-	//document.querySelectorAll('*').forEach(e => e.oncontextmenu = null)
+	//document.querySelectorAll('*').forEach(element => element.oncontextmenu = null)
 }
 
 function funReplaceCrazyURLs()
