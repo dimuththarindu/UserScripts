@@ -315,7 +315,7 @@ function funInsertProgressBar() {
 
     let lineBreak = document.createElement("p");
     docFragment.appendChild(lineBreak);
-    lineBreak.append(" ");
+    lineBreak.append(" ");
 
     let maindiv = document.createElement("div");
     maindiv.className = "col-md-12";
@@ -481,12 +481,12 @@ function funInsertData2Page() {
     //let trhead1_td2 = document.createElement("td");
 	//trhead1_td2.style.padding = "0px 10px 0px 0px";
     //trhead1.appendChild(trhead1_td2);
-    //trhead1_td2.append("   ");
+    //trhead1_td2.append("   ");
     // ------------------------------------------------------
     //let trhead1_td3 = document.createElement("td");
     //trhead1_td3.style.padding = "0px 10px 0px 0px";
     //trhead1.appendChild(trhead1_td3);
-    //trhead1_td3.append("   ");
+    //trhead1_td3.append("   ");
     // ------------------------------------------------------
     tbody.append("\n");
 
@@ -622,17 +622,17 @@ function funInsertData2Page() {
     let trbr01_td1 = document.createElement("td");
     trbr01_td1.style.padding = "0px 10px 0px 0px";
     trbr01.appendChild(trbr01_td1);
-    trbr01_td1.append("   ");
+    trbr01_td1.append("   ");
     // ------------------------------------------------------
     let trbr01_td2 = document.createElement("td");
 	trbr01_td2.style.padding = "0px 10px 0px 0px";
     trbr01.appendChild(trbr01_td2);
-    trbr01_td2.append("   ");
+    trbr01_td2.append("   ");
     // ------------------------------------------------------
     let trbr01_td3 = document.createElement("td");
     trbr01_td3.style.padding = "0px 10px 0px 0px";
     trbr01.appendChild(trbr01_td3);
-    trbr01_td3.append("   ");
+    trbr01_td3.append("   ");
     // ------------------------------------------------------
     tbody.append("\n");
 
@@ -653,12 +653,12 @@ function funInsertData2Page() {
     //let trhead2_td2 = document.createElement("td");
 	//trhead2_td2.style.padding = "0px 10px 0px 0px";
     //trhead2.appendChild(trhead2_td2);
-    //trhead2_td2.append("   ");
+    //trhead2_td2.append("   ");
     // ------------------------------------------------------
     //let trhead2_td3 = document.createElement("td");
     //trhead2_td3.style.padding = "0px 10px 0px 0px";
     //trhead2.appendChild(trhead2_td3);
-    //trhead2_td3.append("   ");
+    //trhead2_td3.append("   ");
     // ------------------------------------------------------
     tbody.append("\n");
 
@@ -768,17 +768,17 @@ function funInsertData2Page() {
     let trbr02_td1 = document.createElement("td");
     trbr02_td1.style.padding = "0px 10px 0px 0px";
     trbr02.appendChild(trbr02_td1);
-    trbr02_td1.append("   ");
+    trbr02_td1.append("   ");
     // ------------------------------------------------------
     let trbr02_td2 = document.createElement("td");
 	trbr02_td2.style.padding = "0px 10px 0px 0px";
     trbr02.appendChild(trbr02_td2);
-    trbr02_td2.append("   ");
+    trbr02_td2.append("   ");
     // ------------------------------------------------------
     let trbr02_td3 = document.createElement("td");
     trbr02_td3.style.padding = "0px 10px 0px 0px";
     trbr02.appendChild(trbr02_td3);
-    trbr02_td3.append("   ");
+    trbr02_td3.append("   ");
     // ------------------------------------------------------
     tbody.append("\n");
 
@@ -799,12 +799,12 @@ function funInsertData2Page() {
     //let trhead3_td2 = document.createElement("td");
 	//trhead3_td2.style.padding = "0px 10px 0px 0px";
     //trhead3.appendChild(trhead3_td2);
-    //trhead3_td2.append("   ");
+    //trhead3_td2.append("   ");
     // ------------------------------------------------------
     //let trhead3_td3 = document.createElement("td");
     //trhead3_td3.style.padding = "0px 10px 0px 0px";
     //trhead3.appendChild(trhead3_td3);
-    //trhead3_td3.append("   ");
+    //trhead3_td3.append("   ");
     // ------------------------------------------------------
     tbody.append("\n");
 
@@ -914,17 +914,17 @@ function funInsertData2Page() {
     let trbr03_td1 = document.createElement("td");
     trbr03_td1.style.padding = "0px 10px 0px 0px";
     trbr03.appendChild(trbr03_td1);
-    trbr03_td1.append("   ");
+    trbr03_td1.append("   ");
     // ------------------------------------------------------
     let trbr03_td2 = document.createElement("td");
 	trbr03_td2.style.padding = "0px 10px 0px 0px";
     trbr03.appendChild(trbr03_td2);
-    trbr03_td2.append("   ");
+    trbr03_td2.append("   ");
     // ------------------------------------------------------
     let trbr03_td3 = document.createElement("td");
     trbr03_td3.style.padding = "0px 10px 0px 0px";
     trbr03.appendChild(trbr03_td3);
-    trbr03_td3.append("   ");
+    trbr03_td3.append("   ");
     // ------------------------------------------------------
     tbody.append("\n");
 
@@ -945,12 +945,12 @@ function funInsertData2Page() {
     //let trhead4_td2 = document.createElement("td");
 	//trhead4_td2.style.padding = "0px 10px 0px 0px";
     //trhead4.appendChild(trhead4_td2);
-    //trhead4_td2.append("   ");
+    //trhead4_td2.append("   ");
     // ------------------------------------------------------
     //let trhead4_td3 = document.createElement("td");
     //trhead4_td3.style.padding = "0px 10px 0px 0px";
     //trhead4.appendChild(trhead4_td3);
-    //trhead4_td3.append("   ");
+    //trhead4_td3.append("   ");
     // ------------------------------------------------------
     tbody.append("\n");
 
@@ -1036,17 +1036,17 @@ function funInsertData2Page() {
     let trbr04_td1 = document.createElement("td");
     trbr04_td1.style.padding = "0px 10px 0px 0px";
     trbr04.appendChild(trbr04_td1);
-    trbr04_td1.append("   ");
+    trbr04_td1.append("   ");
     // ------------------------------------------------------
     let trbr04_td2 = document.createElement("td");
 	trbr04_td2.style.padding = "0px 10px 0px 0px";
     trbr04.appendChild(trbr04_td2);
-    trbr04_td2.append("   ");
+    trbr04_td2.append("   ");
     // ------------------------------------------------------
     let trbr04_td3 = document.createElement("td");
     trbr04_td3.style.padding = "0px 10px 0px 0px";
     trbr04.appendChild(trbr04_td3);
-    trbr04_td3.append("   ");
+    trbr04_td3.append("   ");
     // ------------------------------------------------------
     tbody.append("\n");
 
@@ -1067,12 +1067,12 @@ function funInsertData2Page() {
     //let trhead5_td2 = document.createElement("td");
 	//trhead5_td2.style.padding = "0px 10px 0px 0px";
     //trhead5.appendChild(trhead5_td2);
-    //trhead5_td2.append("   ");
+    //trhead5_td2.append("   ");
     // ------------------------------------------------------
     //let trhead5_td3 = document.createElement("td");
     //trhead5_td3.style.padding = "0px 10px 0px 0px";
     //trhead5.appendChild(trhead5_td3);
-    //trhead5_td3.append("   ");
+    //trhead5_td3.append("   ");
     // ------------------------------------------------------
     tbody.append("\n");
 
