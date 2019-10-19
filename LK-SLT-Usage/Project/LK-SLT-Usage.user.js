@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         LK-SLT-Usage
 // @namespace    UserScripts
-// @version      10.0.1
+// @version      10.2.1
 // @author       DT
 // @description  Sri Lanka Telecom - Data Usage
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -558,7 +558,9 @@ function funInsertExtraDoughnutChart() {
 	extraMonthlylimit = isNaN(extraMonthlylimit) ? 0 : extraMonthlylimit;
 
 	var extraRemaining = (extraMonthlylimit - extraUsed) < 0 ? 0 : (extraMonthlylimit - extraUsed);
-	var percentageExtraUsed = (((extraUsed / extraMonthlylimit) * 100).toFixed(0)) > 100 ? 100 : (((extraUsed / extraMonthlylimit) * 100).toFixed(0));
+	
+	var percentageExtraUsed = ((extraUsed / extraMonthlylimit) * 100).toFixed(0);	
+	percentageExtraUsed = percentageExtraUsed > 100 ? 100 : isNaN(percentageExtraUsed) ? 0 : percentageExtraUsed;
 
 	var docFragment = document.createDocumentFragment();
 	// contains all gathered nodes
@@ -630,7 +632,7 @@ function funInsertExtraDoughnutChart() {
 	text.setAttribute("dx", "-25");
 	text.setAttribute("text-anchor", "middle");
 	svg.appendChild(text);
-	text.append(percentageExtraUsed);
+	text.append(100 - percentageExtraUsed);
 
 	//let tspan = document.createElement("tspan");
 	let tspan = document.createElementNS("http://www.w3.org/2000/svg","tspan");
