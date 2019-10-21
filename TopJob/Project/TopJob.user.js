@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name         TopJob
+// @name         TopJobs
 // @namespace    UserScripts
-// @version      8.0
+// @version      9.0
 // @author       DT
-// @description  TopJob Website User Experience
+// @description  TopJobs Website User Experience
 // @source       https://github.com/dimuththarindu/UserScripts
 // @icon         https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/TopJob/Images/Icon-64.png
 // @icon64URL	 https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/TopJob/Images/Icon-64.png
