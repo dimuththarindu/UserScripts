@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         TopJobs
+// @name         TopJob
 // @namespace    UserScripts
 // @version      9.0
 // @author       DT
