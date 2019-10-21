@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TopJob
 // @namespace    UserScripts
-// @version      7.0
+// @version      8.0
 // @author       DT
 // @description  TopJob Website User Experience
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -14,6 +14,7 @@
 // @run-at       document-end
 // @grant        GM_addStyle
 // @license      Apache License 2.0
+// @history      8.0 Fixed img size
 // @history      5.0 Re-enable right click
 // @history      4.0 Change URLs
 // @history      3.2 Added Image folder
@@ -24,54 +25,66 @@
 // ==/UserScript==
 
 
-
 (function() {
     'use strict';
 
-	// Re-enable right click menu
-	funReenableRightClick();
-	
 	// Remove unwanted elements
 	funRemoveElements();
-
-	// Fix URLs
-	funReplaceCrazyURLs();
+	
+	funChangeElements();	
 })();
 
 function funRemoveElements()
 {
 	document.querySelectorAll('*').forEach(element => element.style.overflow  = null);
+}
+
+function funChangeElements()
+{
+	// Re-enable right click menu
+	funReenableRightClick();
 	
-	//var pathValue = "";
-    //var element = "";
-
-	//// Remove scrollbars
-    //pathValue = '/html/body/div[9]/div';
-    //element = document.evaluate(pathValue, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-	//if(element) {element.removeAttribute("style");}
-    
-	//// Remove scrollbars
-	//pathValue = '//*[@id="hotjobs"]/div[2]';
-    //element = document.evaluate(pathValue, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-	//if(element) {element.removeAttribute("style");}
-
-    //pathValue = '//*[@id="header"]';
-    //element = document.evaluate(pathValue, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-    //if(element) {element.parentNode.removeChild(element);}
-
-    //pathValue = '//*[@id="redBG"]';
-    //element = document.evaluate(pathValue, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-    //if(element) {element.parentNode.removeChild(element);}
+	// Fix URLs
+	funReplaceCrazyURLs();
+	
+	// Fix image size
+	if(window.location.pathname.includes("/employer/JobAdvertismentServlet"))
+	{
+		funGetElement('/html/body/div/div', 'foreignDOMStyle');
+		document.getElementById("foreignDOMStyle").style.width = "90%";
+		
+		funGetElement('//div[@id="remark"]/p/img', 'foreignDOMImgStyle');
+		document.getElementById("foreignDOMImgStyle").style.maxWidth = "100%";	
+	}
+	else if(window.location.pathname.includes("/employer/advertismentpreview.jsp"))
+	{
+		funGetElement('//div[@id="remark"]/p/img', 'foreignDOMImgStyle');
+		document.getElementById("foreignDOMImgStyle").style.maxWidth = "100%";
+		
+		funGetElement('//div[@id="upper"]', 'foreignDOMRemPad');
+		document.getElementById("foreignDOMRemPad").style.padding = "2px";
+	}	
 }
 
 // Re-enable right click
 function funReenableRightClick()
 {
     document.oncontextmenu = undefined;
-	javascript:void(document.oncontextmenu=null);
-	//document.querySelectorAll('*').forEach(element => element.oncontextmenu = null)
+	javascript:void(document.oncontextmenu=null); //document.querySelectorAll('*').forEach(element => element.oncontextmenu = null)
 }
 
+// Get Element by using xpath
+function funGetElement(xPath, idName)
+{
+	let ele = document.evaluate(xPath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+	if (ele != null){
+		ele.id = idName;
+	}
+	
+	return ele;
+}
+
+// Fix crazy URLs
 function funReplaceCrazyURLs()
 {
 	// replace all URLs
