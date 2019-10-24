@@ -53,7 +53,7 @@ function funChangeElements()
 		funGetElement('/html/body/div/div', 'foreignDOMStyle');
 		document.getElementById("foreignDOMStyle").style.width = "90%";
 
-		funGetElement('//div[@id="remark"]/p/img', 'foreignDOMImgStyle');
+		funGetElement('//div[@id="remark"]/p/img', 'foreignDOMImgStyle', '//div[@id="remark"]/p/a/img');
 		document.getElementById("foreignDOMImgStyle").style.maxWidth = "100%";
         document.getElementById("foreignDOMImgStyle").style.height = "auto";
 		document.getElementById("foreignDOMImgStyle").style.display = "block";
@@ -62,7 +62,7 @@ function funChangeElements()
 	}
 	else if(window.location.pathname.includes("/employer/advertismentpreview.jsp"))
 	{
-		funGetElement('//div[@id="remark"]/p/img', 'foreignDOMImgStyle');
+		funGetElement('//div[@id="remark"]/p/img', 'foreignDOMImgStyle', '//div[@id="remark"]/p/a/img');
 		document.getElementById("foreignDOMImgStyle").style.maxWidth = "100%";
         document.getElementById("foreignDOMImgStyle").style.height = "auto";
 		document.getElementById("foreignDOMImgStyle").style.display = "block";
@@ -74,7 +74,7 @@ function funChangeElements()
 	}
     else if(window.location.pathname.includes("/vacancy"))
 	{
-		funGetElement('//div[@id="remark"]/p/a/img', 'foreignDOMImgStyle');
+		funGetElement('//div[@id="remark"]/p/img', 'foreignDOMImgStyle', '//div[@id="remark"]/p/a/img');
 		document.getElementById("foreignDOMImgStyle").style.maxWidth = "100%";
         document.getElementById("foreignDOMImgStyle").style.height = "auto";		
 		document.getElementById("foreignDOMImgStyle").style.display = "block";
@@ -91,10 +91,17 @@ function funReenableRightClick()
 }
 
 // Get Element by using xpath
-function funGetElement(xPath, idName)
+function funGetElement(xPath, idName, backupXPath = "")
 {
 	let ele = document.evaluate(xPath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-	if (ele != null){
+	
+	if (ele == null)
+	{
+		ele = document.evaluate(backupXPath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;		
+	}
+	
+	if (ele != null)
+	{
 		ele.id = idName;
 	}
 
