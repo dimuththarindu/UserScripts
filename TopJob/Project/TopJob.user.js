@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TopJob
 // @namespace    UserScripts
-// @version      11.0
+// @version      12.0
 // @author       DT
 // @description  TopJob Website User Experience
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -56,12 +56,18 @@ function funChangeElements()
 		funGetElement('//div[@id="remark"]/p/img', 'foreignDOMImgStyle');
 		document.getElementById("foreignDOMImgStyle").style.maxWidth = "100%";
         document.getElementById("foreignDOMImgStyle").style.height = "auto";
+		document.getElementById("foreignDOMImgStyle").style.display = "block";
+		document.getElementById("foreignDOMImgStyle").style.marginLeft = "auto";
+		document.getElementById("foreignDOMImgStyle").style.marginRight = "auto";
 	}
 	else if(window.location.pathname.includes("/employer/advertismentpreview.jsp"))
 	{
 		funGetElement('//div[@id="remark"]/p/img', 'foreignDOMImgStyle');
 		document.getElementById("foreignDOMImgStyle").style.maxWidth = "100%";
         document.getElementById("foreignDOMImgStyle").style.height = "auto";
+		document.getElementById("foreignDOMImgStyle").style.display = "block";
+		document.getElementById("foreignDOMImgStyle").style.marginLeft = "auto";
+		document.getElementById("foreignDOMImgStyle").style.marginRight = "auto";
 
 		funGetElement('//div[@id="upper"]', 'foreignDOMRemPad');
 		document.getElementById("foreignDOMRemPad").style.padding = "2px";
@@ -70,7 +76,10 @@ function funChangeElements()
 	{
 		funGetElement('//div[@id="remark"]/p/a/img', 'foreignDOMImgStyle');
 		document.getElementById("foreignDOMImgStyle").style.maxWidth = "100%";
-        document.getElementById("foreignDOMImgStyle").style.height = "auto";
+        document.getElementById("foreignDOMImgStyle").style.height = "auto";		
+		document.getElementById("foreignDOMImgStyle").style.display = "block";
+		document.getElementById("foreignDOMImgStyle").style.marginLeft = "auto";
+		document.getElementById("foreignDOMImgStyle").style.marginRight = "auto";
 	}
 }
 
