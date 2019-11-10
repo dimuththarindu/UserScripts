@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      17.01
+// @version      17.02
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -248,6 +248,9 @@ function funNewDesign() {
 		css += "form div table.tborder tbody tr td div.vb_postbit img {max-width: 100%; height: auto;}";
 		//css += "img {max-width: 100% !important;}";
 		// ^ Error: Effect small images
+		
+		// Emoji
+		css += "div.panel img#display_posticon {width: 22px !important;}";
 
 		// Threads
 		css += "img[src='" + window.location.origin + "/forum/images/bluesaint/statusicon/post_new.gif'], img[src='" + window.location.origin + "/forum/images/bluesaint/statusicon/post_old.gif'] {display: none;}";
