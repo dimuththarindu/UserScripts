@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      18.00
+// @version      18.01
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -82,9 +82,6 @@ function funMain() {
 }
 
 function funNewDesign() {
-	//if(localStorage.getItem("css_custom_style_string")===null)
-	//localStorage.setItem("css_custom_style_string", css);
-	
 	// HTML Colors
 	// - https://mdbootstrap.com/docs/jquery/css/colors/
 	// - https://htmlcolorcodes.com/
@@ -278,7 +275,7 @@ function funNewDesign() {
 
     var style = document.createElement("style");
     style.type = "text/css";
-    style.appendChild(document.createTextNode(css);
+    style.appendChild(document.createTextNode(css));
     document.head.appendChild(style);
 }
 
