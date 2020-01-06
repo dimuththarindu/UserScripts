@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Router Web
 // @namespace    UserScripts
-// @version      2.0
+// @version      2.1
 // @author       DT
 // @description  Custom Scripts
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -40,6 +40,7 @@
 		localStorage.noOfTries = noOfTries;
 		
 		console.log("Job Status: " + noOfTries);
+		document.title = "Job Status: " + noOfTries;
 
 		if(document.getElementsByName('connect_chg')[0].value == "connect")
 		{
