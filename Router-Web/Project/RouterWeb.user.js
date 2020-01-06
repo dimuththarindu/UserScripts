@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Router Web
 // @namespace    UserScripts
-// @version      1.0
+// @version      2.0
 // @author       DT
 // @description  Custom Scripts
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -26,20 +26,28 @@
 
     if (window.location.href == "http://192.168.1.1/status.htm")
     {
-        var x = 0;
-        while(x < 1) //Run only one time but this can be customize if needed
-        {
-            x = x + 1;
-            console.log("Run job: " + x);
+		var key = 'NoOfTries';
+		var noOfTries = 0;
+		
+		noOfTries = +localStorage.noOfTries;
+		
+		if(!Number.isInteger(noOfTries))
+		{
+			noOfTries = 0;
+		}
+		
+        noOfTries = noOfTries + 1;			
+		localStorage.noOfTries = noOfTries;
+		
+		console.log("Job Status: " + noOfTries);
 
-            if(document.getElementsByName('connect_chg')[0].value == "connect")
-            {
-                document.getElementsByName('connect_chg')[0].click();
-            }
-            else
-            {
-                return false;
-            }
-        }
+		if(document.getElementsByName('connect_chg')[0].value == "connect")
+		{
+			document.getElementsByName('connect_chg')[0].click();
+		}
+		else
+		{
+			localStorage.noOfTries = 0;
+		}
     }
 })();
