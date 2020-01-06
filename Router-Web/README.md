@@ -1,7 +1,7 @@
 # UserScripts
 
 ## Scripts
-- RouterWeb: <a href="https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Router-Web/Project/RouterWeb.user.js">link</a>  
+- Router-Web: <a href="https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Router-Web/Project/RouterWeb.user.js">link</a>  
 
 ## UserScripts Manager
 UserScript Manager: <a href="https://www.tampermonkey.net">Tampermonkey</a>  
