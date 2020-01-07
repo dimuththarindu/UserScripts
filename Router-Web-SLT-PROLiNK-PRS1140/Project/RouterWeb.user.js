@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Router Web
 // @namespace    UserScripts
-// @version      2.1
+// @version      3.0
 // @author       DT
 // @description  Custom Scripts
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -28,6 +28,7 @@
     {
 		var key = 'NoOfTries';
 		var noOfTries = 0;
+		var conStatus = 'unknown';
 		
 		noOfTries = +localStorage.noOfTries;
 		
@@ -44,11 +45,44 @@
 
 		if(document.getElementsByName('connect_chg')[0].value == "connect")
 		{
+			conStatus = 'disconnected';
+			funWrite2Doc(conStatus, noOfTries); // This fun has to be at the end
 			document.getElementsByName('connect_chg')[0].click();
 		}
 		else
 		{
+			conStatus = 'connected';		
+			funWrite2Doc(conStatus, noOfTries); // This fun has to be at the end
 			localStorage.noOfTries = 0;
 		}
     }
 })();
+
+function funWrite2Doc(conStatus, noOfTries)
+{
+	var docFragment = document.createDocumentFragment();
+	
+	var br1 = document.createElement("br");
+	docFragment.appendChild(br1);
+
+	var txt = document.createElement("p");
+	docFragment.appendChild(txt);
+
+	var txt_strong = document.createElement("b");
+	txt_strong.append("Connection Summary");
+	docFragment.appendChild(txt_strong);
+
+	var constatus = document.createElement("p");
+	constatus.append("Connection status: " + conStatus);
+	docFragment.appendChild(constatus);
+
+	var pNoOfTries = document.createElement("p");
+	pNoOfTries.append("No of tries: " + noOfTries);
+	docFragment.appendChild(pNoOfTries);
+	
+	var br2 = document.createElement("br");
+	docFragment.appendChild(br2);
+
+	var referenceNode = document.querySelector('#device_info');
+	referenceNode.before(docFragment);
+}

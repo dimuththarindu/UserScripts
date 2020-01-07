@@ -3,8 +3,6 @@
 ## Scripts
 - Elakiri: <a href="https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Project/Elakiri.user.js">link</a>  
 
-Screenshot  
-
 <img src="https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Images/Screenshots/Screenshot_02.png" alt="Screenshot" height="auto" width="100%"> 
 
 ## UserScripts Manager
