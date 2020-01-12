@@ -3,7 +3,7 @@
 ## Scripts
 - Elakiri: <a href="https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Project/Elakiri.user.js">link</a>  
 
-<img src="https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Images/Screenshots/Screenshot_02-Elakiri-Dark-Theme-Homepage.png" alt="Screenshot" height="auto" width="100%">
+<img src="https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Images/Screenshots/Screenshot_02-Elakiri-Dark-Theme-Homepage.png" alt="Screenshot" height="auto" width="100%">  
 
 ## UserScripts Manager
 UserScript Manager: <a href="https://www.tampermonkey.net">Tampermonkey</a>  
