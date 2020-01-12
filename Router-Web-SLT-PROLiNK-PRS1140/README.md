@@ -5,8 +5,6 @@
 
 <img src="https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Router-Web-SLT-PROLiNK-PRS1140/Images/Screenshots/Screenshot_01-PROLiNK-PRS1140-ADSLWireless-Modem.png" alt="Screenshot" height="auto" width="100%">  
 
-- Router-Web: <a href="https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Router-Web-SLT-PROLiNK-PRS1140/Project/RouterWeb.user.js">link</a>  
-
 ## UserScripts Manager
 UserScript Manager: <a href="https://www.tampermonkey.net">Tampermonkey</a>  
 
