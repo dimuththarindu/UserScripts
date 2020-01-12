@@ -4,9 +4,9 @@
 
 LK-SLT-Usage: <a href="https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/LK-SLT-Usage/Project/LK-SLT-Usage.user.js">Download</a>  
 
-<img src="https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/LK-SLT-Usage/Images/Screenshots/Screenshot_01.png" />  
+<img src="https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/LK-SLT-Usage/Images/Screenshots/Screenshot_01-Slt-Monthly-Data-Usage.png" />  
 
-<img src="https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/LK-SLT-Usage/Images/Screenshots/Screenshot_02.png" />  
+<img src="https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/LK-SLT-Usage/Images/Screenshots/Screenshot_02-Slt-Monthly-Data-Usage-Statistics.png" />  
 
 ## UserScripts Manager
 UserScript Manager: <a href="https://www.tampermonkey.net">Tampermonkey</a>  
