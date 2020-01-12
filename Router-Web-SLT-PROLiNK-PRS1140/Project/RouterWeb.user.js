@@ -1,14 +1,14 @@
 // ==UserScript==
-// @name         Router Web
+// @name         Router-Web-SLT-PROLiNK-PRS1140
 // @namespace    UserScripts
 // @version      3.0
 // @author       DT
 // @description  Custom Scripts
 // @source       https://github.com/dimuththarindu/UserScripts
-// @icon         https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Router-Web/Images/Icon-64.png
-// @icon64URL	 https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Router-Web/Images/Icon-64.png
-// @updateURL  	 https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Router-Web/Project/RouterWeb.user.js
-// @downloadURL  https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Router-Web/Project/RouterWeb.user.js
+// @icon         https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Router-Web-SLT-PROLiNK-PRS1140/Images/Icon-64.png
+// @icon64URL	 https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Router-Web-SLT-PROLiNK-PRS1140/Images/Icon-64.png
+// @updateURL  	 https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Router-Web-SLT-PROLiNK-PRS1140/Project/RouterWeb.user.js
+// @downloadURL  https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Router-Web-SLT-PROLiNK-PRS1140/Project/RouterWeb.user.js
 // @supportURL   https://github.com/dimuththarindu/UserScripts/issues
 // @match        *://192.168.1.1/*
 // @run-at       document-end
