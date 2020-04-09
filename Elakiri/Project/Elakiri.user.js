@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      18.01
+// @version      18.02
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -378,8 +378,7 @@ function funRemoveStyle(pathValue) {
 
 // This can be used to get the selected style
 function funGetCookie(name) {
-    let a = `; ${document.cookie}`.match(`;\\s*${name}=([^;]+)`);
-    return a ? a[1] : '';
+    return (document.cookie.match('(^|;) *'+name+'=([^;]*)')||"")[2];
 }
 
 function funReplaceEmojies() {
