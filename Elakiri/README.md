@@ -1,7 +1,8 @@
 # Elakiri: Custom Dark Theme
 
-# Please note that this theme does not work this the new design of Elakiri.com
+## Please note that this theme does not work this the new design of Elakiri.com
 
+<del>
 ## Scripts
 - Elakiri: <a href="https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Project/Elakiri.user.js">link</a>  
 
@@ -30,3 +31,4 @@ Recommended UserScript Manager: Tampermonkey
 ## Troubleshoot
 
 Please remove the script from the UserScript manager and then install it again.  
+</del>
