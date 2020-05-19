@@ -1,6 +1,6 @@
 # Elakiri: Custom Dark Theme
 
-## Please note that this theme does not work this the new design of Elakiri.com
+## Please note that this theme does not work for the new design of Elakiri.com
 
 <del>
 ## Scripts
