@@ -1,5 +1,7 @@
 # Elakiri: Custom Dark Theme
 
+# Please note that this theme does not work this the new design of Elakiri.com
+
 ## Scripts
 - Elakiri: <a href="https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Project/Elakiri.user.js">link</a>  
 

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      18.02
+// @version      19.00
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -21,12 +21,15 @@
 
 
 'use strict';
-funMain();
+
+// This theme does not work this the new design of Elakiri.com
+//funMain();
 
 function funMain() {
 	try 
 	{	
 		// This script only works in EK-Lite design
+		
 		if((funGetCookie("bbstyleid") != 7) && (!window.location.pathname.includes("/forum/archive")))
         {
 			// Go to www.elakiri.com
