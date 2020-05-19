@@ -1,10 +1,10 @@
 # UserScripts
 
 ## Scripts
-- Elakiri: <a href="https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Project/Elakiri.user.js">link</a>  
 - LK-SLT-Usage: <a href="https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/LK-SLT-Usage/Project/LK-SLT-Usage.user.js">link</a>   
 - RouterWeb: <a href="https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Router-Web-SLT-PROLiNK-PRS1140/Project/RouterWeb.user.js">link</a>   
 - TopJob: <a href="https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/TopJob/Project/TopJob.user.js">link</a>  
+- <del>Elakiri: <a href="https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/Elakiri/Project/Elakiri.user.js">link</a></del>  
 
 ## UserScripts Manager
 UserScript Manager: <a href="https://www.tampermonkey.net">Tampermonkey</a>  
