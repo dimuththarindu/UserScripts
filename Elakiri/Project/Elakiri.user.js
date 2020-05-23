@@ -14,7 +14,7 @@
 // @include      *://*.elakiri.lk/*
 // @include      *://elakiri.com/*
 // @include      *://elakiri.lk/*
-// @run-at       document-start
+// @run-at       document-end
 // @grant        GM_addStyle
 // @license      Apache License 2.0
 // ==/UserScript==
