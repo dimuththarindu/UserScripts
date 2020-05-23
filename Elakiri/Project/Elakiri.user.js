@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      20.01
+// @version      20.02
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -21,7 +21,7 @@
 
 'use strict';
 
-//funMain();
+funMain();
 
 function funMain() {
 	try
@@ -47,7 +47,7 @@ function funNewDesign() {
 	replaceColor('#4d5460', '#141414'); // QuoteBorder
 	replaceColor('#0288d1', '#0984e3'); // QuoteLine
 
-    replaceColor('#0984e3', '#212020'); // Notice E.g.: Your account is currently awaiting approval by an admin...
+    //replaceColor('#0984e3', '#212020'); // Notice E.g.: Your account is currently awaiting approval by an admin...
     replaceColor('#0288d1', '#212020'); // Main Heading
     replaceColor('#029ff4', '#050505'); // Search Bar
 
