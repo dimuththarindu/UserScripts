@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      0.1
+// @version      1.0
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -12,6 +12,8 @@
 // @supportURL   https://github.com/dimuththarindu/UserScripts/issues
 // @match        *://*.elakiri.com/*
 // @include      *://*.elakiri.lk/*
+// @include      *://elakiri.com/*
+// @include      *://elakiri.lk/*
 // @run-at       document-end
 // @grant        GM_addStyle
 // @license      Apache License 2.0
