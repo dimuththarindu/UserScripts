@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      20.00
+// @version      20.01
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -21,7 +21,7 @@
 
 'use strict';
 
-funMain();
+//funMain();
 
 function funMain() {
 	try
