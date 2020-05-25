@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      21.00
+// @version      22.00
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -21,24 +21,39 @@
 
 'use strict';
 
-//funMain();
+funMain();
 
 function funMain() {
-	/* try
-	{
-		funNewDesign();
+	var pathname = window.location.pathname;
+	var runner = false;
+	
+	switch (pathname) {
+		case "/":
+		case "/threads/trending":
+		case "/threads/latest":
+		case "/threads/newest":
+			funNavStyleLeft();
+			funNavStyleRight();
+			//funChangeHoverColor();
+			//funDarkTheme();
+			break;
+		case "/forums/":
+			funNavStyleLeft();
+			break;
+		default:
+			runner = true;
 	}
-	catch(err)
+	
+	// if the pathname is equal to a thread url
+	if((runner) && (/\d/.test(pathname)))
 	{
-		console.log("Elakiri UserScript Error: " + err);
-	} */
-	funNewDesign();
+		funNavStyleLeft();
+		funDarkTheme();
+	}
+	
 }
 
-function funNewDesign() {
-	funNavBarStyle();
-	
-	funChangeHoverColor();
+function funDarkTheme() {
 	replaceColor('#292e39', '#050505'); // Background
 	replaceColor('#313742', '#212020'); // Body
 	replaceColor('#3f454f', '#212020'); // Footer
@@ -46,9 +61,9 @@ function funNewDesign() {
 	replaceColor('#3b414b', '#1B1B1B'); // QuoteBody
 	replaceColor('#4d5460', '#141414'); // QuoteBorder
 	replaceColor('#0288d1', '#0984e3'); // QuoteLine
-    // replaceColor('#0984e3', '#212020'); // Notice E.g.: Your account is currently awaiting approval by an admin...
     replaceColor('#0288d1', '#212020'); // Main Heading
     replaceColor('#029ff4', '#050505'); // Search Bar
+	// replaceColor('#0984e3', '#212020'); // Notice E.g.: Your account is currently awaiting approval by an admin...
 }
 
 function funChangeHoverColor() {
@@ -64,13 +79,20 @@ function funChangeHoverColor() {
 	document.getElementsByTagName('head')[0].appendChild(style);
 }
 
-function funNavBarStyle() {
+function funNavStyleLeft() {
 	
 	window.addEventListener("DOMContentLoaded", function(){
-		document.getElementById('js-XFUniqueId3').click();
 		document.getElementById('uix_sidebarNav--trigger').click();
 	});
 }
+
+function funNavStyleRight() {
+	
+	window.addEventListener("DOMContentLoaded", function(){
+		document.getElementById('js-XFUniqueId3').click();
+	});
+}
+
 
 function replaceColor(col1, col2) {
     var keys = Object.values(window.getComputedStyle($('html').get(0)));
