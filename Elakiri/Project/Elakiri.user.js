@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      23.01
+// @version      23.02
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -33,7 +33,7 @@ function funMain() {
 		case "/threads/latest":
 		case "/threads/newest":
 			funNavStyleLeft();
-			//funNavStyleRight();
+			funNavStyleRight();
 			funChangeHoverColor();
 			//funDarkTheme();
 			//funChangeTheme();
