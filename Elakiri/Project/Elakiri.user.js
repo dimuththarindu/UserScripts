@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Elakiri
 // @namespace    UserScripts
-// @version      22.01
+// @version      23.01
 // @author       DT
 // @description  Custom Elakiri Design
 // @source       https://github.com/dimuththarindu/UserScripts
@@ -33,9 +33,10 @@ function funMain() {
 		case "/threads/latest":
 		case "/threads/newest":
 			funNavStyleLeft();
-			funNavStyleRight();
-			//funChangeHoverColor();
+			//funNavStyleRight();
+			funChangeHoverColor();
 			//funDarkTheme();
+			//funChangeTheme();
 			break;
 		case "/forums/":
 			funNavStyleLeft();
@@ -48,7 +49,9 @@ function funMain() {
 	if((runner) && (/\d/.test(pathname)))
 	{
 		funNavStyleLeft();
+		funChangeHeader();
 		funDarkTheme();
+		//funChangeTheme();
 	}
 	
 }
@@ -60,9 +63,9 @@ function funDarkTheme() {
 	replaceColor('#373c46', '#141414'); // QuoteHead
 	replaceColor('#3b414b', '#1B1B1B'); // QuoteBody
 	replaceColor('#4d5460', '#141414'); // QuoteBorder
+	replaceColor('#029ff4', '#050505'); // Search Bar
 	//replaceColor('#0288d1', '#0984e3'); // QuoteLine
-    replaceColor('#0288d1', '#212020'); // Main Heading
-    replaceColor('#029ff4', '#050505'); // Search Bar
+    //replaceColor('#0288d1', '#212020'); // Main Heading    
 	// replaceColor('#0984e3', '#212020'); // Notice E.g.: Your account is currently awaiting approval by an admin...
 }
 
@@ -70,13 +73,26 @@ function funChangeHoverColor() {
 	// Change hover color
 	var css = '.structItem--thread:hover { background-color: #050505 }';
 	var style = document.createElement('style');
+	style.innerText = css;
+	document.head.appendChild(style);
+}
 
-	if (style.styleSheet) {
-		style.styleSheet.cssText = css;
-	} else {
-		style.appendChild(document.createTextNode(css));
-	}
-	document.getElementsByTagName('head')[0].appendChild(style);
+function funChangeHeader() {
+	var css = '.p-nav-inner, .uix_headerContainer, .p-nav { background-color: #212020 }';
+	var style = document.createElement('style');
+	style.innerText = css;
+	document.head.appendChild(style);
+}
+
+function funChangeTheme() {
+	var css = "";
+	var style = document.createElement('style');
+	
+	css += 'body, .uix_sidebarNav__inner, .uix_sidebarNav  { background-color: #050505 } ';
+	css += 'div.block-container:nth-child(2), .block-filterBar, #footer, .p-footer-inner, .uix_sidebarInner > div:nth-child(1) > div:nth-child(1) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2), div.block:nth-child(2), div.block:nth-child(2) > div:nth-child(1) > div:nth-child(2), .uix_sidebarInner > div:nth-child(1) > div:nth-child(1) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > h3:nth-child(1) { background-color: #212020 } ';
+	
+	style.innerText = css;
+	document.head.appendChild(style);
 }
 
 function funNavStyleLeft() {
