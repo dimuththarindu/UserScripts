@@ -1,5 +1,8 @@
 # UserScripts
 
+### This is no longer being maintained.
+<hr>
+<del>
 ## Scripts
 - TopJob: <a href="https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/TopJob/Project/TopJob.user.js">link</a>  
 
@@ -26,3 +29,4 @@ Recommended UserScript Manager: Tampermonkey
 ## Troubleshoot
 
 Please remove the script from the UserScript manager and then install it again.  
+</del>
