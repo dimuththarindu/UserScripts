@@ -1,5 +1,12 @@
 # LK-SLT-Usage
 
+
+### This is no longer being maintained. Here are some alternatives:
+- crashzone - <a href="https://github.com/crashzonecz/SLTUsage">link</a>
+- RavinduSha - <a href="https://github.com/ravindusha/SLT_Usage_Meter_Addon">link</a>    
+
+<hr>
+<del>
 ## Scripts
 
 LK-SLT-Usage: <a href="https://raw.githubusercontent.com/dimuththarindu/UserScripts/master/LK-SLT-Usage/Project/LK-SLT-Usage.user.js">Download</a>  
@@ -31,3 +38,4 @@ Recommended UserScript Manager: Tampermonkey
 ## Troubleshoot
 
 Please remove the script from the UserScript manager and then install it again.  
+</del>
