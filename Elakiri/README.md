@@ -1,5 +1,5 @@
 # Elakiri: Custom Dark Theme
-## This is no longer being maintained.
+### This is no longer being maintained.
 <hr>
 <del>
 ## Scripts
